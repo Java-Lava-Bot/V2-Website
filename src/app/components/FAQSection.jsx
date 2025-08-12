@@ -29,6 +29,10 @@ export default function FAQSection() {
     {
       question: "Is there a limit to how many commands I can use?",
       answer: "For free users, there are reasonable rate limits to ensure fair usage for everyone. Premium users enjoy higher rate limits and priority command processing. We continuously monitor system performance to provide the best experience for all users while preventing abuse."
+    },
+    {
+      question: "I have found a bug! What should I do?",
+      answer: "Please report any bugs you find through our support server or by using the /report command. Include as much detail as possible, such as the command you were using, any error messages, and steps to reproduce the issue. Our team will investigate and work on a fix as soon as possible. IF you include a screenshot, it will help us resolve the issue faster!"
     }
   ];
 
