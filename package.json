@@ -10,14 +10,24 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@types/node": "^24.2.1",
     "framer-motion": "^12.23.12",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
     "next": "15.4.6",
+    "path": "^0.12.7",
     "react": "^19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "remark": "^15.0.1",
+    "remark-emoji": "^5.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-html": "^16.0.1",
+    "remark-slug": "^7.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.16",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "tailwindcss": "^4"

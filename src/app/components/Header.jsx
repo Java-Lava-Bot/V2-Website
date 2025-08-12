@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/privacy-policy", label: "Privacy Policy", icon: "fas fa-user-shield" },
   { href: "/partners", label: "Partners", icon: "fas fa-handshake" },
   { href: "https://top.gg/bot/1305190785536360519/vote", label: "Vote", icon: "fas fa-vote-yea", external: true },
-  { href: "/docs", label: "Docs", icon: "fas fa-info", external: true },
+  { href: "/docs", label: "Documentation", icon: "fas fa-book" },
 ];
 
 export default function Header() {

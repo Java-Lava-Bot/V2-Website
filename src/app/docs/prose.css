@@ -1,0 +1,157 @@
+/* Override Tailwind Typography (prose) for dark theme */
+@layer components {
+  /* Headings */
+  .prose h1 {
+    color: var(--color-light);
+    margin-top: 0;
+    margin-bottom: 0.8888889em;
+    line-height: 1.1111111;
+    font-size: 2.25em;
+    font-weight: 800;
+  }
+
+  .prose h2 {
+    color: var(--color-light);
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.3333333;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  .prose h3 {
+    color: var(--color-light);
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+    font-size: 1.25em;
+    font-weight: 600;
+  }
+
+  .prose h4 {
+    color: var(--color-light);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  /* Links */
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .prose a:hover {
+    color: var(--color-secondary);
+  }
+
+  /* Lists */
+  .prose ul {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    list-style-type: disc;
+    padding-left: 1.625em;
+  }
+
+  .prose ol {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    list-style-type: decimal;
+    padding-left: 1.625em;
+  }
+
+  .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  /* Code blocks */
+  .prose pre {
+    background-color: rgba(15, 15, 26, 0.8);
+    color: var(--color-light);
+    overflow-x: auto;
+    font-weight: 400;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+    margin-top: 1.7142857em;
+    margin-bottom: 1.7142857em;
+    border-radius: 0.375rem;
+    padding: 0.8571429em 1.1428571em;
+    border: 1px solid rgba(123, 63, 228, 0.2);
+  }
+
+  /* Inline code */
+  .prose code {
+    color: var(--color-light);
+    font-weight: 600;
+    font-size: 0.875em;
+    background-color: rgba(15, 15, 26, 0.6);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(123, 63, 228, 0.2);
+  }
+
+  .prose pre code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
+
+  /* Blockquotes */
+  .prose blockquote {
+    font-weight: 500;
+    font-style: italic;
+    color: rgba(245, 245, 247, 0.8);
+    border-left-width: 0.25rem;
+    border-left-color: var(--color-primary);
+    quotes: "\201C""\201D""\2018""\2019";
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    padding-left: 1em;
+  }
+
+  /* Tables */
+  .prose table {
+    width: 100%;
+    table-layout: auto;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+  }
+
+  .prose thead {
+    color: var(--color-light);
+    font-weight: 600;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(123, 63, 228, 0.3);
+  }
+
+  .prose thead th {
+    vertical-align: bottom;
+    padding-right: 0.5714286em;
+    padding-bottom: 0.5714286em;
+    padding-left: 0.5714286em;
+  }
+
+  .prose tbody tr {
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(123, 63, 228, 0.1);
+  }
+
+  .prose tbody tr:last-child {
+    border-bottom-width: 0;
+  }
+
+  .prose tbody td {
+    vertical-align: top;
+    padding: 0.5714286em;
+  }
+}
