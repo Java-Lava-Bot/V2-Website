@@ -85,7 +85,7 @@ export default function Footer() {
                         <h3 className="text-lg font-semibold mb-4 text-white">Legal</h3>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="/terms-of-service" className="text-gray-400 hover:text-[var(--color-accent)] transition">
+                                <Link href="" className="text-gray-400 hover:text-[var(--color-accent)] transition">
                                     Terms of Service
                                 </Link>
                             </li>
