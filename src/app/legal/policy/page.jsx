@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Privacy_Policy() {
 
     return (
@@ -5,15 +7,15 @@ export default function Privacy_Policy() {
         <header class="bg-gradient-to-r from-blue-900 to-gray-900 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
-        <a href="/" class="text-2xl font-bold text-white">Java Lava</a>
+        <Link href="/" class="text-2xl font-bold text-white">Java Lava</Link>
         <div class="hidden md:flex space-x-6">
-          <a href="/" class="text-gray-300 hover:text-white transition">Home</a>
-          <a href="/about-us.html" class="text-gray-300 hover:text-white transition">About Us</a>
-          <a href="/Terms-of-service.html" class="text-gray-300 hover:text-white transition">Terms</a>
-          <a href="/Privacy-Policy.html" class="text-gray-300 hover:text-white transition">Privacy</a>
-          <a href="https://discord.gg/ZZbuatGPHr" class="text-gray-300 hover:text-white transition">Support</a>
-          <a href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"
-            class="text-gray-300 hover:text-white transition">Invite</a>
+          <Link href="/" class="text-gray-300 hover:text-white transition">Home</Link>
+          <Link href="/about-us.html" class="text-gray-300 hover:text-white transition">About Us</Link>
+          <Link href="/Terms-of-service.html" class="text-gray-300 hover:text-white transition">Terms</Link>
+          <Link href="/Privacy-Policy.html" class="text-gray-300 hover:text-white transition">Privacy</Link>
+          <Link href="https://discord.gg/ZZbuatGPHr" class="text-gray-300 hover:text-white transition">Support</Link>
+          <Link href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"
+            class="text-gray-300 hover:text-white transition">Invite</Link>
         </div>
         <div class="md:hidden">
           <button id="mobile-menu-button" class="text-white focus:outline-none">☰</button>
@@ -21,13 +23,13 @@ export default function Privacy_Policy() {
       </div>
     </div>
     <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2 text-gray-300">
-      <a href="/" class="block hover:text-white">Home</a>
-      <a href="/about.html" class="block hover:text-white">About Us</a>
-      <a href="/Terms-of-service.html" class="block hover:text-white">Terms</a>
-      <a href="/Privacy-Policy.html" class="block hover:text-white">Privacy</a>
-      <a href="https://discord.gg/ZZbuatGPHr" class="block hover:text-white">Support</a>
-      <a href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"
-        class="block hover:text-white">Invite</a>
+      <Link href="/" class="block hover:text-white">Home</Link>
+      <Link href="/about.html" class="block hover:text-white">About Us</Link>
+      <Link href="/Terms-of-service.html" class="block hover:text-white">Terms</Link>
+      <Link href="/Privacy-Policy.html" class="block hover:text-white">Privacy</Link>
+      <Link href="https://discord.gg/ZZbuatGPHr" class="block hover:text-white">Support</Link>
+      <Link href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"
+        class="block hover:text-white">Invite</Link>
     </div>
   </header>
 
@@ -35,9 +37,9 @@ export default function Privacy_Policy() {
   <main class="max-w-4xl mx-auto px-6 py-12">
     
     <div class="text-left mb-6">
-      <a href="/" class="inline-flex items-center text-blue-400 hover:text-white transition font-medium text-lg">
+      <Link href="/" class="inline-flex items-center text-blue-400 hover:text-white transition font-medium text-lg">
         ← Back to Home
-      </a>
+      </Link>
     </div>
 
     <h1 class="text-3xl md:text-4xl font-bold text-center mb-6">Java Lava Bot Privacy Policy</h1>
@@ -66,7 +68,7 @@ export default function Privacy_Policy() {
         <h2 class="text-2xl font-semibold text-blue-300">3. Data & Privacy</h2>
         <p>
           Java Lava logs server names, member counts, and command usage for debugging and feature improvement.
-          Errors are reported to developers through logs hosted on our provider. For full details, see our <a href="/Privacy-Policy.html" class="text-blue-400 underline">Privacy Policy</a>.
+          Errors are reported to developers through logs hosted on our provider. For full details, see our <Link href="/Privacy-Policy.html" class="text-blue-400 underline">Privacy Policy</Link>.
         </p>
       </div>
 
