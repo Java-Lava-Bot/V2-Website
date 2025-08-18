@@ -1,3 +1,5 @@
+import Header from '@/app/components/Header'
+
 export default function About_us() {
     return (
         <div>
