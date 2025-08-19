@@ -24,7 +24,7 @@ export default function FAQSection() {
     },
     {
       question: "Can I customize the bot's prefix?",
-      answer: "Yes! You can change the command prefix using the /prefix command. For example, /prefix ! will change the command prefix to ! so you can use commands like !help. This is useful if you have multiple bots that might be using the same default prefix."
+      answer: "No, Java Lava does not support custom prefixes. It uses the slash command system introduced by Discord, which allows for a more consistent and user-friendly experience. You can access all commands by typing '/' in your server's chat."
     },
     {
       question: "Is there a limit to how many commands I can use?",
