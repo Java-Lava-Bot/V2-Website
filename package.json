@@ -4,19 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "node start.js",
+    "build": "next build && npm run postbuild",
+    "start": "node .next/standalone/server.js",
+    "postbuild": "node prepare-standalone.js",
     "lint": "next lint"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@types/node": "^24.2.1",
     "framer-motion": "^12.23.12",
-    "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
-    "http": "^0.0.1-security",
     "next": "15.4.6",
-    "path": "^0.12.7",
     "react": "^19.1.0",
     "react-dom": "19.1.0",
     "remark": "^15.0.1",
