@@ -212,6 +212,10 @@ export default function HeroSection() {
                 </div>
               </div>
               
+              <p className="absolute bottom-2 left-2 z-50 text-sm bg-opacity-60 px-2  rounded">
+                Please note that stats on this page are not correct. They are only placeholders
+              </p>
+              
               {/* Animated elements */}
               <motion.div 
                 className="absolute -right-6 -bottom-6 w-12 h-12 rounded-lg bg-[var(--color-accent)] flex items-center justify-center text-white"
