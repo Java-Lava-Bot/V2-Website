@@ -54,30 +54,16 @@ export default function DocsPage() {
 
                         {/* Setup Guide card */}
                         <a href="/docs/setup" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i class="fas fa-network-wired mr-2"></i>Setup Guide</h3>
+                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fas fa-network-wired mr-2"></i>Setup Guide</h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-4">Learn how to add Java Lava to your Discord server and configure it for optimal use.</p>
                             <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Read guide →</span>
                         </a>
-
-                        <div class="max-w-3xl mx-auto grid gap-8 text-center">
-      <a href="https://discord.gg/n57PBS3v2S" target="_blank"
-        class="block bg-blue-800 hover:bg-blue-700 transition rounded-xl p-6 shadow-lg">
-        <h2 class="text-2xl font-bold text-white"><i class="fas fa-network-wired mr-2"></i> SkyX Systems</h2>
-        <p class="text-gray-300 mt-2">A powerful and innovative tech-driven Discord community.</p>
-      </a>
-
-      <a href="https://discord.gg/qZh2hbz8AS" target="_blank"
-        class="block bg-purple-800 hover:bg-purple-700 transition rounded-xl p-6 shadow-lg">
-        <h2 class="text-2xl font-bold text-white"><i class="fas fa-robot mr-2"></i> Muffin by TrainerJeo</h2>
-        <p class="text-gray-300 mt-2">An advanced Discord bot offering fun, moderation, and more.</p>
-      </a>
-
-      <a href="https://discord.gg/TTUxsVgEuE" target="_blank"
-        class="block bg-indigo-800 hover:bg-indigo-700 transition rounded-xl p-6 shadow-lg">
-        <h2 class="text-2xl font-bold text-white"><i class="fas fa-rocket mr-2"></i> Aerospace by Ziggy</h2>
-        <p class="text-gray-300 mt-2">An efficient multipurpose Discord bot made by Ziggy._.mc.</p>
-      </a>
-    </div>
+                        {/* FAQ */}
+                        <a href="/docs/setup" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fas fa-question"></i> FAQ</h3>
+                            <p className="text-gray-600 dark:text-gray-300 mb-4">Get to know some of our frequently asked questions!</p>
+                            <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Read guide →</span>
+                        </a>
                     </div>
                 </div>
             </main>
