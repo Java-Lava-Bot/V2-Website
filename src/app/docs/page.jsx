@@ -59,7 +59,7 @@ export default function DocsPage() {
                             <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Read guide →</span>
                         </a>
                         {/* FAQ */}
-                        <a href="/docs/setup" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+                        <a href="/docs/faq" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
                             <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fas fa-question"></i> FAQ</h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-4">Get to know some of our frequently asked questions!</p>
                             <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Read guide →</span>
