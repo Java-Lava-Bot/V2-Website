@@ -125,7 +125,7 @@ export default function FAQSection() {
             </a>{" "}
             or join our{" "}
             <a 
-              href="https://discord.gg/javalava" 
+              href="https://discord.com/invite/tM8Y5acUta" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[var(--color-accent)] hover:underline"

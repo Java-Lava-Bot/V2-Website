@@ -1,7 +1,9 @@
 ---
-title: Java Lava Version 1.07
-version: Java Lava Version 1.07
-date: '2023-02-02'
+icon: tools
+label: Version 1.07
+order: 930
+description: Bug fixes - February 25th, 2025
+tags: [bug-fixes]
 ---
 
 # Java Lava Version 1.07

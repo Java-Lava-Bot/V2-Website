@@ -1,7 +1,9 @@
 ---
-title: Java Lava Version 1.03
-version: Java Lava Version 1.03
-date: '2023-01-31'
+icon: gear
+label: Version 1.03
+order: 970
+description: Major automod system refresh with multiple sub-versions - January 9th, 2025
+tags: [automod, commands]
 ---
 
 # Java Lava Version 1.03
@@ -46,9 +48,7 @@ Version 1.03.2 has released on January 11th 2025!
 
 # What is in version 1.03.2?
 
-automod commands have been fixed and command names updated to where you just have to type in /automod- and all the automod commands will show up!
-
-and that's it (for version 1.03.02 at least).
+1. automod commands have been fixed and command names updated to where you just have to type in /automod- and all the automod commands will show up!
 
 ## Welcome to version 1.03.3!
 
@@ -68,7 +68,7 @@ Version 1.03.4 has been released on January 12th 2025.
 
 ## What is new in version 1.03.4?
 
-We have made a /automod-member profile command which only works with community servers!
+1. We have made a /automod-member profile command which only works with community servers!
 
 ## Welcome to verion 1.03.5
 
@@ -78,6 +78,6 @@ Version 1.03.5 has been released on January 13th 2025.
 
 ## What is new in version 1.03.5?
 
-We have added a /terms-of-service and /privacy-policy commands!
+1. We have added a /terms-of-service and /privacy-policy commands!
 
 # and that is the end of version 1.03 updates... onto version 1.04...

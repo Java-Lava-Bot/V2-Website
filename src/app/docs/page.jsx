@@ -32,22 +32,22 @@ export default function DocsPage() {
 
                     <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {/* Start from beginning card */}
-                        <a href="/docs/Home" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3">Beginning</h3>
+                        <a href="\content\docs/index.md" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
+                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fa fa-book"></i> Beginning</h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-4">Explore all that we can offer in our Java Lava docs </p>
                             <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Start here →</span>
                         </a>
 
                         {/* Commands card */}
                         <a href="/docs/commands" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3">Commands</h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">Explore all Java Lava bot commands including moderation, community, music, and utility commands.</p>
+                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fa-solid fa-slash fa-rotate-90"></i> Commands</h3>
+                            <p className="text-gray-600 dark:text-gray-300 mb-4">Explore all Java Lava bot commands including moderation, community, fun, and utility commands.</p>
                             <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Browse commands →</span>
                         </a>
 
                         {/* Updates card */}
                         <a href="/docs/updates" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3">Updates</h3>
+                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fas fa-sync"></i> Updates</h3>
                             <p className="text-gray-600 dark:text-gray-300 mb-4">Stay informed about the latest features, improvements, and bug fixes in Java Lava bot.</p>
                             <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">View changelog →</span>
                         </a>

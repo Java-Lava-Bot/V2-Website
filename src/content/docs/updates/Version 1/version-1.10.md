@@ -1,7 +1,9 @@
 ---
-title: Java Lava Version 1.10
-version: Java Lava Version 1.10
-date: '2023-02-03'
+icon: bug
+label: Version 1.10
+order: 900
+description: Bug fixes and improvements - May 4th, 2025
+tags: [moderation, bug-fixes]
 ---
 
 # Java Lava Version 1.10

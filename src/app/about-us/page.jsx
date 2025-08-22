@@ -7,7 +7,7 @@ export default function About_us() {
             <main class="max-w-4xl mx-auto px-6 py-12 text-center">
               <h1 class="text-4xl font-extrabold mb-6">Where did Java Lava start and what is it about?</h1>
 
-              <p class="text-lg mb-4">Here at Java Lava, PhillsPhanbh3, Jeo, Ziggy, and Thus work hard on all things coding — we're passionate about it.</p>
+              <p class="text-lg mb-4">Here at Java Lava, PhillsPhanbh3, Jeo, and Ziggy work hard on all things coding — we're passionate about it.</p>
               <p class="text-lg mb-4">Java Lava started one day in November of 2024 as an ambitious idea to create a public, verified Discord bot.</p>
               <p class="text-lg mb-4">PhillsPhanbh3 didn’t know where to begin, but with the help of a talented coder friend, Jeo, the project began to take off.</p>
               <p class="text-lg mb-4">Since then, Java Lava has grown to over 50 servers and continues expanding with the development of new systems and features.</p>

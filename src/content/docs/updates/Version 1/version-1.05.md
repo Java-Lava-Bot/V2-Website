@@ -1,7 +1,9 @@
 ---
-title: Java Lava Version 1.05
-version: Java Lava Version 1.05
-date: '2023-02-01'
+icon: bug
+label: Version 1.05
+order: 950
+description: Multiple bug fixes and command updates - February 1st, 2025
+tags: [bug-fixes, commands]
 ---
 
 # Java Lava Version 1.05

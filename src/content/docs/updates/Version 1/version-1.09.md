@@ -1,7 +1,9 @@
 ---
-title: Java Lava Version 1.09
-version: Java Lava Version 1.09
-date: '2023-02-02'
+icon: star
+label: Version 1.09
+order: 910
+description: Java Lava Premium launch and automod fixes - March 25th, 2025
+tags: [premium, automod]
 ---
 
 # Java Lava Version 1.09

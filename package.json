@@ -21,7 +21,8 @@
     "remark-emoji": "^5.0.1",
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
-    "remark-slug": "^7.0.1"
+    "remark-slug": "^7.0.1",
+    "retype": "^0.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

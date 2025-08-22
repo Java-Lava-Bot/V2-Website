@@ -1,7 +1,17 @@
 ---
-title: clicker
-description: clicker - Java Lava Bot community command
-category: community
-permissions: None
+icon: play
+label: Clicker
+order: 400
+description: Interactive clicker command documentation
+tags: [commands, fun]
 ---
 
+# What is the /clicker command
+
+This /clicker command is where it says click the button and it has a button saying click me!
+
+Whenever you press the click me button then it counts up and you can press it as many times as you want!
+
+!!!
+This command is known to cause rate limits from time to time!
+!!!

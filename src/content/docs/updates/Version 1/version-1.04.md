@@ -1,7 +1,9 @@
 ---
-title: Java Lava Version 1.04
-version: Java Lava Version 1.04
-date: '2023-02-01'
+icon: shield-check
+label: Version 1.04
+order: 960
+description: Major moderation commands update with security improvements - January 19th, 2025
+tags: [moderation, commands, security]
 ---
 
 # Java Lava Version 1.04
@@ -16,6 +18,7 @@ Java Lava Version 1.04 has released on January 19th 2025
 
 #### New Moderation Commands
 1. This new update is about moderation!
+
 2. We have added /timeout, a /gag-a-member command (another version of the /timeout command), /kick, /ban, /unban commands - the normal moderation commands on the bot, also decided to add in /ping-latency onto the bot as well like 45 minutes after the announcement of this update
 
 #### Website Updates

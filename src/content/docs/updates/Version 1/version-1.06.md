@@ -1,7 +1,9 @@
 ---
-title: Java Lava Version 1.06
-version: Java Lava Version 1.06
-date: '2023-02-01'
+icon: tools
+label: Version 1.06
+order: 940
+description: Bug fixes - February 16th, 2025
+tags: [bug-fixes]
 ---
 
 # Java Lava Version 1.06

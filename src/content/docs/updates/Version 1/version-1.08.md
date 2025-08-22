@@ -1,7 +1,9 @@
 ---
-title: Java Lava Version 1.08
-version: Java Lava Version 1.08
-date: '2023-02-02'
+icon: broadcast
+label: Version 1.08
+order: 920
+description: Voice channel commands and moderation fixes - March 11th, 2025
+tags: [voice-channels, moderation]
 ---
 
 # Java Lava Version 1.08
