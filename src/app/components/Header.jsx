@@ -9,8 +9,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const navLinks = [
   { href: "/", label: "Home", icon: "fas fa-home" },
   { href: "/about-us", label: "About Us", icon: "fas fa-info-circle" },
-  { href: "/terms-of-service", label: "Terms of Service", icon: "fas fa-file-contract" },
-  { href: "/privacy-policy", label: "Privacy Policy", icon: "fas fa-user-shield" },
+  { href: "/legal/tos", label: "Terms of Service", icon: "fas fa-file-contract" },
+  { href: "/legal/policy", label: "Privacy Policy", icon: "fas fa-user-shield" },
   { href: "/partners", label: "Partners", icon: "fas fa-handshake" },
   { href: "https://top.gg/bot/1305190785536360519/vote", label: "Vote", icon: "fas fa-vote-yea", external: true },
   { href: "/docs", label: "Documentation", icon: "fas fa-book" },

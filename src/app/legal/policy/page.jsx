@@ -11,8 +11,8 @@ export default function Privacy_Policy() {
         <div class="hidden md:flex space-x-6">
           <Link href="/" class="text-gray-300 hover:text-white transition">Home</Link>
           <Link href="/about-us.html" class="text-gray-300 hover:text-white transition">About Us</Link>
-          <Link href="/Terms-of-service.html" class="text-gray-300 hover:text-white transition">Terms</Link>
-          <Link href="/Privacy-Policy.html" class="text-gray-300 hover:text-white transition">Privacy</Link>
+          <Link href="/legal/tos" class="text-gray-300 hover:text-white transition">Terms</Link>
+          <Link href="/legal/policy" class="text-gray-300 hover:text-white transition">Privacy</Link>
           <Link href="https://discord.gg/ZZbuatGPHr" class="text-gray-300 hover:text-white transition">Support</Link>
           <Link href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"
             class="text-gray-300 hover:text-white transition">Invite</Link>
