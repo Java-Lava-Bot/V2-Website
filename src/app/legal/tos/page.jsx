@@ -10,12 +10,11 @@ export default function Privacy_Policy() {
         <Link href="/" className="text-2xl font-bold text-white">Java Lava</Link>
         <div className="hidden md:flex space-x-6">
           <Link href="/" className="text-gray-300 hover:text-white transition">Home</Link>
-          <Link href="/about-us.html" className="text-gray-300 hover:text-white transition">About Us</Link>
+          <Link href="/about-us" className="text-gray-300 hover:text-white transition">About Us</Link>
           <Link href="/legal/tos" className="text-gray-300 hover:text-white transition">Terms</Link>
           <Link href="/legal/policy" className="text-gray-300 hover:text-white transition">Privacy</Link>
           <Link href="https://discord.gg/ZZbuatGPHr" className="text-gray-300 hover:text-white transition">Support</Link>
-          <Link href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"
-            className="text-gray-300 hover:text-white transition">Invite</Link>
+          <Link href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"className="text-gray-300 hover:text-white transition">Invite</Link>
         </div>
         <div className="md:hidden">
           <button id="mobile-menu-button" className="text-white focus:outline-none">☰</button>
@@ -24,7 +23,7 @@ export default function Privacy_Policy() {
     </div>
     <div id="mobile-menu" className="md:hidden hidden px-4 pb-4 space-y-2 text-gray-300">
       <Link href="/" className="block hover:text-white">Home</Link>
-      <Link href="/about.html" className="block hover:text-white">About Us</Link>
+      <Link href="/about-us" className="block hover:text-white">About Us</Link>
       <Link href="/legal/tos" className="block hover:text-white">Terms</Link>
       <Link href="/legal/policy" className="block hover:text-white">Privacy</Link>
       <Link href="https://discord.gg/ZZbuatGPHr" className="block hover:text-white">Support</Link>
@@ -68,7 +67,7 @@ export default function Privacy_Policy() {
         <h2 className="text-2xl font-semibold text-blue-300">3. Data & Privacy</h2>
         <p>
           Java Lava logs server names, member counts, and command usage for debugging and feature improvement.
-          Errors are reported to developers through logs hosted on our provider. For full details, see our <Link href="/Privacy-Policy.html" className="text-blue-400 underline">Privacy Policy</Link>.
+          Errors are reported to developers through logs hosted on our provider. For full details, see our <Link href="/legal/policy" className="text-blue-400 underline">Privacy Policy</Link>.
         </p>
       </div>
 
