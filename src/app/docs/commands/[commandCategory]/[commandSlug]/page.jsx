@@ -19,7 +19,7 @@ export default async function CommandPage({ params }) {
   const resolvedParams = await Promise.resolve(params);
   const { commandCategory, commandSlug } = resolvedParams;
   const commandData = await getDocBySlugAsync(`commands/${commandCategory}`, commandSlug);
-  
+
   if (!commandData) {
     return (
       <div className="text-center py-12">

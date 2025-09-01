@@ -24,13 +24,18 @@ export default function CommandsPage() {
       <div className="mt-16 grid gap-8 md:grid-cols-2">
         {categories.map((category) => {
           const commands = getCommandsByCategory(category);
+          console.log(commands)
+
           return (
             <div key={category} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700 p-6">
               <h2 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-4 capitalize">{category} Commands</h2>
               
               {commands.length > 0 ? (
                 <ul className="space-y-2 mb-6">
-                  {commands.map((command) => (
+                  {commands.map((command) => {
+                    return (
+
+          
                     <li key={command.id}>
                       <Link 
                         href={`/docs/commands/${category}/${command.id}`}
@@ -42,7 +47,8 @@ export default function CommandsPage() {
                         <p className="text-sm text-gray-500 dark:text-gray-400">{command.description}</p>
                       )}
                     </li>
-                  ))}
+                  )
+        })}
                 </ul>
               ) : (
                 <p className="text-gray-500 dark:text-gray-400 mb-6">No commands available in this category yet.</p>
