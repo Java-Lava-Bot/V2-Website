@@ -1,7 +1,7 @@
 ---
 icon: boot
 label: Ban
-order: 200
+order: 380
 description: Ban command documentation
 tags: [commands, moderation]
 ---

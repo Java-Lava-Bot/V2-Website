@@ -1,7 +1,7 @@
 ---
 icon: bot
 label: Automod
-order: 300
+order: 390
 description: Automod rule creation command documentation
 tags: [commands, moderation]
 ---

@@ -1,7 +1,7 @@
 ---
 icon: poke
 label: Poke
-order: 400
+order: 480
 description: Interactive poke command documentation
 tags: [commands, fun]
 ---

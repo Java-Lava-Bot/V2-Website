@@ -1,7 +1,7 @@
 ---
 icon: play
 label: Clicker
-order: 400
+order: 490
 description: Interactive clicker command documentation
 tags: [commands, fun]
 ---
