@@ -1,180 +1,136 @@
+'use client';
 
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  BookOpenIcon,
+  HandRaisedIcon,
+  HomeIcon,
+  InformationCircleIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
+import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const navLinks = [
-  { href: "/", label: "Home", icon: "fas fa-home" },
-  { href: "/about-us", label: "About Us", icon: "fas fa-info-circle" },
-  { href: "/legal/tos", label: "Terms of Service", icon: "fas fa-file-contract" },
-  { href: "/legal/policy", label: "Privacy Policy", icon: "fas fa-user-shield" },
-  { href: "/partners", label: "Partners", icon: "fas fa-handshake" },
-  { href: "https://top.gg/bot/1305190785536360519/vote", label: "Vote", icon: "fas fa-vote-yea", external: true },
-  { href: "/docs", label: "Documentation", icon: "fas fa-book" },
+  { href: '/', label: 'Home', icon: HomeIcon },
+  { href: '/about-us', label: 'About', icon: InformationCircleIcon },
+  { href: '/docs', label: 'Docs', icon: BookOpenIcon },
+  {
+    href: 'https://top.gg/bot/1305190785536360519/vote',
+    label: 'Vote',
+    icon: HandRaisedIcon,
+    external: true,
+  },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { 
-        duration: 0.5,
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    },
-  };
-
-  const linkVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
-  };
-
   return (
     <>
-      <motion.header
-        className="bg-[var(--color-dark)] bg-opacity-95 backdrop-blur-lg border-b border-[var(--color-primary)] border-opacity-40 shadow-xl z-40 relative"
-        initial="hidden"
-        animate="visible"
-        variants={headerVariants}
-      >
+      <header className="sticky top-0 z-50 bg-[var(--color-dark)]/95 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <motion.div 
-              className="flex-shrink-0 text-3xl font-extrabold tracking-wide pl-2 lg:pl-0"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-2xl font-bold"
             >
-              <Link href="/" className="flex items-center gap-2">
-                <span className="text-[var(--color-primary)]">Java</span>
-                <span className="text-[var(--color-secondary)]">Lava</span>
-              </Link>
-            </motion.div>
+              <span className="text-[var(--color-primary)]">Java</span>
+              <span className="text-[var(--color-secondary)]">Lava</span>
+            </Link>
 
-            <nav className="hidden md:flex flex-wrap items-center justify-start gap-x-6 text-lg text-gray-300 ml-8">
-              {navLinks.map((link, index) => (
-                <motion.div
-                  key={link.label}
-                  variants={linkVariants}
-                  whileHover={{ y: -3, transition: { duration: 0.2 } }}
-                >
-                  {link.external ? (
-                    <a 
-                      href={link.href} 
-                      className="flex items-center gap-2 text-gray-300 font-semibold transition-all duration-300 hover:text-[var(--color-accent)]" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <i className={link.icon}></i> {link.label}
-                    </a>
-                  ) : (
-                    <Link 
-                      href={link.href} 
-                      className="flex items-center gap-2 text-gray-300 font-semibold transition-all duration-300 hover:text-[var(--color-accent)]"
-                    >
-                      <i className={link.icon}></i> {link.label}
-                    </Link>
-                  )}
-                </motion.div>
-              ))}
+            <nav className="hidden md:flex items-center space-x-8">
+              {navLinks.map(link => {
+                const Icon = link.icon;
+                return (
+                  <div key={link.label}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 group"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icon className="h-4 w-4 group-hover:text-[var(--color-accent)] transition-colors" />
+                        <span className="font-medium">{link.label}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 group"
+                      >
+                        <Icon className="h-4 w-4 group-hover:text-[var(--color-primary)] transition-colors" />
+                        <span className="font-medium">{link.label}</span>
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
             </nav>
 
-            <div className="md:hidden flex items-center">
-              <motion.button
-                whileTap={{ scale: 0.9 }}
-                onClick={toggleMenu}
-                className="text-white focus:outline-none"
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-gray-300 hover:text-white transition-colors p-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] rounded"
               >
-                <Bars3Icon className="h-8 w-8" />
-              </motion.button>
+                {mobileMenuOpen ? (
+                  <XMarkIcon className="h-6 w-6" />
+                ) : (
+                  <Bars3Icon className="h-6 w-6" />
+                )}
+              </button>
             </div>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={toggleMenu}
+              onClick={() => setMobileMenuOpen(false)}
             />
-
             <motion.div
-              className="fixed inset-0 flex justify-center items-center z-50"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              className="fixed top-16 left-0 right-0 bg-[var(--color-dark)]/95 backdrop-blur-xl border-b border-white/10 z-50 md:hidden"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
             >
-              <motion.div
-                className="bg-[#1E1E30] bg-opacity-95 border border-[var(--color-primary)] p-8 rounded-xl shadow-2xl w-11/12 max-w-sm text-center relative"
-                initial={{ scale: 0.9, y: 20, opacity: 0 }}
-                animate={{ scale: 1, y: 0, opacity: 1 }}
-                exit={{ scale: 0.9, y: 20, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              >
-                <motion.button
-                  onClick={toggleMenu}
-                  className="absolute top-4 right-4 text-white focus:outline-none"
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <XMarkIcon className="h-8 w-8" />
-                </motion.button>
-
-                <div className="space-y-4 mt-6 text-xl">
-                  {navLinks.map((link, index) => (
-                    <motion.div
-                      key={link.label}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ 
-                        opacity: 1, 
-                        x: 0,
-                        transition: { delay: index * 0.1 + 0.2 }
-                      }}
-                      exit={{ 
-                        opacity: 0, 
-                        x: -20, 
-                        transition: { delay: (navLinks.length - index) * 0.05 } 
-                      }}
-                    >
+              <div className="px-4 py-6 space-y-4">
+                {navLinks.map(link => {
+                  const Icon = link.icon;
+                  return (
+                    <div key={link.label}>
                       {link.external ? (
                         <a
                           href={link.href}
-                          className="flex items-center gap-2 py-3 px-4 rounded-lg transition duration-200 bg-white/10 text-gray-300 font-semibold hover:bg-[var(--color-primary)] hover:text-white"
+                          className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
                           target="_blank"
                           rel="noopener noreferrer"
-                          onClick={toggleMenu}
+                          onClick={() => setMobileMenuOpen(false)}
                         >
-                          <i className={link.icon}></i> {link.label}
+                          <Icon className="h-5 w-5" />
+                          <span className="font-medium">{link.label}</span>
                         </a>
                       ) : (
                         <Link
                           href={link.href}
-                          className="flex items-center gap-2 py-3 px-4 rounded-lg transition duration-200 bg-white/10 text-gray-300 font-semibold hover:bg-[var(--color-primary)] hover:text-white"
-                          onClick={toggleMenu}
+                          className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+                          onClick={() => setMobileMenuOpen(false)}
                         >
-                          <i className={link.icon}></i> {link.label}
+                          <Icon className="h-5 w-5" />
+                          <span className="font-medium">{link.label}</span>
                         </Link>
                       )}
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                    </div>
+                  );
+                })}
+              </div>
             </motion.div>
           </>
         )}

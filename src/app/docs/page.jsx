@@ -1,74 +1,172 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import StatusScript from "../components/StatusScript";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import {
+  ArrowPathIcon,
+  BookOpenIcon,
+  Cog6ToothIcon,
+  CommandLineIcon,
+  QuestionMarkCircleIcon,
+  RocketLaunchIcon,
+} from '@heroicons/react/24/outline';
+import { useEffect } from 'react';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import StatusScript from '../components/StatusScript';
+
+const docSections = [
+  {
+    title: 'Getting Started',
+    description: 'Quick start guide to set up Java Lava in your Discord server',
+    href: '/content/docs',
+    icon: RocketLaunchIcon,
+    color: 'text-emerald-400',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500/20',
+  },
+  {
+    title: 'Commands',
+    description:
+      'Complete reference for all moderation, community, and utility commands',
+    href: '/docs/commands',
+    icon: CommandLineIcon,
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/20',
+  },
+  {
+    title: 'Updates',
+    description: 'Latest features, improvements, and bug fixes',
+    href: '/docs/updates',
+    icon: ArrowPathIcon,
+    color: 'text-purple-400',
+    bgColor: 'bg-purple-500/10',
+    borderColor: 'border-purple-500/20',
+  },
+  {
+    title: 'Setup Guide',
+    description: 'Detailed configuration and customization options',
+    href: '/docs/setup',
+    icon: Cog6ToothIcon,
+    color: 'text-orange-400',
+    bgColor: 'bg-orange-500/10',
+    borderColor: 'border-orange-500/20',
+  },
+  {
+    title: 'FAQ',
+    description: 'Common questions and troubleshooting help',
+    href: '/docs/faq',
+    icon: QuestionMarkCircleIcon,
+    color: 'text-cyan-400',
+    bgColor: 'bg-cyan-500/10',
+    borderColor: 'border-cyan-500/20',
+  },
+];
 
 export default function DocsPage() {
-    useEffect(() => {
-        // Set current year in footer if exists
-        const currentYearElement = document.getElementById('current-year');
-        if (currentYearElement) {
-            currentYearElement.textContent = new Date().getFullYear().toString();
-        }
-    }, []);
-    
-    return (
-        <>
-            <StatusScript />
-            <Header />
+  return (
+    <>
+      <StatusScript />
+      <Header />
 
-            <main className="relative z-10">
-                <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                    <div className="text-center">
-                        <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-                            Java Lava Documentation
-                        </h1>
-                        <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300">
-                            Everything you need to know about Java Lava Discord bot features, commands, and updates.
-                        </p>
+      <main className="relative min-h-screen">
+        {/* Hero Section */}
+        <div className="relative pt-20 pb-16 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 mb-6">
+                <BookOpenIcon className="h-5 w-5 text-[var(--color-primary)] mr-2" />
+                <span className="text-sm font-medium text-[var(--color-primary)]">
+                  Documentation
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                Java Lava
+                <br />
+                <span className="text-gradient bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)]">
+                  Documentation
+                </span>
+              </h1>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                Everything you need to build amazing Discord communities with
+                Java Lava's powerful moderation and engagement tools.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Documentation Grid */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {docSections.map((section, index) => {
+              const Icon = section.icon;
+              return (
+                <a
+                  key={section.title}
+                  href={section.href}
+                  className={`group block p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${section.bgColor} ${section.borderColor} hover:border-opacity-40`}
+                >
+                  <div className="flex items-center mb-4">
+                    <div
+                      className={`p-3 rounded-xl ${section.bgColor} ${section.borderColor} border mr-4`}
+                    >
+                      <Icon className={`h-6 w-6 ${section.color}`} />
                     </div>
+                    <h3 className={`text-2xl font-bold ${section.color}`}>
+                      {section.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    {section.description}
+                  </p>
+                  <div className="flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-200 transition-colors">
+                    <span>Explore</span>
+                    <svg
+                      className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
 
-                    <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {/* Start from beginning card */}
-                        <a href="\content\docs" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fa fa-book"></i> Beginning</h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">Explore all that we can offer in our Java Lava docs </p>
-                            <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Start here →</span>
-                        </a>
-
-                        {/* Commands card */}
-                        <a href="/docs/commands" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fa-solid fa-slash fa-rotate-90"></i> Commands</h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">Explore all Java Lava bot commands including moderation, community, fun, and utility commands.</p>
-                            <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Browse commands →</span>
-                        </a>
-
-                        {/* Updates card */}
-                        <a href="/docs/updates" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fas fa-sync"></i> Updates</h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">Stay informed about the latest features, improvements, and bug fixes in Java Lava bot.</p>
-                            <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">View changelog →</span>
-                        </a>
-
-                        {/* Setup Guide card */}
-                        <a href="/docs/setup" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fas fa-network-wired mr-2"></i>Setup Guide</h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">Learn how to add Java Lava to your Discord server and configure it for optimal use.</p>
-                            <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Read guide →</span>
-                        </a>
-                        {/* FAQ */}
-                        <a href="/docs/faq" className="group relative block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-700">
-                            <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3"><i className="fas fa-question"></i> FAQ</h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-4">Get to know some of our frequently asked questions!</p>
-                            <span className="text-indigo-600 dark:text-indigo-400 font-medium group-hover:underline">Read guide →</span>
-                        </a>
-                    </div>
+          {/* Quick Stats */}
+          <div className="mt-20 p-8 rounded-2xl glass-effect">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-[var(--color-accent)] mb-2">
+                  50+
                 </div>
-            </main>
+                <div className="text-gray-300">Available Commands</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-[var(--color-secondary)] mb-2">
+                  99.9%
+                </div>
+                <div className="text-gray-300">Uptime Reliability</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-[var(--color-primary)] mb-2">
+                  24/7
+                </div>
+                <div className="text-gray-300">Active Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
 
-            <Footer />
-        </>
-    )
+      <Footer />
+    </>
+  );
 }

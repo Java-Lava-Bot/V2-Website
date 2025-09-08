@@ -22,7 +22,11 @@ function copyDir(src, dest) {
       copyDir(s, d);
     } else if (entry.isSymbolicLink()) {
       const target = fs.readlinkSync(s);
-      try { fs.symlinkSync(target, d); } catch (_) { /* skip on windows if fails */ }
+      try {
+        fs.symlinkSync(target, d);
+      } catch (_) {
+        /* skip on windows if fails */
+      }
     } else {
       fs.copyFileSync(s, d);
     }
