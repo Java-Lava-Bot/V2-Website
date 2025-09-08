@@ -7,22 +7,17 @@
     "build": "next build && npm run postbuild",
     "start": "node .next/standalone/server.js",
     "postbuild": "node prepare-standalone.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write --ignore-unknown ."
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "framer-motion": "^12.23.12",
-    "gray-matter": "^4.0.3",
     "next": "15.4.6",
     "react": "19.1.1",
-    "react-dom": "19.1.1",
-    "remark": "^15.0.1",
-    "remark-emoji": "^5.0.1",
-    "remark-gfm": "^4.0.1",
-    "remark-html": "^16.0.1",
-    "remark-slug": "^7.0.1",
-    "retype": "^0.2.0",
-    "retypeapp-win-x64": "^3.11.0"
+    "react-dom": "19.1.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -30,6 +25,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
+    "prettier": "^3.2.4",
     "tailwindcss": "^4"
   }
 }

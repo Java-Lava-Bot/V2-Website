@@ -1,44 +1,51 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function FAQSection() {
   const faqs = [
     {
-      question: "How do I add Java Lava to my Discord server?",
-      answer: "Adding Java Lava to your server is simple. Just click the 'Add to Discord' button on our website, select your server from the list, and grant the necessary permissions. The bot will join your server immediately and send a welcome message with setup instructions."
+      question: 'How do I add Java Lava to my Discord server?',
+      answer:
+        "Adding Java Lava to your server is simple. Just click the 'Add to Discord' button on our website, select your server from the list, and grant the necessary permissions. The bot will join your server immediately and send a welcome message with setup instructions.",
     },
     {
-      question: "Is Java Lava free to use?",
-      answer: "Yes! Java Lava is free to use with a generous set of features available to all servers. We also offer a Premium version with additional features like enhanced moderation tools, priority support, and exclusive commands for those who want to get the most out of their Discord server."
+      question: 'Is Java Lava free to use?',
+      answer:
+        'Yes! Java Lava is free to use with a generous set of features available to all servers. We also offer a Premium version with additional features like enhanced moderation tools, priority support, and exclusive commands for those who want to get the most out of their Discord server.',
     },
     {
-      question: "What permissions does Java Lava need?",
-      answer: "For basic functionality, Java Lava needs permissions to read and send messages, embed links, and attach files. For moderation commands, it will need additional permissions like kicking/banning members, managing roles, and managing messages. We recommend using the default permission settings when adding the bot for optimal performance."
+      question: 'What permissions does Java Lava need?',
+      answer:
+        'For basic functionality, Java Lava needs permissions to read and send messages, embed links, and attach files. For moderation commands, it will need additional permissions like kicking/banning members, managing roles, and managing messages. We recommend using the default permission settings when adding the bot for optimal performance.',
     },
     {
       question: "How do I get help if I'm having issues with the bot?",
-      answer: "We provide several support channels. You can join our official support server by clicking the 'Support' link in our website footer, check the documentation for common issues, or contact us directly through the site. Premium users have access to priority support with faster response times."
+      answer:
+        "We provide several support channels. You can join our official support server by clicking the 'Support' link in our website footer, check the documentation for common issues, or contact us directly through the site. Premium users have access to priority support with faster response times.",
     },
     {
       question: "Can I customize the bot's prefix?",
-      answer: "No, Java Lava does not support custom prefixes. It uses the slash command system introduced by Discord, which allows for a more consistent and user-friendly experience. You can access all commands by typing '/' in your server's chat."
+      answer:
+        "No, Java Lava does not support custom prefixes. It uses the slash command system introduced by Discord, which allows for a more consistent and user-friendly experience. You can access all commands by typing '/' in your server's chat.",
     },
     {
-      question: "Is there a limit to how many commands I can use?",
-      answer: "For free users, there are reasonable rate limits to ensure fair usage for everyone. Premium users enjoy higher rate limits and priority command processing. We continuously monitor system performance to provide the best experience for all users while preventing abuse."
+      question: 'Is there a limit to how many commands I can use?',
+      answer:
+        'For free users, there are reasonable rate limits to ensure fair usage for everyone. Premium users enjoy higher rate limits and priority command processing. We continuously monitor system performance to provide the best experience for all users while preventing abuse.',
     },
     {
-      question: "I have found a bug! What should I do?",
-      answer: "Please report any bugs you find through our support server or by using the /report command. Include as much detail as possible, such as the command you were using, any error messages, and steps to reproduce the issue. Our team will investigate and work on a fix as soon as possible. IF you include a screenshot, it will help us resolve the issue faster!"
-    }
+      question: 'I have found a bug! What should I do?',
+      answer:
+        'Please report any bugs you find through our support server or by using the /report command. Include as much detail as possible, such as the command you were using, any error messages, and steps to reproduce the issue. Our team will investigate and work on a fix as soon as possible. IF you include a screenshot, it will help us resolve the issue faster!',
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = index => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
@@ -51,19 +58,22 @@ export default function FAQSection() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-primary)] bg-opacity-20 text-[var(--color-primary)]">
+          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-primary)] bg-opacity-20 text-[var(--color-secondary/60)]">
             FAQ
           </span>
-          <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold mb-4">
+            Frequently Asked Questions
+          </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Get answers to the most common questions about Java Lava and how to get the most out of it for your Discord server.
+            Get answers to the most common questions about Java Lava and how to
+            get the most out of it for your Discord server.
           </p>
         </motion.div>
 
@@ -82,25 +92,21 @@ export default function FAQSection() {
                 className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
               >
                 <span className="text-lg font-medium">{faq.question}</span>
-                <ChevronDownIcon 
-                  className={`w-5 h-5 text-[var(--color-accent)] transition-transform duration-300 ${
-                    activeIndex === index ? 'transform rotate-180' : ''
-                  }`} 
+                <ChevronDownIcon
+                  className={`w-5 h-5 text-[var(--color-accent)] transition-transform duration-300 ${activeIndex === index ? 'transform rotate-180' : ''}`}
                 />
               </button>
-              
+
               <AnimatePresence initial={false}>
                 {activeIndex === index && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-4 text-gray-400">
-                      {faq.answer}
-                    </div>
+                    <div className="px-6 pb-4 text-gray-400">{faq.answer}</div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -108,7 +114,7 @@ export default function FAQSection() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           className="mt-12 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -116,22 +122,23 @@ export default function FAQSection() {
           transition={{ delay: 0.6 }}
         >
           <p className="text-gray-400">
-            Still have questions? Feel free to{" "}
-            <a 
-              href="/contact" 
+            Still have questions? Feel free to{' '}
+            <a
+              href="/contact"
               className="text-[var(--color-accent)] hover:underline"
             >
               contact us
-            </a>{" "}
-            or join our{" "}
-            <a 
-              href="https://discord.com/invite/tM8Y5acUta" 
-              target="_blank" 
+            </a>{' '}
+            or join our{' '}
+            <a
+              href="https://discord.com/invite/tM8Y5acUta"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--color-accent)] hover:underline"
             >
               support server
-            </a>.
+            </a>
+            .
           </p>
         </motion.div>
       </div>

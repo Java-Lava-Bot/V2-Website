@@ -1,151 +1,23 @@
-/* Markdown specific styling */
-.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  font-weight: 600;
-  line-height: 1.3;
+/* Minimal markdown overrides - most styling handled by Tailwind Typography */
+.prose {
   scroll-margin-top: 4rem;
 }
 
-.prose h1 {
-  font-size: 2.25rem;
-  border-bottom: 1px solid var(--tw-prose-hr);
-  padding-bottom: 0.25rem;
-}
-
-.prose h2 {
-  font-size: 1.75rem;
-  border-bottom: 1px solid var(--tw-prose-hr);
-  padding-bottom: 0.25rem;
-}
-
-.prose h3 {
-  font-size: 1.5rem;
-}
-
-.prose h4 {
-  font-size: 1.25rem;
-}
-
-.prose h5 {
-  font-size: 1.125rem;
-}
-
-.prose h6 {
-  font-size: 1rem;
-}
-
-.prose code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.9em;
-  padding: 0.2em 0.4em;
-  border-radius: 0.25rem;
-}
-
-.prose pre {
-  background-color: rgb(31, 41, 55); /* dark gray for dark mode */
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-}
-
-.dark .prose pre {
-  background-color: rgb(17, 24, 39); /* even darker for dark mode */
-}
-
-.prose pre code {
-  color: rgb(229, 231, 235); /* light gray text for dark background */
-  background-color: transparent;
-  padding: 0;
-}
-
-.prose blockquote {
-  border-left-width: 0.25rem;
-  border-left-color: rgb(209, 213, 219);
-  padding-left: 1rem;
-  font-style: italic;
-}
-
-.dark .prose blockquote {
-  border-left-color: rgb(75, 85, 99);
-}
-
-.prose table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-}
-
-.prose th {
-  background-color: rgb(243, 244, 246);
-  font-weight: 600;
-  text-align: left;
-  padding: 0.75rem 1rem;
-}
-
-.dark .prose th {
-  background-color: rgb(31, 41, 55);
-}
-
-.prose td {
-  border-top: 1px solid rgb(229, 231, 235);
-  padding: 0.75rem 1rem;
-}
-
-.dark .prose td {
-  border-top: 1px solid rgb(75, 85, 99);
-}
-
-.prose ul,
-.prose ol {
-  padding-left: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.prose ul {
-  list-style-type: disc;
-}
-
-.prose ol {
-  list-style-type: decimal;
-}
-
-.prose li {
-  margin: 0.5rem 0;
-}
-
-.prose li > ul,
-.prose li > ol {
-  margin: 0.5rem 0;
-}
-
-.prose a {
-  color: rgb(37, 99, 235);
-  text-decoration: underline;
-  font-weight: 500;
-}
-
-.dark .prose a {
-  color: rgb(96, 165, 250);
-}
-
-.prose img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  margin: 1.5rem 0;
-}
-
-.prose hr {
-  margin: 2rem 0;
-  border-top: 1px solid rgb(229, 231, 235);
-}
-
-.dark .prose hr {
-  border-top: 1px solid rgb(75, 85, 99);
+/* Custom heading anchor links */
+.prose h1[id]:hover::before,
+.prose h2[id]:hover::before,
+.prose h3[id]:hover::before,
+.prose h4[id]:hover::before {
+  content: '#';
+  position: absolute;
+  margin-left: -1.5rem;
+  padding-right: 0.5rem;
+  color: var(--color-primary);
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 /* Task list styling */
-.prose ul > li > input[type="checkbox"] {
+.prose ul > li > input[type='checkbox'] {
   margin-right: 0.5rem;
 }

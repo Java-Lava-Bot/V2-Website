@@ -2,10 +2,10 @@ const { createServer } = require('http');
 const next = require('next');
 
 // Basic global error logging to surface crashes that can show up as 502
-process.on('uncaughtException', (err) => {
+process.on('uncaughtException', err => {
   console.error('[uncaughtException]', err);
 });
-process.on('unhandledRejection', (reason) => {
+process.on('unhandledRejection', reason => {
   console.error('[unhandledRejection]', reason);
 });
 
@@ -25,7 +25,7 @@ app
       handle(req, res);
     });
 
-    server.on('error', (err) => {
+    server.on('error', err => {
       console.error('[server:error]', err);
     });
 
@@ -33,7 +33,7 @@ app
       console.log(`> Ready on http://${host}:${port}`);
     });
   })
-  .catch((err) => {
+  .catch(err => {
     console.error('[next:prepare:error]', err);
     process.exit(1);
   });

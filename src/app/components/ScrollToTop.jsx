@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronUpIcon } from "@heroicons/react/24/outline";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronUpIcon } from '@heroicons/react/24/outline';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,15 +18,15 @@ export default function ScrollToTop() {
 
   // Set up scroll event listener
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: 'smooth',
     });
   };
 
@@ -39,24 +39,24 @@ export default function ScrollToTop() {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           whileHover={{ y: -5 }}
           whileTap={{ scale: 0.9 }}
           aria-label="Scroll to top"
         >
           <ChevronUpIcon className="h-6 w-6" />
-          
+
           {/* Animated ring */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0 rounded-full border-2 border-[var(--color-primary)] bg-transparent"
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
-              opacity: [1, 0, 1]
+              opacity: [1, 0, 1],
             }}
             transition={{
               duration: 2,
               repeat: Infinity,
-              repeatType: "loop"
+              repeatType: 'loop',
             }}
           />
         </motion.button>
