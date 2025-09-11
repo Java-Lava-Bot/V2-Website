@@ -33,14 +33,14 @@ const commandCategories = [
         name: '/kick',
         description: 'Remove a member from the server',
         usage: '/kick @user [reason]',
-        permissions: 'Kick, Approve, and Reject Members',
+        permissions: 'Kick Members',
         examples: ['/kick @user Breaking rules'],
       },
       {
         name: '/timeout',
         description: "Temporarily restrict a member's ability to interact",
         usage: '/timeout @user <duration> [reason]',
-        permissions: 'Moderate/Timeout Members',
+        permissions: 'Moderate Members',
         examples: [
           '/timeout @user 10m Inappropriate behavior',
           '/timeout @user 1h',
