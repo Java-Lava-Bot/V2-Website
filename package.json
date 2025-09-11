@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && npm run postbuild",
-    "start": "node .next/standalone/server.js",
+    "start": "node start.js",
     "postbuild": "node prepare-standalone.js",
     "lint": "next lint",
     "format": "prettier --write .",
