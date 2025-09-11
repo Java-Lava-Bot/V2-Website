@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StatusScript from '../components/StatusScript';
+import { BugAntIcon } from '@heroicons/react/24/solid';
 
 const docSections = [
   {
@@ -60,6 +61,15 @@ const docSections = [
     bgColor: 'bg-cyan-500/10',
     borderColor: 'border-cyan-500/20',
   },
+  {
+    title: 'Bugs & Issues',
+    description: 'Report bugs and track known issues with Java Lava',
+    href: '/docs/bugs',
+    icon: BugAntIcon,
+    color: 'text-red-400',
+    bgColor: 'bg-red-500/10',
+    borderColor: 'border-red-500/20',
+  }
 ];
 
 export default function DocsPage() {

@@ -62,7 +62,8 @@ export default function DocsLayout({ children }) {
     pathname === '/docs/commands' ||
     pathname.startsWith('/docs/commands/') ||
     pathname === '/docs/setup' ||
-    pathname === '/docs/faq'
+    pathname === '/docs/faq' ||
+    pathname === '/docs/bugs'
   ) {
     return <>{children}</>;
   }

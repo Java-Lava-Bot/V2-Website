@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
                   <li>Providing and maintaining bot functionality</li>
                   <li>Debugging errors and improving performance</li>
                   <li>Analyzing usage patterns to enhance features</li>
-                  <li>Ensuring compliance with Discord's Terms of Service</li>
+                  <li>Ensuring compliance with Discord's Terms of Service and Dev Terms of Service</li>
                   <li>Preventing abuse and maintaining service security</li>
                 </ul>
               </section>
