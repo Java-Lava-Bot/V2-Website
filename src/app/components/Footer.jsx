@@ -39,7 +39,7 @@ export default function Footer() {
         >
           <div>
             <h3 className="text-xl font-bold mb-4 text-[var(--color-primary)]">
-              Java<span className="text-[var(--color-secondary)]">Lava</span>
+              Java<span className="text-[var(--color-secondary)]"> Lava</span>
             </h3>
             <p className="mb-4 text-sm">
               An advanced Discord bot designed to enhance your community
