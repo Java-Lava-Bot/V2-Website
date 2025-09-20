@@ -217,10 +217,12 @@ export default function CommandsPage() {
           cmd.description.toLowerCase().includes(searchTerm.toLowerCase())
       ),
     }))
-    .filter(category => {
-      if (selectedCategory === 'all') return category.commands.length > 0;
-      return category.name.toLowerCase() === selectedCategory;
-    });
+    .filter(
+      category =>
+        selectedCategory === 'all' ||
+        category.name.toLowerCase() === selectedCategory ||
+        category.commands.length > 0
+    );
 
   const totalCommands = commandCategories.reduce(
     (total, category) => total + category.commands.length,
