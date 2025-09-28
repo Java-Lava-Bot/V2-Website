@@ -61,7 +61,7 @@ export default function UpdatesSection() {
       icon: <ArrowsPointingOutIcon className="h-6 w-6" />,
       title: 'Open Beta bot!',
       description:
-        'We have made a brand new Java Lava Open beta discord bot! It is highly unstable but it has the newest features!',
+        'We have made a brand new Java Lava Open beta discord bot! It is unstable but it has the newest features!',
     },
   ];
 

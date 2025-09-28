@@ -15,181 +15,58 @@ import StatusScript from '../../components/StatusScript';
 
 const commandCategories = [
   {
-    name: 'Moderation',
+    name: 'Moderation Bugs',
     icon: ShieldCheckIcon,
     color: 'text-red-400',
     bgColor: 'bg-red-500/10',
     borderColor: 'border-red-500/20',
-    description: 'Powerful tools to keep your server safe and organized',
+    description: 'Bugs found in our moderation commands',
     commands: [
       {
-        name: '/ban',
-        description: 'Ban a member from the server',
-        usage: '/ban @user [reason]',
-        permissions: 'Ban Members',
-        examples: ['/ban @user Spamming in chat', '/ban @user'],
-      },
-      {
-        name: '/kick',
-        description: 'Remove a member from the server',
-        usage: '/kick @user [reason]',
-        permissions: 'Kick Members',
-        examples: ['/kick @user Breaking rules'],
-      },
-      {
-        name: '/timeout',
-        description: "Temporarily restrict a member's ability to interact",
-        usage: '/timeout @user <duration> [reason]',
-        permissions: 'Moderate Members',
-        examples: [
-          '/timeout @user 10m Inappropriate behavior',
-          '/timeout @user 1h',
-        ],
-      },
-      {
-        name: '/warn',
-        description: 'Issue a warning to a member',
-        usage: '/warn @user <reason>',
-        permissions: 'Manage Messages',
-        examples: ['/warn @user Please follow server rules'],
-      },
-      {
-        name: '/purge',
-        description: 'Delete multiple messages at once',
-        usage: '/purge <amount> [user]',
-        permissions: 'Manage Messages',
-        examples: ['/purge 10', '/purge 5 @user'],
-      },
-      {
-        name: '/lock',
-        description: 'Lock a channel to prevent new messages',
-        usage: '/lock [channel] [reason]',
-        permissions: 'Manage Channels',
-        examples: ['/lock #general Maintenance', '/lock'],
+        name: 'none found yet',
+        description: 'No bugs have been found yet',
       },
     ],
   },
   {
-    name: 'Community',
+    name: 'Community Command Bugs',
     icon: ChatBubbleLeftRightIcon,
     color: 'text-blue-400',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/20',
-    description: 'Engage your community with interactive features',
+    description: 'Bugs found in our community commands',
     commands: [
       {
-        name: '/clicker',
-        description: 'Fun clicking game for community engagement',
-        usage: '/clicker',
-        permissions: 'Use Application Commands',
-        examples: ['/clicker'],
-      },
-      {
-        name: '/poll',
-        description: 'Create interactive polls for your server',
-        usage: '/poll <question> <option1> <option2> [more options]',
-        permissions: 'Use Application Commands',
-        examples: ['/poll "What should we do next?" Gaming Movie Night'],
-      },
-      {
-        name: '/giveaway',
-        description: 'Host giveaways in your server',
-        usage: '/giveaway <prize> <duration> <winners>',
-        permissions: 'Manage Server',
-        examples: ['/giveaway "Discord Nitro" 1h 1'],
-      },
-      {
-        name: '/welcome',
-        description: 'Configure welcome messages for new members',
-        usage: '/welcome setup [channel] [message]',
-        permissions: 'Manage Server',
-        examples: ['/welcome setup #general "Welcome {user}!"'],
+        name: 'none found yet',
+        description: 'No bugs have been found yet',
       },
     ],
   },
   {
-    name: 'Fun',
+    name: 'Fun command bugs',
     icon: SparklesIcon,
     color: 'text-purple-400',
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/20',
-    description: 'Entertainment commands to keep your server lively',
+    description: 'Bugs found in our commands that are meant for entertainment commands to keep your server lively',
     commands: [
       {
-        name: '/meme',
-        description: 'Get a random meme to share',
-        usage: '/meme [category]',
-        permissions: 'Use Application Commands',
-        examples: ['/meme', '/meme programming'],
-      },
-      {
-        name: '/8ball',
-        description: 'Ask the magic 8-ball a question',
-        usage: '/8ball <question>',
-        permissions: 'Use Application Commands',
-        examples: ['/8ball Will it rain tomorrow?'],
-      },
-      {
-        name: '/joke',
-        description: 'Get a random joke',
-        usage: '/joke [type]',
-        permissions: 'Use Application Commands',
-        examples: ['/joke', '/joke dad'],
-      },
-      {
-        name: '/poke',
-        description: 'Poke another user playfully',
-        usage: '/poke @user',
-        permissions: 'Use Application Commands',
-        examples: ['/poke @friend'],
+        name: 'none found yet',
+        description: 'No bugs have been found yet',
       },
     ],
   },
   {
-    name: 'Utility',
+    name: 'Utility bugs',
     icon: WrenchScrewdriverIcon,
     color: 'text-green-400',
     bgColor: 'bg-green-500/10',
     borderColor: 'border-green-500/20',
-    description: 'Helpful tools and information commands',
+    description: 'bugs found in our helpful tools and information commands',
     commands: [
       {
-        name: '/remind',
-        description: 'Set a reminder for yourself or others',
-        usage: '/remind <time> <message> [user]',
-        permissions: 'Use Application Commands',
-        examples: [
-          '/remind 1h Take a break',
-          '/remind 30m @user Meeting starts',
-        ],
-      },
-      {
-        name: '/userinfo',
-        description: 'Get information about a user',
-        usage: '/userinfo [user]',
-        permissions: 'Use Application Commands',
-        examples: ['/userinfo @user', '/userinfo'],
-      },
-      {
-        name: '/serverinfo',
-        description: 'Display server information and statistics',
-        usage: '/serverinfo',
-        permissions: 'Use Application Commands',
-        examples: ['/serverinfo'],
-      },
-      {
-        name: '/avatar',
-        description: "Display a user's avatar",
-        usage: '/avatar [user]',
-        permissions: 'Use Application Commands',
-        examples: ['/avatar @user', '/avatar'],
-      },
-      {
-        name: '/ping',
-        description: 'Check bot response time and status',
-        usage: '/ping',
-        permissions: 'Use Application Commands',
-        examples: ['/ping'],
+        name: 'none found yet',
+        description: 'No bugs have been found yet',
       },
     ],
   },
@@ -348,10 +225,10 @@ export default function CommandsPage() {
                           <div className="space-y-3">
                             <div>
                               <span className="text-xs font-medium text-gray-400 mb-1 block">
-                                Usage:
+                                Reproduced:
                               </span>
                               <code className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed">
-                                {command.usage}
+                                {command.reproduced}
                               </code>
                             </div>
 
