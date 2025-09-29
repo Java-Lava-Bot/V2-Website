@@ -13,7 +13,7 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import StatusScript from '../../components/StatusScript';
 
-const commandCategories = [
+const bugCategories = [
   {
     name: 'Moderation Bugs',
     icon: ShieldCheckIcon,
@@ -21,7 +21,7 @@ const commandCategories = [
     bgColor: 'bg-red-500/10',
     borderColor: 'border-red-500/20',
     description: 'Bugs found in our moderation commands',
-    commands: [
+    bugs: [
       {
         name: 'none found yet',
         description: 'No bugs have been found yet',
@@ -35,7 +35,7 @@ const commandCategories = [
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/20',
     description: 'Bugs found in our community commands',
-    commands: [
+    bugs: [
       {
         name: 'none found yet',
         description: 'No bugs have been found yet',
@@ -49,7 +49,7 @@ const commandCategories = [
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/20',
     description: 'Bugs found in our commands that are meant for entertainment commands to keep your server lively',
-    commands: [
+    bugs: [
       {
         name: 'none found yet',
         description: 'No bugs have been found yet',
@@ -63,7 +63,7 @@ const commandCategories = [
     bgColor: 'bg-green-500/10',
     borderColor: 'border-green-500/20',
     description: 'bugs found in our helpful tools and information commands',
-    commands: [
+    bugs: [
       {
         name: 'none found yet',
         description: 'No bugs have been found yet',
@@ -72,37 +72,37 @@ const commandCategories = [
   },
 ];
 
-export default function CommandsPage() {
+export default function BugsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [expandedCommands, setExpandedCommands] = useState({});
+  const [expandedBugs, setExpandedBugs] = useState({});
 
-  const toggleCommandDetails = (categoryName, commandName) => {
-    const key = `${categoryName}-${commandName}`;
-    setExpandedCommands(prev => ({
+  const toggleBugDetails = (categoryName, bugName) => {
+    const key = `${categoryName}-${bugName}`;
+    setExpandedBugs(prev => ({
       ...prev,
       [key]: !prev[key],
     }));
   };
 
-  const filteredCategories = commandCategories
+  const filteredCategories = bugCategories
     .map(category => ({
       ...category,
-      commands: category.commands.filter(
-        cmd =>
-          cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          cmd.description.toLowerCase().includes(searchTerm.toLowerCase())
+      bugs: category.bugs.filter(
+        bugs =>
+          bugs.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          bugs.description.toLowerCase().includes(searchTerm.toLowerCase())
       ),
     }))
     .filter(
       category =>
         selectedCategory === 'all' ||
         category.name.toLowerCase() === selectedCategory ||
-        category.commands.length > 0
+        category.bugs.length > 0
     );
 
-  const totalCommands = commandCategories.reduce(
-    (total, category) => total + category.commands.length,
+  const totalBugs = bugCategories.reduce(
+    (total, category) => total + category.bugs.length,
     0
   );
 
@@ -123,11 +123,11 @@ export default function CommandsPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Java Lava Commands
+              Java Lava Bugs
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-              Discover all {totalCommands}+ commands available in Java Lava.
-              From powerful moderation tools to fun community features.
+              Discover all {totalBugs}+ bugs and issues in Java Lava.
+              From powerful moderation tools to fun community features that are not working right!
             </p>
 
             {/* Search and Filter */}
@@ -148,7 +148,7 @@ export default function CommandsPage() {
                 onChange={e => setSelectedCategory(e.target.value)}
               >
                 <option value="all">All Categories</option>
-                {commandCategories.map(category => (
+                {bugCategories.map(category => (
                   <option
                     key={category.name}
                     value={category.name.toLowerCase()}
@@ -163,7 +163,7 @@ export default function CommandsPage() {
           {/* Commands Grid */}
           <div className="space-y-12">
             {filteredCategories.map((category, categoryIndex) => {
-              if (category.commands.length === 0) return null;
+              if (category.bugs.length === 0) return null;
 
               const Icon = category.icon;
 
@@ -185,15 +185,15 @@ export default function CommandsPage() {
                       <span
                         className={`px-3 py-1 text-sm font-medium rounded-full ${category.bgColor} ${category.color}`}
                       >
-                        {category.commands.length} commands
+                        {category.bugs.length} bugs
                       </span>
                     </div>
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {category.commands.map((command, commandIndex) => {
-                      const uniqueKey = `${category.name}-${command.name}`;
-                      const isExpanded = expandedCommands[uniqueKey];
+                    {category.bugs.map((bugs, bugsIndex) => {
+                      const uniqueKey = `${category.name}-${bugs.name}`;
+                      const isExpanded = expandedBugs[uniqueKey];
 
                       return (
                         <div
@@ -202,13 +202,13 @@ export default function CommandsPage() {
                         >
                           <div className="flex items-start justify-between mb-4">
                             <h3 className="text-lg font-bold text-white font-mono pr-2">
-                              {command.name}
+                              {bugs.name}
                             </h3>
                             <button
                               onClick={() =>
-                                toggleCommandDetails(
+                                toggleBugDetails(
                                   category.name,
-                                  command.name
+                                  bugs.name
                                 )
                               }
                               className={`flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${category.color} border ${category.borderColor} hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-opacity-50`}
@@ -219,7 +219,7 @@ export default function CommandsPage() {
                           </div>
 
                           <p className="text-gray-300 text-sm mb-4 leading-relaxed min-h-[2.5rem]">
-                            {command.description}
+                            {bugs.description}
                           </p>
 
                           <div className="space-y-3">
@@ -228,7 +228,7 @@ export default function CommandsPage() {
                                 Reproduced:
                               </span>
                               <code className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed">
-                                {command.reproduced}
+                                {bugs.reproduced}
                               </code>
                             </div>
 
@@ -289,11 +289,10 @@ export default function CommandsPage() {
           <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-secondary)]/20">
             <CommandLineIcon className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">
-              Need Help with Commands?
+              Found a bug that isn't on this list?
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">
-              Join our Discord community for support, examples, and tips on
-              using Java Lava commands effectively.
+              Join our Discord community to report the bug.
             </p>
             <a
               href="https://discord.gg/6tF3UFWA6F"
@@ -319,7 +318,7 @@ export default function CommandsPage() {
                 ← Back to Documentation
               </a>
               <div className="text-sm text-gray-500">
-                {totalCommands} commands • Last updated: January 8, 2025
+                {totalBugs} bugs • Last updated: January 8, 2025
               </div>
             </div>
           </div>
