@@ -23,8 +23,9 @@ const bugCategories = [
     description: 'Bugs found in our moderation commands',
     bugs: [
       {
-        name: 'none found yet',
-        description: 'No bugs have been found yet',
+        name: 'Automod commands not showing up',
+        description: 'We are getting issues with our automod commands not showing up in some servers, we are currently looking into recoding this just a fyi',
+        reproduced: 'Yes this has been reproduced in multiple servers.',
       },
     ],
   },
@@ -37,8 +38,9 @@ const bugCategories = [
     description: 'Bugs found in our community commands',
     bugs: [
       {
-        name: 'none found yet',
-        description: 'No bugs have been found yet',
+        name: 'Clicker command not showing up',
+        description: 'We are getting issues with the clicker command not showing up in some servers, we are currently looking into recoding this just a fyi',
+        reproduced: 'not yet but we are looking into it',
       },
     ],
   },
@@ -51,8 +53,9 @@ const bugCategories = [
     description: 'Bugs found in our commands that are meant for entertainment commands to keep your server lively',
     bugs: [
       {
-        name: 'none found yet',
-        description: 'No bugs have been found yet',
+        name: 'giveaway command not loading',
+        description: 'getting reports of the giveaway command not loading, we are looking into it',
+        reproduced: 'Yes AND No. We have found it on some servers but not a lot',
       },
     ],
   },
@@ -65,8 +68,9 @@ const bugCategories = [
     description: 'bugs found in our helpful tools and information commands',
     bugs: [
       {
-        name: 'none found yet',
-        description: 'No bugs have been found yet',
+        name: 'Help command not loading',
+        description: 'getting reports of the help command not loading, we are looking into it',
+        reproduced: 'this bug has not been reproduced yet however we are trying our best to reproduce it',
       },
     ],
   },
