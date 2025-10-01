@@ -158,7 +158,7 @@ export default function Footer() {
           </p>
           <p className="text-xs mt-2 text-gray-600">
             Made with <span className="text-[var(--color-secondary)]">♥</span>{' '}
-            by Phil, Navin, Jeo, Ziggy, and Valentino.
+            by Phil, Jamie, Jeo, Ziggy.
           </p>
         </motion.div>
       </div>

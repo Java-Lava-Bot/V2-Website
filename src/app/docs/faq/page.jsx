@@ -254,7 +254,7 @@ export default function FAQPage() {
                 href="/docs"
                 className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-gray-300 hover:bg-gray-800/70 hover:text-white transition-colors"
               >
-                ← Back to Documentation
+                ← Back to Docs
               </a>
               <div className="text-sm text-gray-500">
                 Last updated: January 8, 2025

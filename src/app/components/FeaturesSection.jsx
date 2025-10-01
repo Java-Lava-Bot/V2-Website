@@ -137,7 +137,7 @@ export default function FeaturesSection() {
           transition={{ delay: 0.6, duration: 0.5 }}
         >
           <a
-            href="/commands"
+            href="/docs/commands"
             className="inline-flex items-center px-8 py-3 rounded-lg bg-[var(--color-secondary)] text-white hover:bg-opacity-90 transition-all duration-300"
           >
             Explore All Commands

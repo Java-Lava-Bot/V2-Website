@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function NotFound() {
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(5);
 
   useEffect(() => {
     const timer = count > 0 && setInterval(() => setCount(count - 1), 1000);
