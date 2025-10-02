@@ -53,9 +53,9 @@ const bugCategories = [
     description: 'Bugs found in our commands that are meant for entertainment commands to keep your server lively',
     bugs: [
       {
-        name: 'giveaway command not loading',
-        description: 'getting reports of the giveaway command not loading, we are looking into it',
-        reproduced: 'Yes AND No. We have found it on some servers but not a lot',
+        name: 'poke command not loading nor working',
+        description: 'our poke command is not loading in some servers, others it is showing up but giving errors, we found the root cause',
+        reproduced: 'Yes, has been reproduced in multiple servers.',
       },
     ],
   },
@@ -67,6 +67,11 @@ const bugCategories = [
     borderColor: 'border-green-500/20',
     description: 'bugs found in our helpful tools and information commands',
     bugs: [
+      {
+        name: 'giveaway command not loading',
+        description: 'getting reports of the giveaway command not loading, we are looking into it',
+        reproduced: 'Yes. We have found that it is not showing up at all',
+      },
       {
         name: 'Help command not loading',
         description: 'getting reports of the help command not loading, we are looking into it',
@@ -322,7 +327,7 @@ export default function BugsPage() {
                 ← Back to Docs
               </a>
               <div className="text-sm text-gray-500">
-                {totalBugs} bugs • Last updated: January 8, 2025
+                {totalBugs} bugs • Last updated: October 2nd, 2025
               </div>
             </div>
           </div>
