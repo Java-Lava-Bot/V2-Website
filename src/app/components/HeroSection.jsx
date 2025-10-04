@@ -169,7 +169,7 @@ export default function HeroSection() {
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                   </div>
                   <div className="text-sm text-gray-400">
-                    Java Lava Dashboard
+                    Java Lava Dashboard - fix being worked on.
                   </div>
                   <div></div>
                 </div>
@@ -280,8 +280,7 @@ export default function HeroSection() {
               </div>
 
               <p className="absolute bottom-2 left-2 z-50 text-sm bg-opacity-60 px-2  rounded">
-                Please note that stats on this page are not correct. They are
-                only placeholders
+                Please note that stats on this page are not correct. They are placeholders.
               </p>
 
               {/* Animated elements */}

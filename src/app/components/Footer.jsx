@@ -89,14 +89,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/premium"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                >
-                  Premium Features
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/docs"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
                 >
@@ -158,7 +150,7 @@ export default function Footer() {
           </p>
           <p className="text-xs mt-2 text-gray-600">
             Made with <span className="text-[var(--color-secondary)]">♥</span>{' '}
-            by Phil, Jamie, Jeo, Ziggy.
+            by Phil, Jeo, Ziggy.
           </p>
         </motion.div>
       </div>

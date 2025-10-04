@@ -13,105 +13,217 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import StatusScript from '../../components/StatusScript';
 
-const bugCategories = [
+const commandCategories = [
   {
-    name: 'Moderation Bugs',
+    name: 'Moderation',
     icon: ShieldCheckIcon,
     color: 'text-red-400',
     bgColor: 'bg-red-500/10',
     borderColor: 'border-red-500/20',
-    description: 'Bugs found in our moderation commands',
-    bugs: [
+    description: 'Powerful tools to keep your server safe and organized',
+    commands: [
       {
-        name: 'Automod commands not showing up',
-        description: 'We are getting issues with our automod commands not showing up in some servers, we are currently looking into recoding this just a fyi',
-        reproduced: 'Yes this has been reproduced in multiple servers.',
+        name: '/ban',
+        description: 'Ban a member from the server',
+        usage: '/ban @user [reason]',
+        permissions: 'Ban Members',
+        examples: ['/ban @user Spamming in chat', '/ban @user'],
+      },
+      {
+        name: '/kick',
+        description: 'Remove a member from the server',
+        usage: '/kick @user [reason]',
+        permissions: 'Kick, Approve, and Reject Members',
+        examples: ['/kick @user Breaking rules'],
+      },
+      {
+        name: '/timeout',
+        description: "Temporarily restrict a member's ability to interact",
+        usage: '/timeout @user <duration> [reason]',
+        permissions: 'Moderate/Timeout Members',
+        examples: [
+          '/timeout @user 10m Inappropriate behavior',
+          '/timeout @user 1h',
+        ],
+      },
+      {
+        name: '/warn',
+        description: 'Issue a warning to a member',
+        usage: '/warn @user <reason>',
+        permissions: 'Manage Messages',
+        examples: ['/warn @user Please follow server rules'],
+      },
+      {
+        name: '/purge',
+        description: 'Delete multiple messages at once',
+        usage: '/purge <amount> [user]',
+        permissions: 'Manage Messages',
+        examples: ['/purge 10', '/purge 5 @user'],
+      },
+      {
+        name: '/lock',
+        description: 'Lock a channel to prevent new messages',
+        usage: '/lock [channel] [reason]',
+        permissions: 'Manage Channels',
+        examples: ['/lock #general Maintenance', '/lock'],
       },
     ],
   },
   {
-    name: 'Community Command Bugs',
+    name: 'Community',
     icon: ChatBubbleLeftRightIcon,
     color: 'text-blue-400',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/20',
-    description: 'Bugs found in our community commands',
-    bugs: [
+    description: 'Engage your community with interactive features',
+    commands: [
       {
-        name: 'Clicker command not showing up',
-        description: 'We are getting issues with the clicker command not showing up in some servers, we are currently looking into recoding this just a fyi',
-        reproduced: 'not yet but we are looking into it',
+        name: '/clicker',
+        description: 'Fun clicking game for community engagement',
+        usage: '/clicker',
+        permissions: 'Use Application Commands',
+        examples: ['/clicker'],
+      },
+      {
+        name: '/poll',
+        description: 'Create interactive polls for your server',
+        usage: '/poll <question> <option1> <option2> [more options]',
+        permissions: 'Use Application Commands',
+        examples: ['/poll "What should we do next?" Gaming Movie Night'],
+      },
+      {
+        name: '/giveaway',
+        description: 'Host giveaways in your server',
+        usage: '/giveaway <prize> <duration> <winners>',
+        permissions: 'Manage Server',
+        examples: ['/giveaway "Discord Nitro" 1h 1'],
+      },
+      {
+        name: '/welcome',
+        description: 'Configure welcome messages for new members',
+        usage: '/welcome setup [channel] [message]',
+        permissions: 'Manage Server',
+        examples: ['/welcome setup #general "Welcome {user}!"'],
       },
     ],
   },
   {
-    name: 'Fun command bugs',
+    name: 'Fun',
     icon: SparklesIcon,
     color: 'text-purple-400',
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/20',
-    description: 'Bugs found in our commands that are meant for entertainment commands to keep your server lively',
-    bugs: [
+    description: 'Entertainment commands to keep your server lively',
+    commands: [
       {
-        name: 'poke command not loading nor working',
-        description: 'our poke command is not loading in some servers, others it is showing up but giving errors, we found the root cause',
-        reproduced: 'Yes, has been reproduced in multiple servers.',
+        name: '/meme',
+        description: 'Get a random meme to share',
+        usage: '/meme [category]',
+        permissions: 'Use Application Commands',
+        examples: ['/meme', '/meme programming'],
+      },
+      {
+        name: '/8ball',
+        description: 'Ask the magic 8-ball a question',
+        usage: '/8ball <question>',
+        permissions: 'Use Application Commands',
+        examples: ['/8ball Will it rain tomorrow?'],
+      },
+      {
+        name: '/joke',
+        description: 'Get a random joke',
+        usage: '/joke [type]',
+        permissions: 'Use Application Commands',
+        examples: ['/joke', '/joke dad'],
+      },
+      {
+        name: '/poke',
+        description: 'Poke another user playfully',
+        usage: '/poke @user',
+        permissions: 'Use Application Commands',
+        examples: ['/poke @friend'],
       },
     ],
   },
   {
-    name: 'Utility bugs',
+    name: 'Utility',
     icon: WrenchScrewdriverIcon,
     color: 'text-green-400',
     bgColor: 'bg-green-500/10',
     borderColor: 'border-green-500/20',
-    description: 'bugs found in our helpful tools and information commands',
-    bugs: [
+    description: 'Helpful tools and information commands',
+    commands: [
       {
-        name: 'giveaway command not loading',
-        description: 'getting reports of the giveaway command not loading, we are looking into it',
-        reproduced: 'Yes. We have found that it is not showing up at all',
+        name: '/remind',
+        description: 'Set a reminder for yourself or others',
+        usage: '/remind <time> <message> [user]',
+        permissions: 'Use Application Commands',
+        examples: [
+          '/remind 1h Take a break',
+          '/remind 30m @user Meeting starts',
+        ],
       },
       {
-        name: 'Help command not loading',
-        description: 'getting reports of the help command not loading, we are looking into it',
-        reproduced: 'this bug has not been reproduced yet however we are trying our best to reproduce it',
+        name: '/userinfo',
+        description: 'Get information about a user',
+        usage: '/userinfo [user]',
+        permissions: 'Use Application Commands',
+        examples: ['/userinfo @user', '/userinfo'],
+      },
+      {
+        name: '/serverinfo',
+        description: 'Display server information and statistics',
+        usage: '/serverinfo',
+        permissions: 'Use Application Commands',
+        examples: ['/serverinfo'],
+      },
+      {
+        name: '/avatar',
+        description: "Display a user's avatar",
+        usage: '/avatar [user]',
+        permissions: 'Use Application Commands',
+        examples: ['/avatar @user', '/avatar'],
+      },
+      {
+        name: '/ping',
+        description: 'Check bot response time and status',
+        usage: '/ping',
+        permissions: 'Use Application Commands',
+        examples: ['/ping'],
       },
     ],
   },
 ];
 
-export default function BugsPage() {
+export default function CommandsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [expandedBugs, setExpandedBugs] = useState({});
+  const [expandedCommands, setExpandedCommands] = useState({});
 
-  const toggleBugDetails = (categoryName, bugName) => {
-    const key = `${categoryName}-${bugName}`;
-    setExpandedBugs(prev => ({
+  const toggleCommandDetails = (categoryName, commandName) => {
+    const key = `${categoryName}-${commandName}`;
+    setExpandedCommands(prev => ({
       ...prev,
       [key]: !prev[key],
     }));
   };
 
-  const filteredCategories = bugCategories
+  const filteredCategories = commandCategories
     .map(category => ({
       ...category,
-      bugs: category.bugs.filter(
-        bugs =>
-          bugs.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          bugs.description.toLowerCase().includes(searchTerm.toLowerCase())
+      commands: category.commands.filter(
+        cmd =>
+          cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          cmd.description.toLowerCase().includes(searchTerm.toLowerCase())
       ),
     }))
-    .filter(
-      category =>
-        selectedCategory === 'all' ||
-        category.name.toLowerCase() === selectedCategory ||
-        category.bugs.length > 0
-    );
+    .filter(category => {
+      if (selectedCategory === 'all') return category.commands.length > 0;
+      return category.name.toLowerCase() === selectedCategory;
+    });
 
-  const totalBugs = bugCategories.reduce(
-    (total, category) => total + category.bugs.length,
+  const totalCommands = commandCategories.reduce(
+    (total, category) => total + category.commands.length,
     0
   );
 
@@ -132,11 +244,11 @@ export default function BugsPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Java Lava Bugs
+              Java Lava Commands
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-              Discover all {totalBugs}+ bugs and issues in Java Lava.
-              From powerful moderation tools to fun community features that are not working right!
+              Discover all {totalCommands}+ commands available in Java Lava.
+              From powerful moderation tools to fun community features.
             </p>
 
             {/* Search and Filter */}
@@ -157,7 +269,7 @@ export default function BugsPage() {
                 onChange={e => setSelectedCategory(e.target.value)}
               >
                 <option value="all">All Categories</option>
-                {bugCategories.map(category => (
+                {commandCategories.map(category => (
                   <option
                     key={category.name}
                     value={category.name.toLowerCase()}
@@ -172,7 +284,7 @@ export default function BugsPage() {
           {/* Commands Grid */}
           <div className="space-y-12">
             {filteredCategories.map((category, categoryIndex) => {
-              if (category.bugs.length === 0) return null;
+              if (category.commands.length === 0) return null;
 
               const Icon = category.icon;
 
@@ -194,15 +306,15 @@ export default function BugsPage() {
                       <span
                         className={`px-3 py-1 text-sm font-medium rounded-full ${category.bgColor} ${category.color}`}
                       >
-                        {category.bugs.length} bugs
+                        {category.commands.length} commands
                       </span>
                     </div>
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {category.bugs.map((bugs, bugsIndex) => {
-                      const uniqueKey = `${category.name}-${bugs.name}`;
-                      const isExpanded = expandedBugs[uniqueKey];
+                    {category.commands.map((command, commandIndex) => {
+                      const uniqueKey = `${category.name}-${command.name}`;
+                      const isExpanded = expandedCommands[uniqueKey];
 
                       return (
                         <div
@@ -211,13 +323,13 @@ export default function BugsPage() {
                         >
                           <div className="flex items-start justify-between mb-4">
                             <h3 className="text-lg font-bold text-white font-mono pr-2">
-                              {bugs.name}
+                              {command.name}
                             </h3>
                             <button
                               onClick={() =>
-                                toggleBugDetails(
+                                toggleCommandDetails(
                                   category.name,
-                                  bugs.name
+                                  command.name
                                 )
                               }
                               className={`flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${category.color} border ${category.borderColor} hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-opacity-50`}
@@ -228,16 +340,16 @@ export default function BugsPage() {
                           </div>
 
                           <p className="text-gray-300 text-sm mb-4 leading-relaxed min-h-[2.5rem]">
-                            {bugs.description}
+                            {command.description}
                           </p>
 
                           <div className="space-y-3">
                             <div>
                               <span className="text-xs font-medium text-gray-400 mb-1 block">
-                                Reproduced:
+                                Usage:
                               </span>
                               <code className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed">
-                                {bugs.reproduced}
+                                {command.usage}
                               </code>
                             </div>
 
@@ -298,10 +410,11 @@ export default function BugsPage() {
           <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-secondary)]/20">
             <CommandLineIcon className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">
-              Found a bug that isn't on this list?
+              Need Help with Commands?
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">
-              Join our Discord community to report the bug.
+              Join our Discord community for support, examples, and tips on
+              using Java Lava commands effectively.
             </p>
             <a
               href="https://discord.gg/6tF3UFWA6F"
@@ -327,7 +440,7 @@ export default function BugsPage() {
                 ← Back to Docs
               </a>
               <div className="text-sm text-gray-500">
-                {totalBugs} bugs • Last updated: October 2nd, 2025
+                {totalCommands} commands • Last updated: January 8, 2025
               </div>
             </div>
           </div>

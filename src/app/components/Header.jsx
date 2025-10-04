@@ -16,12 +16,7 @@ const navLinks = [
   { href: '/', label: 'Home', icon: HomeIcon },
   { href: '/about-us', label: 'About', icon: InformationCircleIcon },
   { href: '/docs', label: 'Docs', icon: BookOpenIcon },
-  {
-    href: 'https://top.gg/bot/1305190785536360519/vote',
-    label: 'Vote',
-    icon: HandRaisedIcon,
-    external: true,
-  },
+  { href: '/vote', label: 'Vote', icon: HandRaisedIcon }
 ];
 
 export default function Header() {
@@ -36,8 +31,8 @@ export default function Header() {
               href="/"
               className="flex items-center gap-2 text-2xl font-bold"
             >
-              <span className="text-[var(--color-primary)]">Java</span>
-              <span className="text-[var(--color-secondary)]">Lava</span>
+              <span className="text-[var(--color-Java)]">Java</span>
+              <span className="text-[var(--color-Lava)]">Lava</span>
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8">
