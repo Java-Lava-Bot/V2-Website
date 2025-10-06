@@ -31,12 +31,12 @@ const faqData = [
       {
         question: 'Is Java Lava free to use?',
         answer:
-          'Yes! Java Lava offers a comprehensive set of features completely free. We also provide premium features for users who want enhanced functionality and exclusive tools.',
+          'Yes! Java Lava offers a comprehensive set of features completely free.',
       },
       {
         question: 'What version is Java Lava currently on?',
         answer:
-          'Java Lava is currently on version 1.20! This version includes major bug fixes, new features, and improved stability. Check our updates section for detailed changelog information.',
+          'Java Lava is currently on version 1.20.2! This version includes major bug fixes, new features, and improved stability. Check our updates section for detailed changelog information.',
       },
     ],
   },

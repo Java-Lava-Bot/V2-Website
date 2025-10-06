@@ -129,9 +129,17 @@ body {
 }
 
 .card {
-  @apply bg-gray-800/50 border border-gray-700/50 rounded-xl p-6 transition-all duration-200;
+  background-color: rgba(31, 41, 55, 0.5); /* bg-gray-800/50 */
+  border: 1px solid rgba(55, 65, 81, 0.5); /* border-gray-700/50 */
+  border-radius: 0.75rem; /* rounded-xl */
 }
 
 .card:hover {
-  @apply border-gray-600/50 transform translate-y-[-2px];
+  border: 1px solid rgba(75, 85, 99, 0.5); /* border-gray-600/50 */
+  transform: translateY(-2px);
+}
+
+.card:hover {
+  border: 1px solid rgba(75, 85, 99, 0.5); /* border-gray-600/50 */
+  transform: translateY(-2px);
 }
