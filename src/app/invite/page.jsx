@@ -67,7 +67,7 @@ export default function NotFound() {
                 repeatType: 'reverse',
               }}
             >
-              Add the bot.
+              Bot Invite
             </motion.div>
 
             <motion.div
@@ -98,7 +98,7 @@ export default function NotFound() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Bot Invite
+            Add the bot
           </motion.h1>
 
           <motion.p
