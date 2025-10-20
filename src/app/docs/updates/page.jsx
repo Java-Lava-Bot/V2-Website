@@ -13,9 +13,9 @@ import StatusScript from '../../components/StatusScript';
 
 const updates = [
   {
-    id: 'v1.20-bot',
-    version: 'Java Lava v1.20',
-    date: '2025-01-07',
+    id: 'v2-bot',
+    version: 'Java Lava v2',
+    date: '2026-02-24',
     type: 'major',
     title: 'Major Bot Update - Bug Fixes & New Features',
     description:
