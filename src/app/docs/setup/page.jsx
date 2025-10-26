@@ -65,6 +65,22 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 3. **Configure Commands** - Set up your preferred settings using our setup commands
 4. **Start Moderating** - Begin using Java Lava's powerful features!
 
+### Detailed Configuration
+
+1. **Invite Java Lava**: Click [here](https://discord.com/oauth2/authorize?client_id=1305190785536360519) to invite the bot to your server. Make sure to grant it the necessary permissions for optimal functionality.
+
+2. **Set Up Roles**: Create a role for Java Lava with appropriate permissions, including managing messages, banning members, and reading message history.
+
+3. **Configure Commands and what you need to get started**: Use the \`/setup\` command to configure Java Lava according to your server's needs. You can customize welcome messages, moderation settings, and more.
+
+4. **Explore Features**: Familiarize yourself with Java Lava's features by checking out the command list using \`/help\`. Experiment with moderation commands, fun interactions, and community engagement tools.
+
+5. **Let Java Lava Work**: Sit back and let Java Lava help you manage and grow your Discord community effectively!
+
+6. **Stay Updated**: Keep an eye on our [Support server](https://discord.gg/6tF3UFWA6F) for updates, new features, and support.
+
+---
+
 ### Key Features
 
 - **Advanced Moderation** - Comprehensive tools for managing your community
