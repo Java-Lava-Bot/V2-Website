@@ -50,6 +50,12 @@ export default function PremiumCTA() {
       description:
         'Enhanced moderation tools and raid protection for better server security.',
     },
+    {
+      icon: <SparklesIcon className="h-6 w-6" />,
+      title: 'Priority Updates, and Hosting',
+      description:
+        'Be the first to access new features and enjoy premium hosting for optimal performance.',
+    }
   ];
 
   return (

@@ -2,24 +2,28 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+const Navin_profile_pictureName = 'Navin_profile_picture.png';
+const Navin_profile_picture = require(`../avatars/${Navin_profile_pictureName}`);
+const ADKA_profile_pictureName = 'ADKA_profile_picture.png';
+const ADKA_profile_picture = require(`../avatars/${ADKA_profile_pictureName}`);
 
 export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
       quote:
-        'Java Lava has completely transformed how we manage our gaming community. The moderation tools are powerful yet easy to use.',
-      author: 'Alex Johnson',
-      role: 'Gaming Server Owner',
-      avatar: '/avatars/avatar1.png',
+        'Owner is a great guy, bot has many moderation commands as well as fun command to check out.',
+      author: 'navin.10',
+      role: 'Fellow discord bot developer and server owner',
+      avatar: `${Navin_profile_picture.default.src}`,
     },
     {
       id: 2,
       quote:
-        "The custom welcome messages and auto-role features save me hours of manual work. I can't imagine running my server without Java Lava now.",
-      author: 'Sophia Chen',
+        "I would rate it a 7/10, I like how it has a lot of great moderation stuff and unique automod modules that other bots do not have like banning sexual content, I also like how I can set reminders with this bot",
+      author: 'techadka78',
       role: 'Community Manager',
-      avatar: '/avatars/avatar2.png',
+      avatar: `${ADKA_profile_picture.default.src}`,
     },
     {
       id: 3,

@@ -185,7 +185,7 @@ export default function HeroSection() {
                       <div className="text-xs text-gray-400 mb-1">
                         Active Servers
                       </div>
-                      <div className="text-2xl font-bold">16.7k</div>
+                      <div className="text-2xl font-bold">52</div>
                     </div>
                     <div className="bg-[var(--color-accent)] bg-opacity-10 p-4 rounded-lg">
                       <div className="text-xs text-Black-400 mb-1">
@@ -270,15 +270,15 @@ export default function HeroSection() {
                   <div className="h-1.5 w-full bg-[var(--color-primary)] bg-opacity-20 rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-accent)]"
-                      initial={{ width: '60%' }}
-                      animate={{ width: isHovered ? '85%' : '60%' }}
-                      transition={{ duration: 1.5 }}
+                      initial={{ width: '80%' }}
+                      animate={{ width: isHovered ? '60%' : '25%' }}
+                      transition={{ duration: 2.0 }}
                     ></motion.div>
                   </div>
                   <div className="mt-2 text-xs text-gray-400 flex justify-between">
                     <span>Server Capacity</span>
                     <span className="text-[var(--color-accent)]">
-                      {isHovered ? '85%' : '60%'}
+                      {isHovered ? '60%' : '25%'}
                     </span>
                   </div>
                 </div>

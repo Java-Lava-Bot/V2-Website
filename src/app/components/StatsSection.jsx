@@ -14,10 +14,10 @@ export default function StatsSection() {
   const y = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
 
   const stats = [
-    { value: '16.7K+', label: 'Servers' },
-    { value: '2.3M+', label: 'Users' },
+    { value: '52+', label: 'Servers' },
+    { value: '1K+', label: 'Users' },
     { value: '63.5M+', label: 'Commands Run' },
-    { value: '99.9%', label: 'Uptime' },
+    { value: '99%', label: 'Uptime' },
   ];
 
   const counterVariants = {
