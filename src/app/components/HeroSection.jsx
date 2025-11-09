@@ -146,7 +146,7 @@ export default function HeroSection() {
               <div className="ml-3">
                 <span className="text-sm font-medium">Trusted by</span>
                 <span className="text-sm text-[var(--color-accent)] ml-1 font-semibold">
-                  16,700+
+                  55+
                 </span>
                 <span className="text-sm ml-1 font-medium">servers</span>
               </div>
