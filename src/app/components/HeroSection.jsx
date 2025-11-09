@@ -285,7 +285,7 @@ export default function HeroSection() {
               </div>
 
               <p className="absolute bottom-2 left-2 z-50 text-sm bg-opacity-60 px-2  rounded">
-                Please note that stats on this page are not correct. They are placeholders.
+                Our Commands Used data is a placeholder, not real data.
               </p>
 
               {/* Animated elements */}
