@@ -106,7 +106,7 @@ Need help or want to connect with other Java Lava users?
         title: 'Java Lava Documentation',
         description:
           'Complete guide to Java Lava Discord bot features and setup',
-        lastUpdated: '2025-01-08',
+        lastUpdated: '08-01-2025',
         tags: ['documentation', 'bot-setup', 'getting-started'],
       });
       setIsLoading(false);
