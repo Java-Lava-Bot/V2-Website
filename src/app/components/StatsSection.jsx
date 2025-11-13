@@ -14,8 +14,8 @@ export default function StatsSection() {
   const y = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
 
   const stats = [
-    { value: '55+', label: 'Servers' },
-    { value: '500+', label: 'Users' },
+    { value: '57+', label: 'Servers' },
+    { value: '1.5k+', label: 'Users' },
     { value: '63.5M+', label: 'Commands Run' },
     { value: '99%', label: 'Uptime' },
   ];
@@ -49,10 +49,10 @@ export default function StatsSection() {
       >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3">
-            Trusted by thousands of Discord communities
+            Trusted by a ton of Discord communities
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Join the thousands of servers already using Java Lava to enhance
+            Join the large number of servers already using Java Lava to enhance
             their Discord experience.
           </p>
         </div>
