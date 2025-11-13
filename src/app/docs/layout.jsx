@@ -17,8 +17,8 @@ const sidebarSections = [
     title: 'Getting Started',
     icon: BookOpenIcon,
     items: [
-      { title: 'Overview', href: '/content/docs' },
-      { title: 'Setup Guide', href: '/docs/setup' },
+      { title: 'Overview', href: '/docs' },
+      { title: 'Setup Guide', href: '/docs/setup_guide' },
       { title: 'FAQ', href: '/docs/faq' },
     ],
   },
@@ -27,8 +27,6 @@ const sidebarSections = [
     icon: CommandLineIcon,
     items: [
       { title: 'All Commands', href: '/docs/commands' },
-      { title: 'Moderation', href: '/docs/commands/moderation' },
-      { title: 'Community', href: '/docs/commands/community' },
     ],
   },
   {
@@ -61,7 +59,7 @@ export default function DocsLayout({ children }) {
     pathname.startsWith('/docs/updates/') ||
     pathname === '/docs/commands' ||
     pathname.startsWith('/docs/commands/') ||
-    pathname === '/docs/setup' ||
+    pathname === '/docs/setup_guide' ||
     pathname === '/docs/faq' ||
     pathname === '/docs/bugs'
   ) {

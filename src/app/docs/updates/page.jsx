@@ -15,11 +15,11 @@ const updates = [
   {
     id: 'v2-bot',
     version: 'Java Lava v2',
-    date: '2026-02-24',
+    date: '02-24-2026',
     type: 'major',
     title: 'Major Bot Update - Bug Fixes & New Features',
     description:
-      'Comprehensive update addressing critical bugs and introducing new features for improved stability and user experience.',
+      'A COMPLETE overhaul of the Java Lava bot with numerous bug fixes and exciting new features to enhance your Discord experience.',
     changes: {
       added: [
         'Enhanced reminder system with improved reliability',

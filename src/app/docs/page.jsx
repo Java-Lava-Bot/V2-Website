@@ -18,7 +18,7 @@ const docSections = [
   {
     title: 'Getting Started',
     description: 'Quick start guide to set up Java Lava in your Discord server',
-    href: '/content/docs',
+    href: '/docs/getting_started',
     icon: RocketLaunchIcon,
     color: 'text-emerald-400',
     bgColor: 'bg-emerald-500/10',
@@ -46,7 +46,7 @@ const docSections = [
   {
     title: 'Setup Guide',
     description: 'Detailed configuration and customization options',
-    href: '/docs/setup',
+    href: '/docs/setup_guide',
     icon: Cog6ToothIcon,
     color: 'text-orange-400',
     bgColor: 'bg-orange-500/10',
