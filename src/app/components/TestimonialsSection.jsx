@@ -6,6 +6,8 @@ const Navin_profile_pictureName = 'Navin_profile_picture.png';
 const Navin_profile_picture = require(`../public/avatars/${Navin_profile_pictureName}`);
 const ADKA_profile_pictureName = 'ADKA_profile_picture.png';
 const ADKA_profile_picture = require(`../public/avatars/${ADKA_profile_pictureName}`);
+const JR_PFPname = 'JR_PFP.png';
+const JR_PFP = require(`../public/avatars/${JR_PFPname}`);
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -28,10 +30,10 @@ export default function TestimonialsSection() {
     {
       id: 3,
       quote:
-        'Premium features are absolutely worth it. The reminder system alone has made our event planning so much easier.',
-      author: 'Michael Torres',
-      role: 'Event Coordinator',
-      avatar: '/avatars/avatar3.png',
+        'love the easy access to the majority of the features, the stability of it and the wide range of options available with the bot its like multiple bots all into one which is great, only thing so far thats a bit stressful is the current slash commands only for like the ban command it takes a few extra seconds when in a rush other than that even it is good all around!',
+      author: 'JR The Fantastic',
+      role: 'VIP Member and TMTOJ Community Leader',
+      avatar: `${JR_PFP.default.src}`,
     },
     {
       id: 4,
