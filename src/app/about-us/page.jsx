@@ -1,9 +1,10 @@
+import React from 'react';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
-export default function About_us() {
+export default function AboutUs() {
   return (
-    <div>
+    <>
       <Header />
       <main className="max-w-4xl mx-auto px-6 py-12 text-center">
         <h1 className="text-4xl font-extrabold mb-6">
@@ -19,8 +20,8 @@ export default function About_us() {
           create a public, verified Discord bot.
         </p>
         <p className="text-lg mb-4">
-          PhillsPhanbh3 didn’t know where to begin, but with the help of a
-          talented coder friend, Jeo, the project began to take off.
+          PhillsPhanbh3 my lead developer didn’t know where to begin, but with the help of 2
+          talented coder friends, Jeo and Ziggy, the project began to take off.
         </p>
         <p className="text-lg mb-4">
           Since then, Java Lava has grown to over 50 servers and continues
@@ -35,13 +36,26 @@ export default function About_us() {
           We're building something new, bold, and exciting — and you're a part
           of that journey.
         </p>
-
+        <p className="text-lg mb-6 font bold text-red-400">
+          The best is yet to come!
+        </p>
+        <p className="text-lg mb-6 font-bold text-purple-200">
+          With Java Lava v2 we have worked hard to improve performance, add new
+          features, and create a better user experience overall.
+        </p>
+        <p className="text-lg mb-6 font-bold text-green-300">
+          We're excited to continue this journey with you and can't wait to see
+          what the future holds.
+        </p>
+        <p className="text-lg mb-6 font-bold text-yellow-300">
+          We thank you for being a part of the Java Lava community!
+        </p>
         <p className="text-md text-gray-300">
           With gratitude, <br />
-          The Java Lava Devs – PhillsPhanbh3, Jeo, & Ziggy
+          The Java Lava Devs – PhillsPhanbh3, Jeo, &amp; Ziggy
         </p>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

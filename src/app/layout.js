@@ -1,6 +1,7 @@
 import './globals.css';
 import ScrollToTop from './components/ScrollToTop';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import favicon from './public/Java_Lava_Logo/favicon.ico';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ export const metadata = {
   description:
     'The ultimate Discord bot for moderation, community engagement, and entertainment',
   icons: {
-    icon: '/favicon.ico',
+    icon: favicon.src,
   },
   metadataBase: new URL('https://javalava.com'),
 };
