@@ -105,6 +105,13 @@ export default function Footer() {
                   Status Page
                 </a>
               </li>
+              <li>
+                <a href="/support"
+                className="text-gray-400 hover:text-[var(--color-accent)] transition"
+                >
+                  Support Server
+                </a>
+              </li>
             </ul>
           </div>
 
