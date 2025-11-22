@@ -106,11 +106,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/support"
-                className="text-gray-400 hover:text-[var(--color-accent)] transition"
+                <Link
+                  href="/support"
+                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
                 >
                   Support Server
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
