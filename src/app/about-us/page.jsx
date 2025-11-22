@@ -1,4 +1,5 @@
 import Header from '@/app/components/Header';
+import Footer from '@/app/components/Footer';
 
 export default function About_us() {
   return (
@@ -40,6 +41,7 @@ export default function About_us() {
           The Java Lava Devs – PhillsPhanbh3, Jeo, & Ziggy
         </p>
       </main>
+      <Footer />
     </div>
   );
 }

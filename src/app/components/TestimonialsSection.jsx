@@ -186,7 +186,7 @@ export default function TestimonialsSection() {
                     setDirection(index > currentIndex ? 1 : -1);
                     setCurrentIndex(index);
                   }}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-[var(--color-accent)] w-6' : 'bg-gray-500'}`}
+                  className={`w-2 h-2 rounded-full transition-all duration-450 ${index === currentIndex ? 'bg-[var(--color-accent)] w-6' : 'bg-gray-500'}`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
@@ -231,7 +231,7 @@ export default function TestimonialsSection() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M9 5l7 7-7 7"
+                  d="M15 19l-7-7 7-7"
                 />
               </svg>
             </button>
