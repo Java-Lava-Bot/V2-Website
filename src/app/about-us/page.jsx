@@ -57,5 +57,5 @@ export default function AboutUs() {
       </main>
       <Footer />
     </>
-  );
+);
 }
