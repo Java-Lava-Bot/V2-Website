@@ -105,6 +105,7 @@ export default function Footer() {
                   Status Page
                 </a>
               </li>
+<<<<<<< HEAD
               <li>
                 <a
                   href="https://discord.gg/ZZbuatGPHr"
@@ -115,6 +116,8 @@ export default function Footer() {
                   Support
                 </a>
               </li>
+=======
+>>>>>>> parent of 1718b75 (added in support server redirect)
             </ul>
           </div>
 
