@@ -29,8 +29,11 @@ export default function AboutUs() {
         </p>
         <p className="text-lg mb-4">
           Right now, Java Lava is focused on moderation and automod
-          functionality — but the goal is to evolve into an all-in-one bot like
-          MEE6.
+          functionality.
+        </p>
+        <p className="text-lg mb-6 font-semibold text-orange-300">
+          Our goal is to provide server admins with powerful tools to keep
+          their communities safe and enjoyable for all members, and to possibly become a competitor to popular bots like MEE6, Dyno, and Carl-bot.
         </p>
         <p className="text-lg mb-6 font-semibold text-blue-300">
           We're building something new, bold, and exciting — and you're a part
