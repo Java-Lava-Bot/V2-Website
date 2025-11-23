@@ -8,6 +8,8 @@ const ADKA_profile_pictureName = 'ADKA_profile_picture.png';
 const ADKA_profile_picture = require(`../public/avatars/${ADKA_profile_pictureName}`);
 const JR_PFPname = 'JR_PFP.png';
 const JR_PFP = require(`../public/avatars/${JR_PFPname}`);
+const JJ_PFPname = 'JJ_PFP.png';
+const JJ_PFP = require(`../public/avatars/${JJ_PFPname}`);
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -22,7 +24,7 @@ export default function TestimonialsSection() {
     {
       id: 2,
       quote:
-        "I would rate it a 7/10, I like how it has a lot of great moderation stuff and unique automod modules that other bots do not have like banning sexual content, I also like how I can set reminders with this bot",
+        "I like how it has a lot of great moderation stuff and unique automod modules that other bots do not have like banning sexual content, I also like how I can set reminders with this bot",
       author: 'techadka78',
       role: 'Server Owner',
       avatar: `${ADKA_profile_picture.default.src}`,
@@ -38,10 +40,10 @@ export default function TestimonialsSection() {
     {
       id: 4,
       quote:
-        'I run a server with over 50,000 members, and Java Lava handles everything flawlessly. The support team is also incredibly responsive.',
-      author: 'Emily Jackson',
-      role: 'Content Creator',
-      avatar: '/avatars/avatar4.png',
+        'Java lava is a amazing bot, it provides amazing security measures and it makes for easier bans and kicks than big bots such as the carl bot.',
+      author: 'JJ The Purple Lad',
+      role: 'Community Manager',
+      avatar: `${JJ_PFP.default.src}`,
     },
   ];
 
