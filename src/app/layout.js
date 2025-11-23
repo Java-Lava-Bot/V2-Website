@@ -22,7 +22,7 @@ export const metadata = {
   description:
     'The ultimate Discord bot for moderation, community engagement, and entertainment',
   icons: {
-    icon: favicon.src,
+    icon: '/Java_Lava_Logo/favicon.ico',
   },
   metadataBase: new URL('https://javalava.com'),
 };
