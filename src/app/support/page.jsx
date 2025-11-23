@@ -98,7 +98,7 @@ export default function NotFound() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Add the bot
+            Join our Support Server!
           </motion.h1>
 
           <motion.p
@@ -107,7 +107,7 @@ export default function NotFound() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            You have been redirected to the bot invite page! Click the button or wait for the countdown to finish!
+            You have been redirected to the support server invite page! Click the button or wait for the countdown to finish!
           </motion.p>
 
           <motion.div
@@ -117,10 +117,10 @@ export default function NotFound() {
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Link
-              href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"
+              href="https://discord.gg/tM8Y5acUta"
               className="inline-flex items-center px-6 py-3 rounded-lg bg-[var(--color-primary)] text-white font-medium hover:bg-opacity-90 transition-all duration-300"
             >
-              Add bot
+              Join Support Server
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 ml-2"
@@ -144,7 +144,7 @@ export default function NotFound() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            Redirecting to bot invite page in {count} seconds...
+            Redirecting to support server in {count} seconds...
           </motion.p>
         </motion.div>
       </div>

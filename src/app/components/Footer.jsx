@@ -107,7 +107,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://discord.gg/ZZbuatGPHr"
+                  href="/support"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
                   target="_blank"
                   rel="noopener noreferrer"
