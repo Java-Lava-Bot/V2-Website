@@ -417,7 +417,7 @@ export default function CommandsPage() {
               using Java Lava commands effectively.
             </p>
             <a
-              href="https://discord.gg/6tF3UFWA6F"
+              href="/support"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"

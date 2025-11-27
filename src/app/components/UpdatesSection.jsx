@@ -81,7 +81,7 @@ export default function UpdatesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm rounded-full bg-[var(--color-secondary)] bg-opacity-20 text-[var(--color-secondary/60)]">
+          <span className="inline-block px-4 py-1 mb-4 text-sm rounded-full bg-[var(--color-secondary)] bg-opacity-20 text-[var(--color-secondary)]">
             What's New
           </span>
           <h2 className="text-4xl font-bold mb-4">
@@ -133,7 +133,7 @@ export default function UpdatesSection() {
         >
           <a
             href="/docs/updates"
-            className="inline-flex items-center px-6 py-2 rounded-lg border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:bg-opacity-10 transition-all duration-300"
+            className="inline-flex items-center px-6 py-2 rounded-lg border border-[var(--color-primary)] text-[var(--color-primary)] transition-all duration-300"
           >
             View Complete Changelog
             <svg

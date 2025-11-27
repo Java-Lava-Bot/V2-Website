@@ -89,7 +89,7 @@ export default function FeaturesSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-accent)] bg-opacity-20 text-[var(--color-secondary/60)]">
+          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-accent)] bg-opacity-20 text-[var(--color-secondary)]">
             Features
           </span>
           <h2 className="text-4xl font-bold mb-4">

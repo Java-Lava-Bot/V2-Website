@@ -55,6 +55,7 @@ export default function DocsLayout({ children }) {
   // just render the children directly
   if (
     pathname === '/docs' ||
+    pathname === '/docs/getting_started' ||
     pathname === '/docs/updates' ||
     pathname.startsWith('/docs/updates/') ||
     pathname === '/docs/commands' ||
