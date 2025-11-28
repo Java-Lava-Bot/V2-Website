@@ -19,7 +19,7 @@ export default function FAQSection() {
     {
       question: 'What permissions does Java Lava need?',
       answer:
-        'For basic functionality, Java Lava needs permissions to read and send messages, embed links, and attach files. For moderation commands, it will need additional permissions like kicking/banning members, managing roles, and managing messages. We recommend using the default permission settings when adding the bot for optimal performance.',
+        'For basic functionality, Java Lava needs permissions to read and send messages, embed links, and attach files. For moderation commands, it will need additional permissions like kicking/banning members, managing roles, and managing messages. We recommend using the default permission settings when adding the bot for optimal performance. We however do ask for administrator permissions to ensure all features work correctly.',
     },
     {
       question: "How do I get help if I'm having issues with the bot?",
@@ -29,7 +29,7 @@ export default function FAQSection() {
     {
       question: "Can I customize the bot's prefix?",
       answer:
-        "No, Java Lava does not support custom prefixes. It uses the slash command system introduced by Discord, which allows for a more consistent and user-friendly experience. You can access all commands by typing '/' in your server's chat.",
+        "Yes and no, Java Lava NOW supports custom prefixes. Java Lava's prefix is J. and it uses the slash command system introduced by Discord. This allows our users to use commands more easily without worrying about prefix conflicts with other bots. HOWEVER, you can't create your own custom prefix at this time, but we may consider adding this feature in the future based on user feedback!",
     },
     {
       question: 'Is there a limit to how many commands I can use?',

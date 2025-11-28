@@ -93,7 +93,7 @@ export default function TermsOfService() {
                 <p className="text-gray-300 leading-relaxed">
                   For complete details on data handling, please review our{' '}
                   <a
-                    href="/legal/policy"
+                    href="/legal/privacy"
                     className="text-[var(--color-accent)] hover:text-[var(--color-secondary)] underline transition-colors"
                   >
                     Privacy Policy

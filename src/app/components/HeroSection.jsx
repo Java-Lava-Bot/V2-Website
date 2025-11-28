@@ -51,7 +51,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6 }}
               className="mb-6"
             >
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[var(--color-secondary)] bg-opacity-20 text-[var(--color-secondary)]">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-[var(--color-secondary)] bg-opacity-20 text-[var(--color-DCbot)]\60">
                 Discord Bot
               </span>
             </motion.div>

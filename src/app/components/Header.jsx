@@ -31,8 +31,9 @@ export default function Header() {
               href="/"
               className="flex items-center gap-2 text-2xl font-bold"
             >
-              <span className="text-[var(--color-Java)]">Java</span>
-              <span className="text-[var(--color-Lava)]">Lava</span>
+              <span className="text-gradient bg-gradient-to-r from-[var(--color-Java)] to-[var(--color-Lava)]">
+                Java Lava  - The Discord Bot
+              </span>
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8">

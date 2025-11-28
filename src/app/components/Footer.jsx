@@ -105,16 +105,6 @@ export default function Footer() {
                   Status Page
                 </a>
               </li>
-              <li>
-                <a
-                  href="/support"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Support
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -131,7 +121,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="legal/policy"
+                  href="legal/privacy"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
                 >
                   Privacy Policy
@@ -139,7 +129,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://discord.gg/ZZbuatGPHr"
+                  href="/support"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
                   target="_blank"
                   rel="noopener noreferrer"

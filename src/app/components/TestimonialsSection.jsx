@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
       quote:
         'Java lava is a amazing bot, it provides amazing security measures and it makes for easier bans and kicks than big bots such as the carl bot.',
       author: 'JJ The Purple Lad',
-      role: 'Community Manager',
+      role: 'Former Community Manager',
       avatar: `${JJ_PFP.default.src}`,
     },
   ];
