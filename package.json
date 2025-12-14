@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@statuspage/status-widget": "^1.0.5",
     "framer-motion": "^12.23.12",
     "gray-matter": "^4.0.3",
     "next": "^16.0.10",
