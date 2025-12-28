@@ -15,181 +15,49 @@ import StatusScript from '../../components/StatusScript';
 
 const commandCategories = [
   {
-    name: 'Moderation',
+    name: 'Major Bugs',
     icon: ShieldCheckIcon,
     color: 'text-red-400',
     bgColor: 'bg-red-500/10',
     borderColor: 'border-red-500/20',
-    description: 'Powerful tools to keep your server safe and organized',
+    description: 'Bugs that significantly impact functionality',
     commands: [
       {
-        name: '/ban',
-        description: 'Ban a member from the server',
-        usage: '/ban @user [reason]',
+        name: 'None found yet',
+        description: 'We haven\'t identified any major bugs so far.',
+        Reproduced: '/ban @user [reason]',
         permissions: 'Ban Members',
         examples: ['/ban @user Spamming in chat', '/ban @user'],
-      },
-      {
-        name: '/kick',
-        description: 'Remove a member from the server',
-        usage: '/kick @user [reason]',
-        permissions: 'Kick, Approve, and Reject Members',
-        examples: ['/kick @user Breaking rules'],
-      },
-      {
-        name: '/timeout',
-        description: "Temporarily restrict a member's ability to interact",
-        usage: '/timeout @user <duration> [reason]',
-        permissions: 'Moderate/Timeout Members',
-        examples: [
-          '/timeout @user 10m Inappropriate behavior',
-          '/timeout @user 1h',
-        ],
-      },
-      {
-        name: '/warn',
-        description: 'Issue a warning to a member',
-        usage: '/warn @user <reason>',
-        permissions: 'Manage Messages',
-        examples: ['/warn @user Please follow server rules'],
-      },
-      {
-        name: '/purge',
-        description: 'Delete multiple messages at once',
-        usage: '/purge <amount> [user]',
-        permissions: 'Manage Messages',
-        examples: ['/purge 10', '/purge 5 @user'],
-      },
-      {
-        name: '/lock',
-        description: 'Lock a channel to prevent new messages',
-        usage: '/lock [channel] [reason]',
-        permissions: 'Manage Channels',
-        examples: ['/lock #general Maintenance', '/lock'],
       },
     ],
   },
   {
-    name: 'Community',
+    name: 'Intermediate Bugs',
     icon: ChatBubbleLeftRightIcon,
     color: 'text-blue-400',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/20',
-    description: 'Engage your community with interactive features',
+    description: 'Bugs that affect user interaction and experience',
     commands: [
       {
-        name: '/clicker',
-        description: 'Fun clicking game for community engagement',
-        usage: '/clicker',
-        permissions: 'Use Application Commands',
-        examples: ['/clicker'],
-      },
-      {
-        name: '/poll',
-        description: 'Create interactive polls for your server',
-        usage: '/poll <question> <option1> <option2> [more options]',
-        permissions: 'Use Application Commands',
-        examples: ['/poll "What should we do next?" Gaming Movie Night'],
-      },
-      {
-        name: '/giveaway',
-        description: 'Host giveaways in your server',
-        usage: '/giveaway <prize> <duration> <winners>',
-        permissions: 'Manage Server',
-        examples: ['/giveaway "Discord Nitro" 1h 1'],
-      },
-      {
-        name: '/welcome',
-        description: 'Configure welcome messages for new members',
-        usage: '/welcome setup [channel] [message]',
-        permissions: 'Manage Server',
-        examples: ['/welcome setup #general "Welcome {user}!"'],
+        name: 'None found yet',
+        description: 'We haven\'t identified any intermediate bugs so far.',
+        Reproduced: '',
       },
     ],
   },
   {
-    name: 'Fun',
+    name: 'Minor Bugs',
     icon: SparklesIcon,
     color: 'text-purple-400',
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/20',
-    description: 'Entertainment commands to keep your server lively',
+    description: 'Bugs that affect minor features and aesthetics',
     commands: [
       {
-        name: '/meme',
-        description: 'Get a random meme to share',
-        usage: '/meme [category]',
-        permissions: 'Use Application Commands',
-        examples: ['/meme', '/meme programming'],
-      },
-      {
-        name: '/8ball',
-        description: 'Ask the magic 8-ball a question',
-        usage: '/8ball <question>',
-        permissions: 'Use Application Commands',
-        examples: ['/8ball Will it rain tomorrow?'],
-      },
-      {
-        name: '/joke',
-        description: 'Get a random joke',
-        usage: '/joke [type]',
-        permissions: 'Use Application Commands',
-        examples: ['/joke', '/joke dad'],
-      },
-      {
-        name: '/poke',
-        description: 'Poke another user playfully',
-        usage: '/poke @user',
-        permissions: 'Use Application Commands',
-        examples: ['/poke @friend'],
-      },
-    ],
-  },
-  {
-    name: 'Utility',
-    icon: WrenchScrewdriverIcon,
-    color: 'text-green-400',
-    bgColor: 'bg-green-500/10',
-    borderColor: 'border-green-500/20',
-    description: 'Helpful tools and information commands',
-    commands: [
-      {
-        name: '/remind',
-        description: 'Set a reminder for yourself or others',
-        usage: '/remind <time> <message> [user]',
-        permissions: 'Use Application Commands',
-        examples: [
-          '/remind 1h Take a break',
-          '/remind 30m @user Meeting starts',
-        ],
-      },
-      {
-        name: '/userinfo',
-        description: 'Get information about a user',
-        usage: '/userinfo [user]',
-        permissions: 'Use Application Commands',
-        examples: ['/userinfo @user', '/userinfo'],
-      },
-      {
-        name: '/serverinfo',
-        description: 'Display server information and statistics',
-        usage: '/serverinfo',
-        permissions: 'Use Application Commands',
-        examples: ['/serverinfo'],
-      },
-      {
-        name: '/avatar',
-        description: "Display a user's avatar",
-        usage: '/avatar [user]',
-        permissions: 'Use Application Commands',
-        examples: ['/avatar @user', '/avatar'],
-      },
-      {
-        name: '/ping',
-        description: 'Check bot response time and status',
-        usage: '/ping',
-        permissions: 'Use Application Commands',
-        examples: ['/ping'],
+        name: 'None found yet',
+        description: 'We haven\'t identified any minor bugs so far.',
+        Reproduced: '',
       },
     ],
   },
@@ -244,11 +112,11 @@ export default function CommandsPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Java Lava Commands
+              Java Lava Bugs
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-              Discover all {totalCommands}+ commands available in Java Lava.
-              From powerful moderation tools to fun community features.
+              Discover all {totalCommands} bugs reported in Java Lava.
+              From critical issues to minor glitches.
             </p>
 
             {/* Search and Filter */}
@@ -257,7 +125,7 @@ export default function CommandsPage() {
                 <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search commands..."
+                  placeholder="Search Bugs..."
                   className="w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
@@ -346,10 +214,10 @@ export default function CommandsPage() {
                           <div className="space-y-3">
                             <div>
                               <span className="text-xs font-medium text-gray-400 mb-1 block">
-                                Usage:
+                                Reproduced:
                               </span>
                               <code className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed">
-                                {command.usage}
+                                {command.reproduced}
                               </code>
                             </div>
 
@@ -410,11 +278,10 @@ export default function CommandsPage() {
           <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-secondary)]/20">
             <CommandLineIcon className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">
-              Need Help with Commands?
+              Need to Report a bug?
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">
-              Join our Discord community for support, examples, and tips on
-              using Java Lava commands effectively.
+                Join our Discord community for support, bug reports, and feature requests. 
             </p>
             <a
               href="https://discord.gg/6tF3UFWA6F"
