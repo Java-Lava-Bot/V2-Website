@@ -7,6 +7,8 @@ import {
   SparklesIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline';
+import { MdRemoveModerator } from "react-icons/md";
+import { FaHandsHelping } from "react-icons/fa";
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import StatusScript from '../../components/StatusScript';
@@ -16,8 +18,8 @@ const updates = [
     id: 'v2-bot',
     version: 'Java Lava v2',
     date: '02-24-2026',
-    type: 'major',
-    title: 'Major Bot Update - Bug Fixes & New Features',
+    type: 'major - v2',
+    title: 'Major Bot Update - Complete Overhaul and New Features',
     description:
       'A COMPLETE overhaul of the Java Lava bot with numerous bug fixes and exciting new features to enhance your Discord experience.',
     changes: {
@@ -25,19 +27,29 @@ const updates = [
         'Enhanced reminder system with improved reliability',
         'Open beta bot for testing new features',
         'Premium features access for enhanced functionality',
+        'New moderation commands and features',
+        'Updated command flags for better compatibility',
+        'New dedicated support server for assistance',
+        'Better way to setup automod rules with our new AND improved automod system!',
+      ],
+      updated: [
+        'Updated all error messages for clarity, consistency, and helpfulness, including a link to our support server!',
+        'Resolved Discord.js v14.21.0 memory leak issues',
+        'Updated all commands to use modern Discord flags',
+        'Improved bot stability and performance',
+        'Enhanced moderation command reliability',
         'Improved error handling and logging',
+      ],
+      deprecated: [
+        'Old reminder command variations',
+        'Legacy premium feature access methods',
       ],
       removed: [
         'Legacy timeout command variations',
         'Deprecated ephemeral message handling',
         'Old reminder system implementation',
-      ],
-      updated: [
-        'Fixed ban command TypeError: Cannot read properties of undefined',
-        'Resolved Discord.js v14.21.0 memory leak issues',
-        'Updated all commands to use modern Discord flags',
-        'Improved bot stability and performance',
-        'Enhanced moderation command reliability',
+        'Outdated error logging and error alerts for cleaner notifications for users',
+        'Removed support for old Discord Automod Commands'
       ],
     },
   },
@@ -45,6 +57,12 @@ const updates = [
 
 const getTypeColor = type => {
   switch (type) {
+    case 'major - v2':
+      return {
+        bg: 'bg-[var(--color-primary)]/10',
+        border: 'border-[var(--color-primary)]/20',
+        text: 'text-[var(--color-primary)]',
+      }
     case 'major':
       return {
         bg: 'bg-[var(--color-primary)]/10',
@@ -87,7 +105,7 @@ export default function UpdatesPage() {
       <Header />
 
       <main className="min-h-screen bg-[var(--color-dark)]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Header */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-secondary)]/10 border border-[var(--color-secondary)]/20 mb-6">
@@ -115,13 +133,13 @@ export default function UpdatesPage() {
                 <div key={update.id} className="relative">
                   {/* Timeline Line */}
                   {index < updates.length - 1 && (
-                    <div className="absolute left-8 top-20 w-0.5 h-full bg-gradient-to-b from-gray-600 to-transparent"></div>
+                    <div className="absolute left-12 top-20 w-0.5 h-full bg-gradient-to-b from-gray-600 to-transparent"></div>
                   )}
 
                   <div className="bg-gray-900/30 rounded-2xl p-8 border border-gray-800/50 relative">
                     {/* Timeline Dot */}
                     <div
-                      className={`absolute -left-2 top-8 w-4 h-4 rounded-full ${typeColors.bg} ${typeColors.border} border-2`}
+                      className={`absolute -left-4 top-8 w-4 h-4 rounded-full ${typeColors.bg} ${typeColors.border} border-2`}
                     ></div>
 
                     {/* Update Header */}
@@ -156,7 +174,7 @@ export default function UpdatesPage() {
                       </div>
 
                       {/* Changes */}
-                      <div className="grid gap-6 md:grid-cols-3">
+                      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                         {/* Added */}
                         <div className="space-y-3">
                           <div className="flex items-center gap-2">
@@ -189,7 +207,27 @@ export default function UpdatesPage() {
                             {update.changes.updated.map((item, i) => (
                               <li
                                 key={i}
-                                className="text-sm text-gray-300 pl-4 border-l border-blue-400/30"
+                                className="text-sm text-gray-300 pl-4 border-l border-blue-800/80"
+                              >
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Deprecated */}
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-2">
+                            <MdRemoveModerator className="h-5 w-5 text-yellow-400" />
+                            <h3 className="text-lg font-semibold text-yellow-400">
+                              Deprecated
+                            </h3>
+                          </div>
+                          <ul className="space-y-2">
+                            {update.changes.deprecated.map((item, i) => (
+                              <li
+                                key={i}
+                                className="text-sm text-gray-300 pl-4 border-l border-yellow-400/30"
                               >
                                 {item}
                               </li>
@@ -222,6 +260,86 @@ export default function UpdatesPage() {
                 </div>
               );
             })}
+          </div>
+
+          {/*Contributors to this Major update*/}
+          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
+            <FaHandsHelping className="h-12 w-12 text-[var(--color-Contributor1)] mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-white mb-2">Contributors!</h3>
+            <p className="text-gray-400 mb-6 max-w-md mx-auto">
+              I would like to extend a heartfelt thank you to the amazing contributors who helped make this major update possible! Your dedication and hard work are truly appreciated.
+              ZixeSea, Chrizz - ServerStats Developers!
+              SvpremeSn0wyy - Java Lava Support Community Manager!
+              techadka78, nielsen1984, pixitan, and sorceressrl - Beta Testers & bug hunters!
+              trainerjeo - Muffin Developer & Error logging specialist!
+              Ziggy._.mc - Areospace Developer & Reminder system helper and debugger!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://serverstats.bot/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-primary)] text-white font-medium rounded-lg hover:bg-[var(--color-primary)]/80 transition-colors"
+              >
+                <span>Serverstats</span>
+                <svg
+                  className="h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+              </a>
+              <a
+                href="https://muffindiscord.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-primary)] text-white font-medium rounded-lg hover:bg-[var(--color-primary)]/80 transition-colors"
+              >
+                <span>Muffin</span>
+                <svg
+                  className="h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+              </a>
+              <a
+                href="https://areospace.ziggymc.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-primary)] text-white font-medium rounded-lg hover:bg-[var(--color-primary)]/80 transition-colors"
+              >
+                <span>Areospace</span>
+                <svg
+                  className="h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+              </a>
+              <a
+                href="https://javalava.statuspage.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-gray-600 text-gray-300 font-medium rounded-lg hover:border-gray-500 hover:text-white transition-colors"
+              >
+                <span>Check Status</span>
+                <svg
+                  className="h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Call to Action */}
