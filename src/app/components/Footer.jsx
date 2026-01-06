@@ -48,7 +48,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://discord.gg/ZZbuatGPHr"
+                href="https://discord.gg/tM8Y5acUta"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[var(--color-primary)]"
@@ -64,7 +64,15 @@ export default function Footer() {
                 <i className="fab fa-twitter text-xl"></i>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Java-Lava-Bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[var(--color-primary)]"
+              >
+                <i className="fab fa-github text-xl"></i>
+              </a>
+              <a
+                href="https://github.com/phillsphanbh3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[var(--color-primary)]"
@@ -105,6 +113,16 @@ export default function Footer() {
                   Status Page
                 </a>
               </li>
+              <li>
+                <a
+                  href="/support"
+                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Support
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -128,14 +146,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="/support"
+                <Link
+                  href="legal/cookies"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  Support
-                </a>
+                  Cookie Policy
+                </Link>
               </li>
             </ul>
           </div>
@@ -146,7 +162,7 @@ export default function Footer() {
           className="pt-6 border-t border-gray-800"
         >
           <p className="text-sm">
-            © {currentYear} Java Lava Discord Bot. All rights reserved.
+            © 2025 - {currentYear} Java Lava Discord Bot. All rights reserved.
           </p>
           <p className="text-xs mt-2 text-gray-600">
             Made with <span className="text-[var(--color-secondary)]">♥</span>{' '}

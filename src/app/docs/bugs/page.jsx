@@ -6,14 +6,13 @@ import {
   MagnifyingGlassIcon,
   ShieldCheckIcon,
   SparklesIcon,
-  WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import StatusScript from '../../components/StatusScript';
 
-const commandCategories = [
+const bugCategories = [
   {
     name: 'Major Bugs',
     icon: ShieldCheckIcon,
@@ -21,7 +20,7 @@ const commandCategories = [
     bgColor: 'bg-red-500/10',
     borderColor: 'border-red-500/20',
     description: 'Bugs that significantly impact functionality',
-    commands: [
+    bugs: [
       {
         name: 'None found yet',
         description: 'We haven\'t identified any major bugs so far.',
@@ -38,11 +37,13 @@ const commandCategories = [
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/20',
     description: 'Bugs that affect user interaction and experience',
-    commands: [
+    bugs: [
       {
         name: 'None found yet',
         description: 'We haven\'t identified any intermediate bugs so far.',
         Reproduced: '',
+        permissions: 'Ban Members',
+        examples: ['/ban @user Spamming in chat', '/ban @user'],
       },
     ],
   },
@@ -53,45 +54,64 @@ const commandCategories = [
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/20',
     description: 'Bugs that affect minor features and aesthetics',
-    commands: [
+    bugs: [
       {
         name: 'None found yet',
         description: 'We haven\'t identified any minor bugs so far.',
         Reproduced: '',
+        permissions: 'Ban Members',
+        examples: ['/ban @user Spamming in chat', '/ban @user'],
+      },
+    ],
+  },
+  {
+    name: 'Fixed Bugs',
+    icon: SparklesIcon,
+    color: 'text-green-400',
+    bgColor: 'bg-green-500/10',
+    borderColor: 'border-green-500/20',
+    description: 'Bugs that have been resolved in recent updates',
+    bugs: [
+      {
+        name: 'None found yet',
+        description: 'We haven\'t identified any minor bugs so far.',
+        Reproduced: '',
+        permissions: 'Ban Members',
+        examples: ['/ban @user Spamming in chat', '/ban @user'],
       },
     ],
   },
 ];
 
-export default function CommandsPage() {
+export default function BugsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [expandedCommands, setExpandedCommands] = useState({});
+  const [expandedBugs, setExpandedBugs] = useState({});
 
-  const toggleCommandDetails = (categoryName, commandName) => {
-    const key = `${categoryName}-${commandName}`;
-    setExpandedCommands(prev => ({
+  const toggleBugDetails = (categoryName, bugName) => {
+    const key = `${categoryName}-${bugName}`;
+    setExpandedBugs(prev => ({
       ...prev,
       [key]: !prev[key],
     }));
   };
 
-  const filteredCategories = commandCategories
+  const filteredCategories = bugCategories
     .map(category => ({
       ...category,
-      commands: category.commands.filter(
-        cmd =>
-          cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          cmd.description.toLowerCase().includes(searchTerm.toLowerCase())
+      bugs: category.bugs.filter(
+        bug =>
+          bug.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          bug.description.toLowerCase().includes(searchTerm.toLowerCase())
       ),
     }))
     .filter(category => {
-      if (selectedCategory === 'all') return category.commands.length > 0;
+      if (selectedCategory === 'all') return category.bugs.length > 0;
       return category.name.toLowerCase() === selectedCategory;
     });
 
-  const totalCommands = commandCategories.reduce(
-    (total, category) => total + category.commands.length,
+  const totalBugs = bugCategories.reduce(
+    (total, category) => total + category.bugs.length,
     0
   );
 
@@ -107,16 +127,16 @@ export default function CommandsPage() {
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 mb-6">
               <CommandLineIcon className="h-5 w-5 text-[var(--color-primary)] mr-2" />
               <span className="text-sm font-medium text-[var(--color-primary)]">
-                Command Reference
+                Reported Bugs
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Java Lava Bugs
+              Java Lava's Reported Bugs
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-              Discover all {totalCommands} bugs reported in Java Lava.
-              From critical issues to minor glitches.
+              Discover all {totalBugs}+ bugs reported in Java Lava.
+              From powerful moderation tools to fun community features.
             </p>
 
             {/* Search and Filter */}
@@ -125,7 +145,7 @@ export default function CommandsPage() {
                 <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search Bugs..."
+                  placeholder="Search bugs..."
                   className="w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
@@ -137,7 +157,7 @@ export default function CommandsPage() {
                 onChange={e => setSelectedCategory(e.target.value)}
               >
                 <option value="all">All Categories</option>
-                {commandCategories.map(category => (
+                {bugCategories.map(category => (
                   <option
                     key={category.name}
                     value={category.name.toLowerCase()}
@@ -152,7 +172,7 @@ export default function CommandsPage() {
           {/* Commands Grid */}
           <div className="space-y-12">
             {filteredCategories.map((category, categoryIndex) => {
-              if (category.commands.length === 0) return null;
+              if (category.bugs.length === 0) return null;
 
               const Icon = category.icon;
 
@@ -174,15 +194,15 @@ export default function CommandsPage() {
                       <span
                         className={`px-3 py-1 text-sm font-medium rounded-full ${category.bgColor} ${category.color}`}
                       >
-                        {category.commands.length} commands
+                        {category.bugs.length} bugs
                       </span>
                     </div>
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {category.commands.map((command, commandIndex) => {
-                      const uniqueKey = `${category.name}-${command.name}`;
-                      const isExpanded = expandedCommands[uniqueKey];
+                    {category.bugs.map((bug, bugIndex) => {
+                      const uniqueKey = `${category.name}-${bug.name}`;
+                      const isExpanded = expandedBugs[uniqueKey];
 
                       return (
                         <div
@@ -191,13 +211,13 @@ export default function CommandsPage() {
                         >
                           <div className="flex items-start justify-between mb-4">
                             <h3 className="text-lg font-bold text-white font-mono pr-2">
-                              {command.name}
+                              {bug.name}
                             </h3>
                             <button
                               onClick={() =>
-                                toggleCommandDetails(
+                                toggleBugDetails(
                                   category.name,
-                                  command.name
+                                  bug.name
                                 )
                               }
                               className={`flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${category.color} border ${category.borderColor} hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-opacity-50`}
@@ -208,16 +228,16 @@ export default function CommandsPage() {
                           </div>
 
                           <p className="text-gray-300 text-sm mb-4 leading-relaxed min-h-[2.5rem]">
-                            {command.description}
+                            {bug.description}
                           </p>
 
                           <div className="space-y-3">
                             <div>
                               <span className="text-xs font-medium text-gray-400 mb-1 block">
-                                Reproduced:
+                                Usage:
                               </span>
                               <code className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed">
-                                {command.reproduced}
+                                {bug.usage}
                               </code>
                             </div>
 
@@ -228,7 +248,7 @@ export default function CommandsPage() {
                                     Required Permission:
                                   </span>
                                   <p className="text-sm text-gray-300 bg-gray-800/30 rounded-md p-2">
-                                    {command.permissions}
+                                    {bug.permissions}
                                   </p>
                                 </div>
 
@@ -237,7 +257,7 @@ export default function CommandsPage() {
                                     Examples:
                                   </span>
                                   <div className="space-y-2">
-                                    {command.examples.map(
+                                    {bug.examples.map(
                                       (example, exIndex) => (
                                         <code
                                           key={exIndex}
@@ -262,11 +282,11 @@ export default function CommandsPage() {
           </div>
 
           {searchTerm &&
-            filteredCategories.every(cat => cat.commands.length === 0) && (
+            filteredCategories.every(cat => cat.bugs.length === 0) && (
               <div className="text-center py-12">
                 <CommandLineIcon className="h-16 w-16 text-gray-600 mx-auto mb-4" />
                 <h3 className="text-xl font-medium text-gray-400 mb-2">
-                  No commands found
+                  No bugs found
                 </h3>
                 <p className="text-gray-500">
                   Try adjusting your search or filter criteria.
@@ -278,13 +298,14 @@ export default function CommandsPage() {
           <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-secondary)]/20">
             <CommandLineIcon className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">
-              Need to Report a bug?
+              Need to Report a Bug or Get Help?
             </h3>
             <p className="text-gray-400 mb-6 max-w-md mx-auto">
-                Join our Discord community for support, bug reports, and feature requests. 
+              Join our Discord community for reporting bugs, seeking support,
+              and connecting with other users.
             </p>
             <a
-              href="https://discord.gg/6tF3UFWA6F"
+              href="/support"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
@@ -307,7 +328,7 @@ export default function CommandsPage() {
                 ← Back to Docs
               </a>
               <div className="text-sm text-gray-500">
-                {totalCommands} commands • Last updated: January 8, 2025
+                {totalBugs} bugs • Last updated: January 8, 2025
               </div>
             </div>
           </div>

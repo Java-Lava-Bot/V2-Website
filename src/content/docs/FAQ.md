@@ -36,7 +36,7 @@ If Java Lava appears offline, it might be:
 - Experiencing temporary downtime
 - Having connection issues
 
-Check our [Discord server](https://discord.gg/6tF3UFWA6F) and [Status Page](https://javalava.statuspage.io/) for status updates.
+Check our [Discord server](https://discord.gg/tM8Y5acUta) and [Status Page](https://javalava.statuspage.io/) for status updates.
 
 ## Updates
 
@@ -46,17 +46,17 @@ We aim for around every 3 to 6 months but we could have major issues when it com
 
 ### Where can I suggest new features?
 
-Join our [Discord server](https://discord.gg/6tF3UFWA6F) to suggest new features and provide feedback!
+Join our [Discord server](https://discord.gg/tM8Y5acUta) to suggest new features and provide feedback!
 
 ## Support
 
 ### I need help that isn't covered here
 
-Join our [Discord server](https://discord.gg/6tF3UFWA6F) for direct support from our team and community.
+Join our [Discord server](https://discord.gg/tM8Y5acUta) for direct support from our team and community.
 
 ### How do I report a bug?
 
-Report bugs in our [Discord server](https://discord.gg/6tF3UFWA6F) or help test new features with our beta bot!
+Report bugs in our [Discord server](https://discord.gg/tM8Y5acUta) or help test new features with our beta bot!
 
 ### How can I view current known bugs?
 
@@ -64,4 +64,4 @@ You can go to our Bugs section of our documentation page or our bug tracker sect
 
 ### How can I suggest a new feature for a module that we currently got?
 
-You can join our [Support server](https://discord.gg/6tF3UFWA6F) and go to the suggestions section of our support server!
+You can join our [Support server](https://discord.gg/tM8Y5acUta) and go to the suggestions section of our support server!

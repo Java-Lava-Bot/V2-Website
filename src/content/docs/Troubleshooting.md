@@ -14,4 +14,4 @@ tags: [troubleshooting, support]
 
 ---
 
-**Still having issues?** Join our [Discord server](https://discord.gg/6tF3UFWA6F) for direct support from the Java Lava team!
+**Still having issues?** Join our [Discord server](https://discord.gg/tM8Y5acUta) for direct support from the Java Lava team!

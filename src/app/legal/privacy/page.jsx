@@ -184,7 +184,7 @@ export default function PrivacyPolicy() {
                   <li>
                     Support Server:{' '}
                     <a
-                      href="https://discord.gg/6tF3UFWA6F"
+                      href="https://discord.gg/tM8Y5acUta"
                       className="text-[var(--color-accent)] hover:text-[var(--color-secondary)] underline transition-colors"
                     >
                       Join our community

@@ -3,11 +3,11 @@
 import {
   CommandLineIcon,
 } from '@heroicons/react/24/outline';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import StatusScript from '../components/StatusScript';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import StatusScript from '../../components/StatusScript';
 
-export default function BugsPage() {
+export default function VotingPage() {
 
   return (
     <>

@@ -3,7 +3,6 @@
 import {
   Bars3Icon,
   BookOpenIcon,
-  HandRaisedIcon,
   HomeIcon,
   InformationCircleIcon,
   XMarkIcon,
@@ -16,7 +15,6 @@ const navLinks = [
   { href: '/', label: 'Home', icon: HomeIcon },
   { href: '/about-us', label: 'About', icon: InformationCircleIcon },
   { href: '/docs', label: 'Docs', icon: BookOpenIcon },
-  { href: '/vote', label: 'Vote', icon: HandRaisedIcon }
 ];
 
 export default function Header() {

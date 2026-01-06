@@ -24,7 +24,7 @@ export const metadata = {
   icons: {
     icon: favicon.src,
   },
-  metadataBase: new URL('https://betajavalava.discloud.app/'),
+  metadataBase: new URL('https://betajavalava.phillsphanbh3.me/'),
 };
 
 export default function RootLayout({ children }) {

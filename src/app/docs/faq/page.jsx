@@ -2,7 +2,6 @@
 
 import {
   ChevronDownIcon,
-  ExternalLinkIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/react/24/outline';
 import { useState } from 'react';
@@ -60,7 +59,7 @@ const faqData = [
           "Report bugs in our Discord server's bug report channel, or help us test new features with our open beta bot! Our developers actively monitor reports and work quickly to resolve issues.",
         link: {
           text: 'Join Support Server',
-          url: 'https://discord.gg/6tF3UFWA6F',
+          url: 'https://discord.gg/tM8Y5acUta',
         },
       },
     ],
@@ -79,7 +78,7 @@ const faqData = [
           'Join our Discord server and use the suggestions channel! We love hearing from our community and many user suggestions have been implemented in past updates.',
         link: {
           text: 'Make a Suggestion',
-          url: 'https://discord.gg/6tF3UFWA6F',
+          url: 'https://discord.gg/tM8Y5acUta',
         },
       },
       {
@@ -101,7 +100,7 @@ const faqData = [
         question: "I need help that isn't covered here",
         answer:
           'Join our Discord server for direct support from our team and community. We have dedicated support channels and active staff members ready to help.',
-        link: { text: 'Get Support', url: 'https://discord.gg/6tF3UFWA6F' },
+        link: { text: 'Get Support', url: 'https://discord.gg/tM8Y5acUta' },
       },
       {
         question: 'How can I view current known bugs?',
@@ -115,6 +114,16 @@ const faqData = [
       },
     ],
   },
+  {
+    category: 'Troubleshooting',
+    questions: [
+      {
+        question: 'Java Lava is not responding to commands',
+        answer:
+          'Ensure the bot has the necessary permissions in your server. Try restarting Discord or re-inviting the bot if issues persist.',
+      },
+    ]
+  }
 ];
 
 export default function FAQPage() {
@@ -161,7 +170,7 @@ export default function FAQPage() {
               >
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                   <div
-                    className={`w-2 h-8 rounded-full ${categoryIndex === 0 ? 'bg-[var(--color-primary)]' : categoryIndex === 1 ? 'bg-[var(--color-secondary)]' : categoryIndex === 2 ? 'bg-[var(--color-accent)]' : 'bg-gray-500'}`}
+                    className={`w-2 h-8 rounded-full ${categoryIndex === 0 ? 'bg-[var(--color-primary)]' : categoryIndex === 1 ? 'bg-[var(--color-secondary)]' : categoryIndex === 2 ? 'bg-[var(--color-accent)]' : categoryIndex === 3 ? 'bg-[var(--color-Java)]' : categoryIndex === 4 ? 'bg-[var(--color-Lava)]' : 'bg-gray-500'}`}
                   ></div>
                   {category.category}
                 </h2>
@@ -229,7 +238,7 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://discord.gg/6tF3UFWA6F"
+                href="https://discord.gg/tM8Y5acUta"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-primary)] text-white font-medium rounded-lg hover:bg-[var(--color-primary)]/80 transition-colors"

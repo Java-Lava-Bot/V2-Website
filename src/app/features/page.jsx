@@ -48,7 +48,7 @@ const faqData = [
           "Report errors and/or bugs in our Discord server's bug report channel, or help us test new features with our open beta bot! Our developers actively monitor reports and work quickly to resolve issues.",
         link: {
           text: 'Join Support Server',
-          url: 'https://discord.gg/6tF3UFWA6F',
+          url: 'https://discord.gg/tM8Y5acUta',
         },
       },
     ],
@@ -67,7 +67,7 @@ const faqData = [
           'Join our Discord server and use the suggestions channel! We love hearing from our community and many user suggestions have been implemented in past updates.',
         link: {
           text: 'Make a Suggestion',
-          url: 'https://discord.gg/6tF3UFWA6F',
+          url: 'https://discord.gg/tM8Y5acUta',
         },
       },
     ],
@@ -186,7 +186,7 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://discord.gg/6tF3UFWA6F"
+                href="https://discord.gg/tM8Y5acUta"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-primary)] text-white font-medium rounded-lg hover:bg-[var(--color-primary)]/80 transition-colors"

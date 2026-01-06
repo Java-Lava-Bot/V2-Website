@@ -13,6 +13,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StatusScript from '../components/StatusScript';
 import { BugAntIcon } from '@heroicons/react/24/solid';
+import { FaVoteYea, FaHandsHelping } from 'react-icons/fa';
 
 const docSections = [
   {
@@ -69,6 +70,33 @@ const docSections = [
     color: 'text-red-400',
     bgColor: 'bg-red-500/10',
     borderColor: 'border-red-500/20',
+  },
+  {
+    title: 'Vote for Java Lava',
+    description: 'Support Java Lava by voting on popular bot listing sites',
+    href: '/docs/vote',
+    icon: FaVoteYea,
+    color: 'text-pink-400',
+    bgColor: 'bg-pink-500/10',
+    borderColor: 'border-pink-500/20',
+  },
+  {
+    title: 'Contributors',
+    description: 'Meet the amazing people who contribute to Java Lava',
+    href: '/docs/contributors',
+    icon: FaHandsHelping,
+    color: 'text-yellow-400',
+    bgColor: 'bg-yellow-500/10',
+    borderColor: 'border-yellow-500/20',
+  },
+  {
+    title: 'Java Lava Advanced Docs',
+    description: 'In-depth technical documentation for developers and advanced users',
+    href: '/docs/advanced',
+    icon: BookOpenIcon,
+    color: 'text-lime-400',
+    bgColor: 'bg-lime-500/10',
+    borderColor: 'border-lime-500/20',
   }
 ];
 

@@ -77,7 +77,7 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 
 5. **Let Java Lava Work**: Sit back and let Java Lava help you manage and grow your Discord community effectively!
 
-6. **Stay Updated**: Keep an eye on our [Support server](https://discord.gg/6tF3UFWA6F) for updates, new features, and support.
+6. **Stay Updated**: Keep an eye on our [Support server](https://discord.gg/tM8Y5acUta) for updates, new features, and support.
 
 ---
 
@@ -93,7 +93,7 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 
 Need help or want to connect with other Java Lava users?
 
-- **Discord Server**: [Join our community](https://discord.gg/6tF3UFWA6F)
+- **Discord Server**: [Join our community](https://discord.gg/tM8Y5acUta)
 - **Status Page**: [Check service status](https://javalava.statuspage.io/)
 - **Documentation**: You're already here!
 
