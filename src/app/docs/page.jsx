@@ -91,7 +91,7 @@ const docSections = [
   },
   {
     title: 'Java Lava Advanced Docs',
-    description: 'In-depth technical documentation for developers and advanced users',
+    description: 'In-depth technical documentation for developers and advanced users which is being made right now.',
     href: '/docs/advanced',
     icon: BookOpenIcon,
     color: 'text-lime-400',
