@@ -88,7 +88,7 @@ const commandCategories = [
         name: '/poll',
         description: 'Create interactive polls for your server',
         usage: '/poll <question> <option1> <option2> [more options]',
-        permissions: 'Use Application Commands',
+        permissions: 'Manage Messages',
         examples: ['/poll "What should we do next?" Gaming Movie Night'],
       },
       {
