@@ -29,7 +29,7 @@ export default function FAQSection() {
     {
       question: "Can I customize the bot's prefix?",
       answer:
-        "Yes and no, Java Lava NOW supports custom prefixes. Java Lava's prefix is J. and it uses the slash command system introduced by Discord. This allows our users to use commands more easily without worrying about prefix conflicts with other bots. HOWEVER, you can't create your own custom prefix at this time, but we may consider adding this feature in the future based on user feedback!",
+        "Yes and no, Java Lava does NOT supports custom prefixes, HOWEVER the default prefix is \"J.\" and it uses the slash command system introduced by Discord. This allows our users to use commands more easily without worrying about prefix conflicts with other bots. HOWEVER, you can't create your own custom prefix at this time, but we may consider adding this feature in the future based on user feedback!",
     },
     {
       question: 'Is there a limit to how many commands I can use?',
@@ -41,6 +41,11 @@ export default function FAQSection() {
       answer:
         'Please report any bugs you find through our support server or by using the /report command. Include as much detail as possible, such as the command you were using, any error messages, and steps to reproduce the issue. Our team will investigate and work on a fix as soon as possible. IF you include a screenshot, it will help us resolve the issue faster!',
     },
+    {
+      question: 'Where can I find the documentation for Java Lava commands?',
+      answer:
+        'You can go to our Docs section located in the navigation menu at the top of our website, then click commands.',
+    }
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);

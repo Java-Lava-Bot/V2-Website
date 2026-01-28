@@ -64,23 +64,6 @@ const bugCategories = [
       },
     ],
   },
-  {
-    name: 'Fixed Bugs',
-    icon: SparklesIcon,
-    color: 'text-green-400',
-    bgColor: 'bg-green-500/10',
-    borderColor: 'border-green-500/20',
-    description: 'Bugs that have been resolved in recent updates',
-    bugs: [
-      {
-        name: 'None found yet',
-        description: 'We haven\'t identified any minor bugs so far.',
-        Reproduced: '',
-        permissions: 'Ban Members',
-        examples: ['/ban @user Spamming in chat', '/ban @user'],
-      },
-    ],
-  },
 ];
 
 export default function BugsPage() {
