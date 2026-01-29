@@ -131,7 +131,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="legal/tos"
+                  href="/legal/tos"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
                 >
                   Terms of Service
@@ -139,7 +139,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="legal/privacy"
+                  href="/legal/privacy"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
                 >
                   Privacy Policy
@@ -147,7 +147,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="legal/cookies"
+                  href="/legal/cookies"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
                 >
                   Cookie Policy
