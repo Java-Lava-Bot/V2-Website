@@ -199,7 +199,8 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          <div className='flex justify-between items-center mt-8'>
+          {/* Navigation arrows */}
+          <div className='flex justify-between mt-8'>
             <button
               onClick={handlePrev}
               className='p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-primary)] hover:bg-opacity-20 transition-all duration-300'
@@ -221,6 +222,30 @@ export default function TestimonialsSection() {
               </svg>
             </button>
 
+            <button
+              onClick={handleNext}
+              className='p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-primary)] hover:bg-opacity-20 transition-all duration-300'
+              aria-label='Next testimonial'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-6 w-6'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M9 5l7 7-7 7'
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Pause/Play control centered below */}
+          <div className='flex justify-center mt-4'>
             <button
               onClick={() => setAutoPlay(!autoPlay)}
               className='p-3 rounded-full bg-[var(--color-accent)] bg-opacity-10 text-[var(--color-accent)] hover:bg-opacity-20 transition-all duration-300'
@@ -263,27 +288,6 @@ export default function TestimonialsSection() {
                   />
                 </svg>
               )}
-            </button>
-
-            <button
-              onClick={handleNext}
-              className='p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-primary)] hover:bg-opacity-20 transition-all duration-300'
-              aria-label='Next testimonial'
-            >
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M9 5l7 7-7 7'
-                />
-              </svg>
             </button>
           </div>
         </div>
