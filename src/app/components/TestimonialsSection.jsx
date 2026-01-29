@@ -95,7 +95,6 @@ export default function TestimonialsSection() {
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Background design elements */}
       <div className="absolute inset-0">
         <div className="absolute -bottom-32 -left-32 w-64 h-64 rounded-full bg-[var(--color-accent)] opacity-[0.03] blur-3xl"></div>
         <div className="absolute top-20 right-10 w-32 h-32 rounded-full bg-[var(--color-primary)] opacity-[0.05] blur-xl"></div>
@@ -123,13 +122,8 @@ export default function TestimonialsSection() {
           <div className="absolute top-10 left-0 w-20 h-20 rounded-full bg-[var(--color-primary)] bg-opacity-10 blur-xl z-0"></div>
           <div className="absolute bottom-10 right-0 w-20 h-20 rounded-full bg-[var(--color-accent)] bg-opacity-10 blur-xl z-0"></div>
 
-          {/* Decorative quote marks */}
-          <div className="absolute -top-10 -left-4 text-[100px] leading-none text-[var(--color-accent)] opacity-10">
-            "
-          </div>
-          <div className="absolute -bottom-20 right-0 text-[100px] leading-none text-[var(--color-accent)] opacity-10">
-            "
-          </div>
+          <div className="absolute -top-10 -left-4 text-[100px] leading-none text-[var(--color-accent)] opacity-10"></div>
+          <div className="absolute -bottom-20 right-0 text-[100px] leading-none text-[var(--color-accent)] opacity-10"></div>
 
           <div className="bg-[#1a1a2e] border border-[var(--color-primary)] border-opacity-20 rounded-xl p-8 md:p-10 relative overflow-hidden">
             <AnimatePresence initial={false} custom={direction} mode="wait">
@@ -195,48 +189,98 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          <div className="flex justify-between mt-8">
-            <button
-              onClick={handlePrev}
-              className="p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-primary)] hover:bg-opacity-20 transition-all duration-300"
-              aria-label="Previous testimonial"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+          <div className="mt-8 grid grid-cols-3 items-center">
+            <div className="justify-self-start">
+              <button
+                onClick={handlePrev}
+                className="p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-accent)] hover:bg-opacity-20 transition-all duration-300"
+                aria-label="Previous testimonial"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+            </div>
 
-            <button
-              onClick={handleNext}
-              className="p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-primary)] hover:bg-opacity-20 transition-all duration-300"
-              aria-label="Next testimonial"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <div className="justify-self-center">
+              <button
+                onClick={() => setAutoPlay(!autoPlay)}
+                className="p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-accent)] hover:bg-opacity-20 transition-all duration-300"
+                aria-label={autoPlay ? 'Pause auto-scroll' : 'Resume auto-scroll'}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
+                {autoPlay ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
+
+            <div className="justify-self-end">
+              <button
+                onClick={handleNext}
+                className="p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-accent)] hover:bg-opacity-20 transition-all duration-300"
+                aria-label="Next testimonial"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
