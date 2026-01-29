@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect } from 'react';
 
@@ -16,12 +16,12 @@ export default function useAnimationScripts() {
     // Add scroll animations
     const handleScroll = () => {
       const scrollElements = document.querySelectorAll('.scroll-animate');
-      
+
       scrollElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
-        const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
-        
+        const isVisible = elementTop < window.innerHeight && elementBottom >= 0;
+
         if (isVisible) {
           element.classList.add('animate-visible');
         }
@@ -33,7 +33,7 @@ export default function useAnimationScripts() {
 
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

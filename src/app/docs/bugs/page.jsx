@@ -23,7 +23,7 @@ const bugCategories = [
     bugs: [
       {
         name: 'None found yet',
-        description: 'We haven\'t identified any major bugs so far.',
+        description: "We haven't identified any major bugs so far.",
         Reproduced: '/ban @user [reason]',
         permissions: 'Ban Members',
         examples: ['/ban @user Spamming in chat', '/ban @user'],
@@ -40,7 +40,7 @@ const bugCategories = [
     bugs: [
       {
         name: 'None found yet',
-        description: 'We haven\'t identified any intermediate bugs so far.',
+        description: "We haven't identified any intermediate bugs so far.",
         Reproduced: '',
         permissions: 'Ban Members',
         examples: ['/ban @user Spamming in chat', '/ban @user'],
@@ -57,7 +57,7 @@ const bugCategories = [
     bugs: [
       {
         name: 'None found yet',
-        description: 'We haven\'t identified any minor bugs so far.',
+        description: "We haven't identified any minor bugs so far.",
         Reproduced: '',
         permissions: 'Ban Members',
         examples: ['/ban @user Spamming in chat', '/ban @user'],
@@ -103,43 +103,43 @@ export default function BugsPage() {
       <StatusScript />
       <Header />
 
-      <main className="min-h-screen bg-[var(--color-dark)]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className='min-h-screen bg-[var(--color-dark)]'>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
           {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 mb-6">
-              <CommandLineIcon className="h-5 w-5 text-[var(--color-primary)] mr-2" />
-              <span className="text-sm font-medium text-[var(--color-primary)]">
+          <div className='text-center mb-12'>
+            <div className='inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 mb-6'>
+              <CommandLineIcon className='h-5 w-5 text-[var(--color-primary)] mr-2' />
+              <span className='text-sm font-medium text-[var(--color-primary)]'>
                 Reported Bugs
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className='text-4xl md:text-5xl font-bold mb-4'>
               Java Lava's Reported Bugs
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-              Discover all {totalBugs}+ bugs reported in Java Lava.
-              From powerful moderation tools to fun community features.
+            <p className='text-xl text-gray-400 max-w-3xl mx-auto mb-8'>
+              Discover all {totalBugs}+ bugs reported in Java Lava. From
+              powerful moderation tools to fun community features.
             </p>
 
             {/* Search and Filter */}
-            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-              <div className="relative flex-1">
-                <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <div className='flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto'>
+              <div className='relative flex-1'>
+                <MagnifyingGlassIcon className='absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400' />
                 <input
-                  type="text"
-                  placeholder="Search bugs..."
-                  className="w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
+                  type='text'
+                  placeholder='Search bugs...'
+                  className='w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent'
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
                 />
               </div>
               <select
-                className="px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                className='px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]'
                 value={selectedCategory}
                 onChange={e => setSelectedCategory(e.target.value)}
               >
-                <option value="all">All Categories</option>
+                <option value='all'>All Categories</option>
                 {bugCategories.map(category => (
                   <option
                     key={category.name}
@@ -153,15 +153,15 @@ export default function BugsPage() {
           </div>
 
           {/* Commands Grid */}
-          <div className="space-y-12">
+          <div className='space-y-12'>
             {filteredCategories.map((category, categoryIndex) => {
               if (category.bugs.length === 0) return null;
 
               const Icon = category.icon;
 
               return (
-                <div key={categoryIndex} className="space-y-6">
-                  <div className="flex items-center gap-4">
+                <div key={categoryIndex} className='space-y-6'>
+                  <div className='flex items-center gap-4'>
                     <div
                       className={`p-3 rounded-xl ${category.bgColor} ${category.borderColor} border`}
                     >
@@ -171,9 +171,9 @@ export default function BugsPage() {
                       <h2 className={`text-3xl font-bold ${category.color}`}>
                         {category.name}
                       </h2>
-                      <p className="text-gray-400">{category.description}</p>
+                      <p className='text-gray-400'>{category.description}</p>
                     </div>
-                    <div className="ml-auto">
+                    <div className='ml-auto'>
                       <span
                         className={`px-3 py-1 text-sm font-medium rounded-full ${category.bgColor} ${category.color}`}
                       >
@@ -182,7 +182,7 @@ export default function BugsPage() {
                     </div>
                   </div>
 
-                  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
                     {category.bugs.map((bug, bugIndex) => {
                       const uniqueKey = `${category.name}-${bug.name}`;
                       const isExpanded = expandedBugs[uniqueKey];
@@ -192,16 +192,13 @@ export default function BugsPage() {
                           key={uniqueKey}
                           className={`relative p-6 rounded-xl border transition-all duration-300 hover:transform hover:translate-y-[-2px] ${category.bgColor} ${category.borderColor} hover:border-opacity-60`}
                         >
-                          <div className="flex items-start justify-between mb-4">
-                            <h3 className="text-lg font-bold text-white font-mono pr-2">
+                          <div className='flex items-start justify-between mb-4'>
+                            <h3 className='text-lg font-bold text-white font-mono pr-2'>
                               {bug.name}
                             </h3>
                             <button
                               onClick={() =>
-                                toggleBugDetails(
-                                  category.name,
-                                  bug.name
-                                )
+                                toggleBugDetails(category.name, bug.name)
                               }
                               className={`flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${category.color} border ${category.borderColor} hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-opacity-50`}
                               style={{ focusRingColor: category.color }}
@@ -210,46 +207,44 @@ export default function BugsPage() {
                             </button>
                           </div>
 
-                          <p className="text-gray-300 text-sm mb-4 leading-relaxed min-h-[2.5rem]">
+                          <p className='text-gray-300 text-sm mb-4 leading-relaxed min-h-[2.5rem]'>
                             {bug.description}
                           </p>
 
-                          <div className="space-y-3">
+                          <div className='space-y-3'>
                             <div>
-                              <span className="text-xs font-medium text-gray-400 mb-1 block">
+                              <span className='text-xs font-medium text-gray-400 mb-1 block'>
                                 Usage:
                               </span>
-                              <code className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed">
+                              <code className='block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed'>
                                 {bug.usage}
                               </code>
                             </div>
 
                             {isExpanded && (
-                              <div className="space-y-4 pt-4 border-t border-gray-700/50 animate-fade-in">
+                              <div className='space-y-4 pt-4 border-t border-gray-700/50 animate-fade-in'>
                                 <div>
-                                  <span className="text-xs font-medium text-gray-400 mb-1 block">
+                                  <span className='text-xs font-medium text-gray-400 mb-1 block'>
                                     Required Permission:
                                   </span>
-                                  <p className="text-sm text-gray-300 bg-gray-800/30 rounded-md p-2">
+                                  <p className='text-sm text-gray-300 bg-gray-800/30 rounded-md p-2'>
                                     {bug.permissions}
                                   </p>
                                 </div>
 
                                 <div>
-                                  <span className="text-xs font-medium text-gray-400 mb-2 block">
+                                  <span className='text-xs font-medium text-gray-400 mb-2 block'>
                                     Examples:
                                   </span>
-                                  <div className="space-y-2">
-                                    {bug.examples.map(
-                                      (example, exIndex) => (
-                                        <code
-                                          key={exIndex}
-                                          className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed"
-                                        >
-                                          {example}
-                                        </code>
-                                      )
-                                    )}
+                                  <div className='space-y-2'>
+                                    {bug.examples.map((example, exIndex) => (
+                                      <code
+                                        key={exIndex}
+                                        className='block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed'
+                                      >
+                                        {example}
+                                      </code>
+                                    ))}
                                   </div>
                                 </div>
                               </div>
@@ -266,51 +261,51 @@ export default function BugsPage() {
 
           {searchTerm &&
             filteredCategories.every(cat => cat.bugs.length === 0) && (
-              <div className="text-center py-12">
-                <CommandLineIcon className="h-16 w-16 text-gray-600 mx-auto mb-4" />
-                <h3 className="text-xl font-medium text-gray-400 mb-2">
+              <div className='text-center py-12'>
+                <CommandLineIcon className='h-16 w-16 text-gray-600 mx-auto mb-4' />
+                <h3 className='text-xl font-medium text-gray-400 mb-2'>
                   No bugs found
                 </h3>
-                <p className="text-gray-500">
+                <p className='text-gray-500'>
                   Try adjusting your search or filter criteria.
                 </p>
               </div>
             )}
 
           {/* Need Help Section */}
-          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-secondary)]/20">
-            <CommandLineIcon className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">
+          <div className='mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-secondary)]/20'>
+            <CommandLineIcon className='h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4' />
+            <h3 className='text-2xl font-bold text-white mb-2'>
               Need to Report a Bug or Get Help?
             </h3>
-            <p className="text-gray-400 mb-6 max-w-md mx-auto">
+            <p className='text-gray-400 mb-6 max-w-md mx-auto'>
               Join our Discord community for reporting bugs, seeking support,
               and connecting with other users.
             </p>
             <a
-              href="/support"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
+              href='/support'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors'
             >
               <span>Get Support</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+              <svg className='h-4 w-4' fill='currentColor' viewBox='0 0 20 20'>
+                <path d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z' />
+                <path d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z' />
               </svg>
             </a>
           </div>
 
           {/* Navigation */}
-          <div className="mt-12 pt-8 border-t border-gray-800">
-            <div className="flex justify-between items-center">
+          <div className='mt-12 pt-8 border-t border-gray-800'>
+            <div className='flex justify-between items-center'>
               <a
-                href="/docs"
-                className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-gray-300 hover:bg-gray-800/70 hover:text-white transition-colors"
+                href='/docs'
+                className='flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-gray-300 hover:bg-gray-800/70 hover:text-white transition-colors'
               >
                 ← Back to Docs
               </a>
-              <div className="text-sm text-gray-500">
+              <div className='text-sm text-gray-500'>
                 {totalBugs} bugs • Last updated: January 8, 2025
               </div>
             </div>

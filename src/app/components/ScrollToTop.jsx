@@ -35,20 +35,20 @@ export default function ScrollToTop() {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 rounded-full bg-[var(--color-primary)] text-white shadow-lg hover:bg-opacity-90 transition-all duration-300 z-50"
+          className='fixed bottom-6 right-6 p-3 rounded-full bg-[var(--color-primary)] text-white shadow-lg hover:bg-opacity-90 transition-all duration-300 z-50'
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           whileHover={{ y: -5 }}
           whileTap={{ scale: 0.9 }}
-          aria-label="Scroll to top"
+          aria-label='Scroll to top'
         >
-          <ChevronUpIcon className="h-6 w-6" />
+          <ChevronUpIcon className='h-6 w-6' />
 
           {/* Animated ring */}
           <motion.div
-            className="absolute inset-0 rounded-full border-2 border-[var(--color-primary)] bg-transparent"
+            className='absolute inset-0 rounded-full border-2 border-[var(--color-primary)] bg-transparent'
             animate={{
               scale: [1, 1.2, 1],
               opacity: [1, 0, 1],

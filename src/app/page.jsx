@@ -16,7 +16,7 @@ export default function HomePage() {
     <>
       <StatusScript />
       <Header />
-      <main className="relative z-10">
+      <main className='relative z-10'>
         <HeroSection />
         <UpdatesSection />
         <FeaturesSection />

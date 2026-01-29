@@ -29,7 +29,7 @@ export default function FAQSection() {
     {
       question: "Can I customize the bot's prefix?",
       answer:
-        "Yes and no, Java Lava does NOT supports custom prefixes, HOWEVER the default prefix is \"J.\" and it uses the slash command system introduced by Discord. This allows our users to use commands more easily without worrying about prefix conflicts with other bots. HOWEVER, you can't create your own custom prefix at this time, but we may consider adding this feature in the future based on user feedback!",
+        'Yes and no, Java Lava does NOT supports custom prefixes, HOWEVER the default prefix is "J." and it uses the slash command system introduced by Discord. This allows our users to use commands more easily without worrying about prefix conflicts with other bots. HOWEVER, you can\'t create your own custom prefix at this time, but we may consider adding this feature in the future based on user feedback!',
     },
     {
       question: 'Is there a limit to how many commands I can use?',
@@ -45,7 +45,7 @@ export default function FAQSection() {
       question: 'Where can I find the documentation for Java Lava commands?',
       answer:
         'You can go to our Docs section located in the navigation menu at the top of our website, then click commands.',
-    }
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);
@@ -55,34 +55,34 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className='py-20 relative overflow-hidden'>
       {/* Background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[var(--color-primary)] to-transparent opacity-[0.03]"></div>
-        <div className="absolute -right-24 top-40 w-48 h-48 rounded-full bg-[var(--color-accent)] opacity-[0.04] blur-2xl"></div>
+      <div className='absolute inset-0'>
+        <div className='absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[var(--color-primary)] to-transparent opacity-[0.03]'></div>
+        <div className='absolute -right-24 top-40 w-48 h-48 rounded-full bg-[var(--color-accent)] opacity-[0.04] blur-2xl'></div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
         <motion.div
-          className="text-center mb-12"
+          className='text-center mb-12'
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-primary)] bg-opacity-20 text-[var(--color-secondary)]">
+          <span className='inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-primary)] bg-opacity-20 text-[var(--color-secondary)]'>
             FAQ
           </span>
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className='text-4xl font-bold mb-4'>
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className='text-gray-400 max-w-2xl mx-auto'>
             Get answers to the most common questions about Java Lava and how to
             get the most out of it for your Discord server.
           </p>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className='space-y-4'>
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -90,13 +90,13 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="border border-[var(--color-primary)] border-opacity-20 rounded-lg overflow-hidden"
+              className='border border-[var(--color-primary)] border-opacity-20 rounded-lg overflow-hidden'
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
+                className='flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none'
               >
-                <span className="text-lg font-medium">{faq.question}</span>
+                <span className='text-lg font-medium'>{faq.question}</span>
                 <ChevronDownIcon
                   className={`w-5 h-5 text-[var(--color-accent)] transition-transform duration-300 ${activeIndex === index ? 'transform rotate-180' : ''}`}
                 />
@@ -109,9 +109,9 @@ export default function FAQSection() {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="overflow-hidden"
+                    className='overflow-hidden'
                   >
-                    <div className="px-6 pb-4 text-gray-400">{faq.answer}</div>
+                    <div className='px-6 pb-4 text-gray-400'>{faq.answer}</div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -120,26 +120,26 @@ export default function FAQSection() {
         </div>
 
         <motion.div
-          className="mt-12 text-center"
+          className='mt-12 text-center'
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
-          <p className="text-gray-400">
+          <p className='text-gray-400'>
             Still have questions? Feel free to{' '}
             <a
-              href="/contact"
-              className="text-[var(--color-accent)] hover:underline"
+              href='/contact'
+              className='text-[var(--color-accent)] hover:underline'
             >
               contact us
             </a>{' '}
             or join our{' '}
             <a
-              href="https://discord.com/invite/tM8Y5acUta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[var(--color-accent)] hover:underline"
+              href='https://discord.com/invite/tM8Y5acUta'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-[var(--color-accent)] hover:underline'
             >
               support server
             </a>

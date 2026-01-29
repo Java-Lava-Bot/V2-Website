@@ -25,9 +25,7 @@ const sidebarSections = [
   {
     title: 'Commands',
     icon: CommandLineIcon,
-    items: [
-      { title: 'All Commands', href: '/docs/commands' },
-    ],
+    items: [{ title: 'All Commands', href: '/docs/commands' }],
   },
   {
     title: 'Updates',
@@ -71,21 +69,21 @@ export default function DocsLayout({ children }) {
 
   // Otherwise, show the sidebar layout for deeper pages
   return (
-    <div className="flex flex-col min-h-screen bg-[var(--color-dark)]">
-      <main className="flex-grow flex">
+    <div className='flex flex-col min-h-screen bg-[var(--color-dark)]'>
+      <main className='flex-grow flex'>
         {/* Sidebar */}
-        <aside className="w-64 bg-[var(--color-dark)]/50 backdrop-blur-xl border-r border-white/10 hidden lg:block">
-          <div className="sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto p-6">
-            <div className="mb-8">
-              <h2 className="text-lg font-semibold text-white mb-1">
+        <aside className='w-64 bg-[var(--color-dark)]/50 backdrop-blur-xl border-r border-white/10 hidden lg:block'>
+          <div className='sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto p-6'>
+            <div className='mb-8'>
+              <h2 className='text-lg font-semibold text-white mb-1'>
                 Documentation
               </h2>
-              <p className="text-sm text-gray-400">
+              <p className='text-sm text-gray-400'>
                 Explore Java Lava features
               </p>
             </div>
 
-            <nav className="space-y-6">
+            <nav className='space-y-6'>
               {sidebarSections.map(section => {
                 const Icon = section.icon;
                 const isExpanded = expandedCategories[section.title];
@@ -93,24 +91,24 @@ export default function DocsLayout({ children }) {
                 return (
                   <div key={section.title}>
                     <button
-                      className="flex items-center justify-between w-full text-left group mb-3"
+                      className='flex items-center justify-between w-full text-left group mb-3'
                       onClick={() => toggleCategory(section.title)}
                     >
-                      <div className="flex items-center gap-2">
-                        <Icon className="h-4 w-4 text-[var(--color-primary)] group-hover:text-[var(--color-accent)] transition-colors" />
-                        <span className="font-medium text-gray-200 group-hover:text-white transition-colors">
+                      <div className='flex items-center gap-2'>
+                        <Icon className='h-4 w-4 text-[var(--color-primary)] group-hover:text-[var(--color-accent)] transition-colors' />
+                        <span className='font-medium text-gray-200 group-hover:text-white transition-colors'>
                           {section.title}
                         </span>
                       </div>
                       {isExpanded ? (
-                        <ChevronDownIcon className="w-4 h-4 text-gray-400" />
+                        <ChevronDownIcon className='w-4 h-4 text-gray-400' />
                       ) : (
-                        <ChevronRightIcon className="w-4 h-4 text-gray-400" />
+                        <ChevronRightIcon className='w-4 h-4 text-gray-400' />
                       )}
                     </button>
 
                     {isExpanded && (
-                      <ul className="ml-6 space-y-2">
+                      <ul className='ml-6 space-y-2'>
                         {section.items.map(item => (
                           <li key={item.href}>
                             <Link
@@ -135,9 +133,9 @@ export default function DocsLayout({ children }) {
         </aside>
 
         {/* Content */}
-        <div className="flex-1 overflow-auto">
-          <div className="max-w-4xl mx-auto p-8">
-            <article className="prose prose-invert prose-lg max-w-none">
+        <div className='flex-1 overflow-auto'>
+          <div className='max-w-4xl mx-auto p-8'>
+            <article className='prose prose-invert prose-lg max-w-none'>
               {children}
             </article>
           </div>

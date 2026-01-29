@@ -28,37 +28,37 @@ export default function UpdatesSection() {
 
   const updates = [
     {
-      icon: <BugAntIcon className="h-6 w-6" />,
+      icon: <BugAntIcon className='h-6 w-6' />,
       title: 'Fixed bugs!',
       description:
         'We have fixed the ban command after multiple developer errors sorry everyone.',
     },
     {
-      icon: <XMarkIcon className="h-6 w-6" />,
+      icon: <XMarkIcon className='h-6 w-6' />,
       title: 'Removed commands',
       description:
         'We have removed the /gag-a-member command from all bots. I thought it was removed on all bots but somehow it was not on multiple custom branding bots and premium.',
     },
     {
-      icon: <ArrowPathIcon className="h-6 w-6" />,
+      icon: <ArrowPathIcon className='h-6 w-6' />,
       title: 'New features!',
       description:
         'We have added some new features to the bot and website! check them out below!',
     },
     {
-      icon: <AdjustmentsHorizontalIcon className="h-6 w-6" />,
+      icon: <AdjustmentsHorizontalIcon className='h-6 w-6' />,
       title: 'Bot itself',
       description:
         'Java Lava now can help remind you of things you set through the bot, this requires you to have dms turn on!',
     },
     {
-      icon: <UsersIcon className="h-6 w-6" />,
+      icon: <UsersIcon className='h-6 w-6' />,
       title: 'Website updates',
       description:
         'We have buttons that turn from for example yellow to pink for our premium button! And the new premium page, about us, and in Development a documentation page!',
     },
     {
-      icon: <ArrowsPointingOutIcon className="h-6 w-6" />,
+      icon: <ArrowsPointingOutIcon className='h-6 w-6' />,
       title: 'Open Beta bot!',
       description:
         'We have made a brand new Java Lava Open beta discord bot! It is unstable but it has the newest features!',
@@ -66,58 +66,58 @@ export default function UpdatesSection() {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section className='py-20 relative'>
       {/* Background design elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[var(--color-primary)]\60 opacity-5 blur-3xl"></div>
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[var(--color-secondary)]\60 opacity-5 blur-3xl"></div>
+      <div className='absolute inset-0 overflow-hidden'>
+        <div className='absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[var(--color-primary)]\60 opacity-5 blur-3xl'></div>
+        <div className='absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[var(--color-secondary)]\60 opacity-5 blur-3xl'></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
         <motion.div
-          className="text-center mb-16"
+          className='text-center mb-16'
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm rounded-full bg-[var(--color-secondary)] bg-opacity-20 text-[var(--color-WhatsNew)]">
+          <span className='inline-block px-4 py-1 mb-4 text-sm rounded-full bg-[var(--color-secondary)] bg-opacity-20 text-[var(--color-WhatsNew)]'>
             What's New
           </span>
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="text-[var(--color-accent)]">Version 1.20</span> has
+          <h2 className='text-4xl font-bold mb-4'>
+            <span className='text-[var(--color-accent)]'>Version 1.20</span> has
             Released!
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className='text-gray-400 max-w-2xl mx-auto'>
             Released on July 24th, 2025 - Check out the latest improvements and
             changes to Java Lava
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
           variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true, margin: '-50px' }}
         >
           {updates.map((update, index) => (
             <motion.div
               key={index}
-              className="p-6 rounded-lg border border-[var(--color-primary)] border-opacity-20 bg-[#1a1a2e] hover:border-[var(--color-secondary)] transition-all duration-300"
+              className='p-6 rounded-lg border border-[var(--color-primary)] border-opacity-20 bg-[#1a1a2e] hover:border-[var(--color-secondary)] transition-all duration-300'
               variants={itemVariants}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              <div className="flex items-start">
-                <div className="flex-shrink-0 p-2 rounded-md bg-[var(--color-primary)] bg-opacity-20 text-[var(--color-accent)]">
+              <div className='flex items-start'>
+                <div className='flex-shrink-0 p-2 rounded-md bg-[var(--color-primary)] bg-opacity-20 text-[var(--color-accent)]'>
                   {update.icon}
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold mb-2 text-[var(--color-accent)]">
+                <div className='ml-4'>
+                  <h3 className='text-lg font-semibold mb-2 text-[var(--color-accent)]'>
                     {update.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{update.description}</p>
+                  <p className='text-gray-400 text-sm'>{update.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -125,29 +125,29 @@ export default function UpdatesSection() {
         </motion.div>
 
         <motion.div
-          className="mt-12 text-center"
+          className='mt-12 text-center'
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6 }}
         >
           <a
-            href="/docs/updates"
-            className="inline-flex items-center px-6 py-2 rounded-lg border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-Changelog)] hover:bg-opacity-10 transition-all duration-300"
+            href='/docs/updates'
+            className='inline-flex items-center px-6 py-2 rounded-lg border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-Changelog)] hover:bg-opacity-10 transition-all duration-300'
           >
             View Complete Changelog
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-4 w-4 ml-2'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                strokeLinecap='round'
+                strokeLinejoin='round'
                 strokeWidth={2}
-                d="M9 5l7 7-7 7"
+                d='M9 5l7 7-7 7'
               />
             </svg>
           </a>

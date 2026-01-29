@@ -91,13 +91,14 @@ const docSections = [
   },
   {
     title: 'Java Lava Advanced Docs',
-    description: 'In-depth technical documentation for developers and advanced users which is being made right now.',
+    description:
+      'In-depth technical documentation for developers and advanced users which is being made right now.',
     href: '/docs/advanced',
     icon: BookOpenIcon,
     color: 'text-lime-400',
     bgColor: 'bg-lime-500/10',
     borderColor: 'border-lime-500/20',
-  }
+  },
 ];
 
 export default function DocsPage() {
@@ -106,26 +107,26 @@ export default function DocsPage() {
       <StatusScript />
       <Header />
 
-      <main className="relative min-h-screen">
+      <main className='relative min-h-screen'>
         {/* Hero Section */}
-        <div className="relative pt-20 pb-16 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 mb-6">
-                <BookOpenIcon className="h-5 w-5 text-[var(--color-primary)] mr-2" />
-                <span className="text-sm font-medium text-[var(--color-primary)]">
+        <div className='relative pt-20 pb-16 overflow-hidden'>
+          <div className='absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent'></div>
+          <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='text-center'>
+              <div className='inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 mb-6'>
+                <BookOpenIcon className='h-5 w-5 text-[var(--color-primary)] mr-2' />
+                <span className='text-sm font-medium text-[var(--color-primary)]'>
                   Documentation
                 </span>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <h1 className='text-5xl md:text-6xl font-bold mb-6'>
                 Java Lava
                 <br />
-                <span className="text-gradient bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)]">
+                <span className='text-gradient bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)]'>
                   Documentation
                 </span>
               </h1>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+              <p className='text-xl text-gray-400 max-w-3xl mx-auto mb-8'>
                 Everything you need to build amazing Discord communities with
                 Java Lava's powerful moderation and engagement tools.
               </p>
@@ -134,8 +135,8 @@ export default function DocsPage() {
         </div>
 
         {/* Documentation Grid */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20'>
+          <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {docSections.map((section, index) => {
               const Icon = section.icon;
               return (
@@ -144,7 +145,7 @@ export default function DocsPage() {
                   href={section.href}
                   className={`group block p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${section.bgColor} ${section.borderColor} hover:border-opacity-40`}
                 >
-                  <div className="flex items-center mb-4">
+                  <div className='flex items-center mb-4'>
                     <div
                       className={`p-3 rounded-xl ${section.bgColor} ${section.borderColor} border mr-4`}
                     >
@@ -154,22 +155,22 @@ export default function DocsPage() {
                       {section.title}
                     </h3>
                   </div>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
+                  <p className='text-gray-300 mb-6 leading-relaxed'>
                     {section.description}
                   </p>
-                  <div className="flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-200 transition-colors">
+                  <div className='flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-200 transition-colors'>
                     <span>Explore</span>
                     <svg
-                      className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+                      className='ml-2 h-4 w-4 transition-transform group-hover:translate-x-1'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
                     >
                       <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
                         strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        d='M17 8l4 4m0 0l-4 4m4-4H3'
                       />
                     </svg>
                   </div>
@@ -179,25 +180,25 @@ export default function DocsPage() {
           </div>
 
           {/* Quick Stats */}
-          <div className="mt-20 p-8 rounded-2xl glass-effect">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className='mt-20 p-8 rounded-2xl glass-effect'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8 text-center'>
               <div>
-                <div className="text-3xl font-bold text-[var(--color-accent)] mb-2">
+                <div className='text-3xl font-bold text-[var(--color-accent)] mb-2'>
                   50+
                 </div>
-                <div className="text-gray-300">Available Commands</div>
+                <div className='text-gray-300'>Available Commands</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[var(--color-secondary)] mb-2">
+                <div className='text-3xl font-bold text-[var(--color-secondary)] mb-2'>
                   99.9%
                 </div>
-                <div className="text-gray-300">Uptime Reliability</div>
+                <div className='text-gray-300'>Uptime Reliability</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[var(--color-primary)] mb-2">
+                <div className='text-3xl font-bold text-[var(--color-primary)] mb-2'>
                   24/7
                 </div>
-                <div className="text-gray-300">Active Support</div>
+                <div className='text-gray-300'>Active Support</div>
               </div>
             </div>
           </div>
