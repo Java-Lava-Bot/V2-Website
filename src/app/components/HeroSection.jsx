@@ -110,15 +110,13 @@ export default function HeroSection() {
                 {/* Features Link */}
               <a
             href="/features"
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-3 rounded-lg bg-[var(--color-secondary)] text-white hover:bg-opacity-90 transition-all duration-300"
           >
-            Explore All Features
+            Explore all features
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 ml-2"
-              fill="currentColor"
+              fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
