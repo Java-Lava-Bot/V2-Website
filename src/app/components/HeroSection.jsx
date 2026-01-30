@@ -168,7 +168,7 @@ export default function HeroSection() {
               <div className="ml-3">
                 <span className="text-sm font-medium">Trusted by</span>
                 <span className="text-sm text-[var(--color-accent)] ml-1 font-semibold">
-                  57+
+                  61+
                 </span>
                 <span className="text-sm ml-1 font-medium">servers</span>
               </div>
@@ -207,7 +207,7 @@ export default function HeroSection() {
                       <div className="text-xs text-gray-400 mb-1">
                         Active Servers
                       </div>
-                      <div className="text-2xl font-bold">57+</div>
+                      <div className="text-2xl font-bold">61+</div>
                     </div>
                     <div className="bg-[var(--color-accent)] bg-opacity-10 p-4 rounded-lg">
                       <div className="text-xs text-Black-400 mb-1">
