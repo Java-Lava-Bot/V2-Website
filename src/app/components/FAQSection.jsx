@@ -127,14 +127,7 @@ export default function FAQSection() {
           transition={{ delay: 0.6 }}
         >
           <p className="text-gray-400">
-            Still have questions? Feel free to{' '}
-            <a
-              href="/contact"
-              className="text-[var(--color-accent)] hover:underline"
-            >
-              contact us
-            </a>{' '}
-            or join our{' '}
+            Still have questions? Feel free to join our{' '}
             <a
               href="https://discord.com/invite/tM8Y5acUta"
               target="_blank"

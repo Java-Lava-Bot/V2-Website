@@ -24,7 +24,7 @@ const faqData = [
           'Simply click our invitation link and select your server. Make sure you have Administrator permissions on the server you want to add the bot to.',
         link: {
           text: 'Invite Java Lava',
-          url: 'https://discord.com/oauth2/authorize?client_id=1305190785536360519',
+          url: 'https://discord.com/oauth2/authorize?client_id=1305190785536360519&scope=bot&permissions=8',
         },
       },
       {
@@ -35,7 +35,7 @@ const faqData = [
       {
         question: 'What version is Java Lava currently on?',
         answer:
-          'Java Lava is currently on version 1.20.2! This version includes major bug fixes, new features, and improved stability. Check our updates section for detailed changelog information.',
+          'Java Lava is currently on version 2.0! This version includes a complete rewrite with improved performance and new features. Check our updates section for detailed changelog information.',
       },
     ],
   },
@@ -46,12 +46,19 @@ const faqData = [
         question: 'Java Lava is offline, what should I do?',
         answer:
           'If Java Lava appears offline, it might be undergoing maintenance, experiencing temporary downtime, or having connection issues. Check our status page and Discord server for real-time updates.',
-        link: { text: 'Check Status', url: 'https://javalava.statuspage.io/' },
+        link: { 
+          text: 'Check Status', 
+          url: 'https://javalava.statuspage.io/'
+        },
       },
       {
         question: "Commands aren't working properly",
         answer:
           'First, ensure Java Lava has the necessary permissions in your server. If issues persist, try refreshing Discord or rejoining the voice channel. For persistent problems, contact our support team.',
+          link: {
+            text: 'Get Support',
+            url: 'https://discord.gg/tM8Y5acUta',
+          },
       },
       {
         question: 'How do I report a bug?',
@@ -82,14 +89,22 @@ const faqData = [
         },
       },
       {
-        question: "What's new in version 1.20?",
+        question: "What's new in version 2.00?",
         answer:
-          'Version 1.20 includes major bug fixes (ban command errors, memory leaks), a new reminder system, open beta bot access, premium features, and this improved documentation site!',
+          'Version 2.00 is a WHOLE rewrite of Java Lava, featuring a new architecture, improved performance, and a host of new features!',
+        link: {
+          text: 'View Changelog',
+          url: '/docs/updates',
+        }
       },
       {
         question: 'Can I test beta features?',
         answer:
-          "Yes! We now offer an open beta bot where you can test new features before they're released to the main bot. Join our Discord server to get access.",
+          "Yes! We now offer a public beta bot where you can test new features before they're released to the main bot. Click the Java Lava Beta Bot link below to invite it to your server!",
+        link: {
+          text: 'Java Lava Beta Bot',
+          url: 'https://discord.com/oauth2/authorize?client_id=1390723130904805376&scope=bot&permissions=8',
+        }
       },
     ],
   },

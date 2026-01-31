@@ -10,6 +10,8 @@ const JR_PFPname = 'JR_PFP.png';
 const JR_PFP = require(`../public/avatars/${JR_PFPname}`);
 const JJ_PFPname = 'JJ_PFP.png';
 const JJ_PFP = require(`../public/avatars/${JJ_PFPname}`);
+const Ryan_profile_pictureName = 'Ryan_pfp.png';
+const Ryan_PFP = require(`../public/avatars/${Ryan_profile_pictureName}`);
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -44,6 +46,14 @@ export default function TestimonialsSection() {
       author: 'JJ The Purple Lad',
       role: 'Former Community Manager',
       avatar: `${JJ_PFP.default.src}`,
+    },
+    {
+      id: 5,
+      quote:
+        'It\'s quite easy to work with javalava, apart from some bugs but the team is doing a great job in resolving those bugs🙌',
+      author: 'ℝ𝕪𝕒𝕟𝟛𝟛𝟜𝟛',
+      role: 'Server Administrator',
+      avatar: `${Ryan_PFP.default.src}`,
     },
   ];
 

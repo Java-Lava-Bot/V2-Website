@@ -27,17 +27,17 @@ export default function DocsContentPage() {
 
 Welcome to the official Java Lava Discord bot documentation! This comprehensive guide will help you get the most out of your Discord server with our powerful moderation and community tools.
 
-### Current Version: 1.20
+### Current Version: 2.0
 
-Java Lava is currently on **version 1.20**, packed with improvements and new features to enhance your Discord server experience.
+Java Lava is currently on **version 2.0**, packed with improvements and new features to enhance your Discord server experience.
 
-## What's New in Version 1.20?
+## What's New in Version 2.0?
 
 ### 🐛 Major Bug Fixes
 
 We've addressed several critical issues to improve stability and performance:
 
-1. **Ban Command Fix** - Resolved the \`TypeError: Cannot read properties of undefined (reading 'has')\` error that was affecting the ban command functionality.
+1. **Ban command Fix** - Resolved the \`TypeError: Cannot read properties of undefined (reading 'has')\` error that was affecting the ban command functionality.
 
 2. **Discord.js v14.21.0 Compatibility** - Fixed memory leak issues and improved overall bot stability with the latest Discord.js updates.
 
@@ -60,7 +60,7 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 
 ### Quick Setup
 
-1. **Invite the Bot** - Use our [invitation link](https://discord.com/oauth2/authorize?client_id=1305190785536360519) to add Java Lava to your server
+1. **Invite the Bot** - Use our [invite](https://discord.com/oauth2/authorize?client_id=1305190785536360519) to add Java Lava to your server
 2. **Set Permissions** - Ensure the bot has the necessary permissions for moderation
 3. **Configure Commands** - Set up your preferred settings using our setup commands
 4. **Start Moderating** - Begin using Java Lava's powerful features!

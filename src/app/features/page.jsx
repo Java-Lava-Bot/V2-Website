@@ -25,17 +25,22 @@ const faqData = [
       {
         question: 'What are some of the commands I can use?',
         answer:
-          'Java Lava offers a variety of commands for moderation, fun, and utility. For a full list of commands, check our documentation or use the /help command in Discord.',
+          'Java Lava offers a variety of commands for moderation, community, fun, and utility. For a full list of commands, check our documentation or use the /help command in Discord.',
+      },
+      {
+        question: 'How do I setup Java Lava?',
+        answer:
+          'Java Lava needs NO setup. Simply invite the bot to your server and start using its features immediately!',
       },
     ],
   },
   {
-    category: 'Moderation commands',
+    category: 'Moderation Commands',
     questions: [
       {
-        question: 'I want to setup the automd system, how do I do that? ',
+        question: 'I want to setup the automod system, how do I do that? ',
         answer:
-          'To make the automod system to work, you need to run the /automod commands and use the command selector for it!',
+          'To make the automod system to work, you need to run the /automod commands and use the command selector for it! and make sure you have the manage server permission otherwise the commands will NOT show up!',
       },
       {
         question: "I want to use the moderation commands like timeout, kick, ban, but it's not working?",
@@ -51,15 +56,20 @@ const faqData = [
           url: 'https://discord.gg/tM8Y5acUta',
         },
       },
+      {
+        question: "I want to use the moderation commands but I don't see the automod commands, why?",
+        answer:
+          'If you are wanting to timeout a member, warn them, then you will need the moderate members permission. This is the same for ban and kick commands, you will need the ban members and kick members permission to use those commands.',
+      },
     ],
   },
   {
-    category: 'Community commands',
+    category: 'Community Commands',
     questions: [
       {
-        question: 'I want to use commands like /clicker, or /poke, how do I set those up?',
+        question: 'I want to use commands like /clicker, or /poll, how do I set those up?',
         answer:
-          'These do NOT require setup, run them and have fun!',
+          'These do NOT require setup, run them and have fun! however our poll command does require you to have the manage messages permission to get the poll command to show up!',
       },
       {
         question: 'Where can I suggest new features?',
@@ -69,6 +79,46 @@ const faqData = [
           text: 'Make a Suggestion',
           url: 'https://discord.gg/tM8Y5acUta',
         },
+      },
+    ],
+  },
+  {
+    category: 'Fun Commands',
+    questions: [
+      {
+        question: 'I want to use commands like /8ball, or /poke, how do I set those up?',
+        answer:
+          'These do NOT require setup, run them and have fun!',
+      },
+      {
+        question: 'Some fun commands are not working, why?',
+        answer:
+          'Some fun commands may require specific permissions to function properly. For example, commands that send images or GIFs may need the "Embed Links" permission. Ensure Java Lava has the necessary permissions in your server settings.',
+      },
+      {
+        question: 'I want to suggest new fun commands, how do I do that?',
+        answer:
+          'Join our Discord server and use the suggestions channel! We love hearing from our community and many user suggestions have been implemented in past updates.',
+      },
+    ],
+  },
+  {
+    category: 'Utility Commands',
+    questions: [
+      {
+        question: 'I want to use commands like /8ball, or /poke, how do I set those up?',
+        answer:
+          'These do NOT require setup, run them and have fun!',
+      },
+      {
+        question: 'Some utility commands are not working, why?',
+        answer:
+          'Some utility commands may require specific permissions to function properly. For example, commands that send images or GIFs may need the "Embed Links" permission. Ensure Java Lava has the necessary permissions in your server settings.',
+      },
+      {
+        question: 'I want to suggest new utility commands, how do I do that?',
+        answer:
+          'Join our Discord server and use the suggestions channel! We love hearing from our community and many user suggestions have been implemented in past updates.',
       },
     ],
   },
@@ -118,7 +168,7 @@ export default function FAQPage() {
               >
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                   <div
-                    className={`w-2 h-8 rounded-full ${categoryIndex === 0 ? 'bg-[var(--color-primary)]' : categoryIndex === 1 ? 'bg-[var(--color-secondary)]' : categoryIndex === 2 ? 'bg-[var(--color-accent)]' : 'bg-gray-500'}`}
+                    className={`w-2 h-8 rounded-full ${categoryIndex === 0 ? 'bg-[var(--color-primary)]' : categoryIndex === 1 ? 'bg-[var(--color-secondary)]' : categoryIndex === 2 ? 'bg-[var(--color-accent)]' : categoryIndex === 3 ? 'bg-[var(--color-policies)]' : categoryIndex === 4 ? 'bg-[var(--color-WhatsNew)]' : 'bg-gray-500'}`}
                   ></div>
                   {category.category}
                 </h2>

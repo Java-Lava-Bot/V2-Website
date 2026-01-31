@@ -28,7 +28,7 @@ const docSections = [
   {
     title: 'Commands',
     description:
-      'Complete reference for all moderation, community, and utility commands',
+      'Complete reference for all moderation, community, fun, and utility commands',
     href: '/docs/commands',
     icon: CommandLineIcon,
     color: 'text-blue-400',
