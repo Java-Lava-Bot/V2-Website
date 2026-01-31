@@ -14,7 +14,7 @@ export default function StatsSection() {
   const y = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
 
   const stats = [
-    { value: '61+', label: 'Servers' },
+    { value: '63+', label: 'Servers' },
     { value: '1.5k+', label: 'Users' },
     { value: '63.5M+', label: 'Commands Run' },
     { value: '99%', label: 'Uptime' },
@@ -106,7 +106,7 @@ export default function StatsSection() {
             </div>
             <p className="text-gray-400">
               We constantly monitor our systems to ensure maximum uptime and
-              performance. Our infrastructure is designed to handle millions of
+              performance. Our infrastructure is designed to handle tens of thousands of
               commands every day without breaking a sweat.
             </p>
           </div>
