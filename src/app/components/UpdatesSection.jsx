@@ -28,16 +28,16 @@ export default function UpdatesSection() {
 
   const updates = [
     {
-      icon: <BugAntIcon className="h-6 w-6" />,
-      title: 'Fixed bugs!',
+      icon: <ArrowPathIcon className="h-6 w-6" />,
+      title: 'Study Buddy!',
       description:
-        'We have fixed the ban command after multiple developer errors sorry everyone.',
+        'We have implement a study buddy feature to help you stay focused and productive while studying or working on tasks.',
     },
     {
       icon: <XMarkIcon className="h-6 w-6" />,
-      title: 'Removed commands',
+      title: 'Removed old automod commands',
       description:
-        'We have removed the /gag-a-member command from all bots. I thought it was removed on all bots but somehow it was not on multiple custom branding bots and premium.',
+        'We have removed the old automod commands from the bot, as they have been replaced with the new automod system!',
     },
     {
       icon: <ArrowPathIcon className="h-6 w-6" />,
@@ -55,13 +55,13 @@ export default function UpdatesSection() {
       icon: <UsersIcon className="h-6 w-6" />,
       title: 'Website updates',
       description:
-        'We have buttons that turn from for example yellow to pink for our premium button! And the new premium page, about us, and in Development a documentation page!',
+        'We have updated the website as with our version 2 update!',
     },
     {
       icon: <ArrowsPointingOutIcon className="h-6 w-6" />,
       title: 'Open Beta bot!',
       description:
-        'We have made a brand new Java Lava Open beta discord bot! It is unstable but it has the newest features!',
+        'We have a Java Lava Beta Discord bot where you can test upcoming features in version 2.1! It is unstable but it has the newest features, try it out!',
     },
   ];
 
@@ -85,11 +85,11 @@ export default function UpdatesSection() {
             What's New
           </span>
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-[var(--color-accent)]">Version 1.20</span> has
+            <span className="text-[var(--color-accent)]">Version 2.00</span> has
             Released!
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Released on July 24th, 2025 - Check out the latest improvements and
+            Released on February 24th, 2026 - Check out the latest improvements and
             changes to Java Lava
           </p>
         </motion.div>

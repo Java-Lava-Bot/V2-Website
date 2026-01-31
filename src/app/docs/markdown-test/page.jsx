@@ -24,9 +24,9 @@ export default function MarkdownTestPage() {
         
         <pre><code className="language-javascript">
         {`function hello() {
-  console.log("Hello world");
-  return true;
-}`}
+        console.log("Hello world");
+        return true;
+        }`}
         </code></pre>
         
         <p>Here is some <code>inline code</code> in a paragraph.</p>
