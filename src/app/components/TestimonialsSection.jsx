@@ -12,6 +12,8 @@ const JJ_PFPname = 'JJ_PFP.png';
 const JJ_PFP = require(`../public/avatars/${JJ_PFPname}`);
 const Ryan_profile_pictureName = 'Ryan_pfp.png';
 const Ryan_PFP = require(`../public/avatars/${Ryan_profile_pictureName}`);
+const ziggy_profile_pictureName = 'ziggy.gif';
+const ziggy_PFP = require(`../public/avatars/${ziggy_profile_pictureName}`);
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -55,6 +57,14 @@ export default function TestimonialsSection() {
       role: 'Server Administrator',
       avatar: `${Ryan_PFP.default.src}`,
     },
+    {
+      id: 6,
+      quote:
+        "Java lava is a decent bot, great for small servers. Mainly tailored towards mobile users with automod commands. I'd recommend you adding the bot! 😮",
+        author: "ziggy._.mc",
+      role: 'Server Owner & Developer',
+      avatar: `${ziggy_PFP.default.src}`,
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
