@@ -24,9 +24,7 @@ const bugCategories = [
       {
         name: 'None found yet',
         description: 'We haven\'t identified any major bugs so far.',
-        Reproduced: '/ban @user [reason]',
-        permissions: 'Ban Members',
-        examples: ['/ban @user Spamming in chat', '/ban @user'],
+        Reproduced: '',
       },
     ],
   },
@@ -42,8 +40,6 @@ const bugCategories = [
         name: 'None found yet',
         description: 'We haven\'t identified any intermediate bugs so far.',
         Reproduced: '',
-        permissions: 'Ban Members',
-        examples: ['/ban @user Spamming in chat', '/ban @user'],
       },
     ],
   },
@@ -59,8 +55,6 @@ const bugCategories = [
         name: 'None found yet',
         description: 'We haven\'t identified any minor bugs so far.',
         Reproduced: '',
-        permissions: 'Ban Members',
-        examples: ['/ban @user Spamming in chat', '/ban @user'],
       },
     ],
   },
@@ -185,7 +179,6 @@ export default function BugsPage() {
                   <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                     {category.bugs.map((bug, bugIndex) => {
                       const uniqueKey = `${category.name}-${bug.name}`;
-                      const isExpanded = expandedBugs[uniqueKey];
 
                       return (
                         <div
@@ -196,18 +189,6 @@ export default function BugsPage() {
                             <h3 className="text-lg font-bold text-white font-mono pr-2">
                               {bug.name}
                             </h3>
-                            <button
-                              onClick={() =>
-                                toggleBugDetails(
-                                  category.name,
-                                  bug.name
-                                )
-                              }
-                              className={`flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${category.color} border ${category.borderColor} hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-opacity-50`}
-                              style={{ focusRingColor: category.color }}
-                            >
-                              {isExpanded ? 'Less' : 'More'}
-                            </button>
                           </div>
 
                           <p className="text-gray-300 text-sm mb-4 leading-relaxed min-h-[2.5rem]">
@@ -217,43 +198,12 @@ export default function BugsPage() {
                           <div className="space-y-3">
                             <div>
                               <span className="text-xs font-medium text-gray-400 mb-1 block">
-                                Usage:
+                                Reproduced Steps:
                               </span>
                               <code className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed">
-                                {bug.usage}
+                                {bug.Reproduced}
                               </code>
                             </div>
-
-                            {isExpanded && (
-                              <div className="space-y-4 pt-4 border-t border-gray-700/50 animate-fade-in">
-                                <div>
-                                  <span className="text-xs font-medium text-gray-400 mb-1 block">
-                                    Required Permission:
-                                  </span>
-                                  <p className="text-sm text-gray-300 bg-gray-800/30 rounded-md p-2">
-                                    {bug.permissions}
-                                  </p>
-                                </div>
-
-                                <div>
-                                  <span className="text-xs font-medium text-gray-400 mb-2 block">
-                                    Examples:
-                                  </span>
-                                  <div className="space-y-2">
-                                    {bug.examples.map(
-                                      (example, exIndex) => (
-                                        <code
-                                          key={exIndex}
-                                          className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed"
-                                        >
-                                          {example}
-                                        </code>
-                                      )
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                            )}
                           </div>
                         </div>
                       );
