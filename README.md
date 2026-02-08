@@ -1,15 +1,21 @@
-# How to use
+# Discord Moderation Bot Documentation
 
-If your making this on your laptop or local PC use the command:
-(Once) npm install
-and
+A modern documentation website built with Next.js for a multi-purpose Discord moderation bot.
+
+## Getting Started
+
+```bash
+npm install
 npm run dev
-to start the site local only. Access it at http://localhost:3000/
+```
 
-If your deploying the site to a server di the following:
+Open [http://localhost:3000](http://localhost:3000) to view the documentation.
 
-1. Run "npm install"
-2. Run "npm run build"
-3. Run "npm run start"
+## Features
 
-Thats it
+- 📚 Clean documentation layout
+- 🎨 Modern UI with Tailwind CSS
+- 📱 Fully responsive
+- 🔍 Easy navigation
+- ⚡ Fast page loads with Next.js
+```
