@@ -56,14 +56,6 @@ export default function Footer() {
                 <i className="fab fa-discord text-xl"></i>
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[var(--color-primary)]"
-              >
-                <i className="fab fa-twitter text-xl"></i>
-              </a>
-              <a
                 href="https://github.com/Java-Lava-Bot"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -101,6 +93,11 @@ export default function Footer() {
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
                 >
                   Documentation
+                </Link>
+              </li>
+              <li>
+                <Link href="https://javalavadocs.phillsphanbh3.me/" className="text-gray-400 hover:text-[var(--color-accent)] transition" target="_blank" rel="noopener noreferrer">
+                  Advanced Documentation
                 </Link>
               </li>
               <li>

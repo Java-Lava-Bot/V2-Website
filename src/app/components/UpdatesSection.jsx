@@ -59,9 +59,9 @@ export default function UpdatesSection() {
     },
     {
       icon: <ArrowsPointingOutIcon className="h-6 w-6" />,
-      title: 'Open Beta bot!',
+      title: 'New invite system!',
       description:
-        'We have a Java Lava Beta Discord bot where you can test upcoming features in version 2.1! It is unstable but it has the newest features, try it out!',
+        'We have implemented a new invite system for the bot, which allows you to easily invite the bot to your server and manage your invites through the website and it redirects to this page!',
     },
   ];
 
