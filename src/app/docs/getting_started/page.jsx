@@ -25,34 +25,7 @@ export default function DocsContentPage() {
 
 ## Welcome to Java Lava Bot
 
-Welcome to the official Java Lava Discord bot documentation! This comprehensive guide will help you get the most out of your Discord server with our powerful moderation and community tools.
-
-### Current Version: 2.0
-
-Java Lava is currently on **version 2.0**, packed with improvements and new features to enhance your Discord server experience.
-
-## What's New in Version 2.0?
-
-### 🐛 Major Bug Fixes
-
-We've addressed several critical issues to improve stability and performance:
-
-1. **Ban command Fix** - Resolved the \`TypeError: Cannot read properties of undefined (reading 'has')\` error that was affecting the ban command functionality.
-
-2. **Discord.js v14.21.0 Compatibility** - Fixed memory leak issues and improved overall bot stability with the latest Discord.js updates.
-
-3. **Deprecated Ephemeral Warnings** - Updated all commands to use modern Discord flags instead of deprecated ephemeral properties.
-
-### ✨ New Features
-
-- **Enhanced Reminder System** - A completely rebuilt reminder system with improved reliability
-- **Open Beta Bot** - Test new features before they reach the main bot
-- **Premium Features** - Access to exclusive functionality for premium users
-- **Improved Documentation** - This beautiful new documentation site you're viewing!
-
-### 🗑️ Removed Features
-
-- Legacy timeout command variations have been removed for better user experience
+Welcome to the official Java Lava Discord bot documentation! This comprehensive guide will help you get the most out of your Discord server with our powerful moderation and community tools. Whether you're new to Discord bots or an experienced server owner, Java Lava has something for everyone. Let's dive in and explore how to set up and use Java Lava to enhance your community experience.
 
 ## Getting Started
 
@@ -67,13 +40,13 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 
 ### Detailed Configuration
 
-1. **Invite Java Lava**: Click [here](https://discord.com/oauth2/authorize?client_id=1305190785536360519) to invite the bot to your server. Make sure to grant it the necessary permissions for optimal functionality.
+1. **Invite Java Lava**: Click (here)[https://discord.com/oauth2/authorize?client_id=1305190785536360519] to invite the bot to your server. Make sure to grant it the necessary permissions for optimal functionality.
 
 2. **Set Up Roles**: Create a role for Java Lava with appropriate permissions, including managing messages, banning members, and reading message history.
 
-3. **Configure Commands and what you need to get started**: Use the \`/setup\` command to configure Java Lava according to your server's needs. You can customize welcome messages, moderation settings, and more.
+3. **Configure Systems and what you need to get started**: Use the automod commands to set up automated moderation rules. You can customize the rules to fit your server's specific needs, and way more!
 
-4. **Explore Features**: Familiarize yourself with Java Lava's features by checking out the command list using \`/help\`. Experiment with moderation commands, fun interactions, and community engagement tools.
+4. **Explore Features**: Familiarize yourself with Java Lava's features by checking out the command list using \`/help\` and if you got more questions check out the docs! Experiment with moderation commands, fun interactions, and community engagement tools.
 
 5. **Let Java Lava Work**: Sit back and let Java Lava help you manage and grow your Discord community effectively!
 

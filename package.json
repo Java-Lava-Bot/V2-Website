@@ -29,10 +29,10 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@tailwindcss/typography": "^0.5.16",
-    "baseline-browser-mapping": "^2.8.32",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.6",
+    "@tailwindcss/typography": "^0.5.19",
+    "baseline-browser-mapping": "^2.9.19",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^15.4.6",
     "prettier": "^3.2.4",
     "tailwindcss": "^4"
   }
