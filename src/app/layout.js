@@ -2,6 +2,7 @@ import './globals.css';
 import ScrollToTop from './components/ScrollToTop';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import favicon from './public/Java_Lava_Logo/favicon.ico';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
       >
         {children}
         <ScrollToTop />
+        <SpeedInsights />
       </body>
     </html>
   );
