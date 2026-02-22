@@ -88,15 +88,6 @@ const docSections = [
     color: 'text-yellow-400',
     bgColor: 'bg-yellow-500/10',
     borderColor: 'border-yellow-500/20',
-  },
-  {
-    title: 'Java Lava Advanced Docs',
-    description: 'In-depth technical documentation for developers and advanced users.',
-    href: 'https://javalavadocs.phillsphanbh3.me/',
-    icon: BookOpenIcon,
-    color: 'text-lime-400',
-    bgColor: 'bg-lime-500/10',
-    borderColor: 'border-lime-500/20',
   }
 ];
 

@@ -96,11 +96,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="https://javalavadocs.phillsphanbh3.me/" className="text-gray-400 hover:text-[var(--color-accent)] transition" target="_blank" rel="noopener noreferrer">
-                  Advanced Documentation
-                </Link>
-              </li>
-              <li>
                 <a
                   href="https://javalava.statuspage.io/"
                   className="text-gray-400 hover:text-[var(--color-accent)] transition"
