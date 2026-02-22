@@ -15,7 +15,6 @@ const navLinks = [
   { href: '/', label: 'Home', icon: HomeIcon },
   { href: '/about-us', label: 'About', icon: InformationCircleIcon },
   { href: '/docs', label: 'Docs', icon: BookOpenIcon },
-  { href: 'https://javalavadocs.phillsphanbh3.me/', label: 'Advanced Docs', icon: BookOpenIcon, external: true },
 ];
 
 export default function Header() {
