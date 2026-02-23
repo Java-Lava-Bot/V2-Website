@@ -30,6 +30,9 @@ const updates = [
         'New moderation commands and features',
         'New dedicated support server for assistance',
         'Better way to setup automod rules with our new AND improved automod system!',
+        'New error handling system for clearer and more helpful error messages',
+        'New command flags for better compatibility and reliability',
+        'New Study Buddy feature to help you stay focused and productive while studying or working',
       ],
       updated: [
         'Updated all error messages for clarity, consistency, and helpfulness, including a link to our support server!',
@@ -46,10 +49,10 @@ const updates = [
         'Legacy premium feature access methods',
         'Deprecated moderation command variations',
         'Deprecated support methods for old Discord Automod Commands',
+        'Deprecated ephemeral message handling',
       ],
       removed: [
         'Legacy timeout command variations',
-        'Deprecated ephemeral message handling',
         'Old reminder system implementation',
         'Outdated error logging and error alerts for cleaner notifications for users',
         'Removed support for old Discord Automod Commands',
