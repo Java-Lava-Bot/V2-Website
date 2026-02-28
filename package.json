@@ -14,6 +14,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@statuspage/status-widget": "^1.0.5",
+    "@vercel/speed-insights": "^1.3.1",
     "framer-motion": "^12.23.12",
     "gray-matter": "^4.0.3",
     "next": "^16.1.6",
