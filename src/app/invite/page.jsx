@@ -10,7 +10,7 @@ export default function NotFound() {
   useEffect(() => {
     const timer = count > 0 && setInterval(() => setCount(count - 1), 1000);
     if (count === 0) {
-      window.location.href = 'https://discord.com/oauth2/authorize?client_id=1305190785536360519&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fjavalava.phillsphanbh3.me%2F&integration_type=0&scope=bot+identify+guilds+guilds.join';
+      window.location.href = 'https://discord.com/oauth2/authorize?client_id=1305190785536360519&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fjavalava.phillsphanbh3.me%2F&integration_type=0&scope=bot+applications.commands.permissions.update+applications.commands';
     }
     return () => clearInterval(timer);
   }, [count]);
@@ -117,7 +117,7 @@ export default function NotFound() {
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Link
-              href="https://discord.com/oauth2/authorize?client_id=1305190785536360519"
+              href="https://discord.com/oauth2/authorize?client_id=1305190785536360519&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fjavalava.phillsphanbh3.me%2F&integration_type=0&scope=bot+applications.commands.permissions.update+applications.commands"
               className="inline-flex items-center px-6 py-3 rounded-lg bg-[var(--color-primary)] text-white font-medium hover:bg-opacity-90 transition-all duration-300"
             >
               Add bot

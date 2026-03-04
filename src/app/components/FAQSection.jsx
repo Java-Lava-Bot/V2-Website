@@ -45,7 +45,12 @@ export default function FAQSection() {
       question: 'Where can I find the documentation for Java Lava commands?',
       answer:
         'You can go to our Docs section located in the navigation menu at the top of our website, then click commands.',
-    }
+    },
+    {
+      question: 'Why does Java Lava ask for Manage access to its commands in a server?',
+      answer:
+        'Java Lava uses Discord\'s slash command system, and to ensure that all commands work fully, we ask for you to grant the bot this permission that way it can manage its own commands and ensure they are registered correctly. This allows us to provide a seamless experience for users without requiring manual command registration or updates.',
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);
