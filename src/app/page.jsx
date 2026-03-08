@@ -10,11 +10,13 @@ import StatsSection from './components/StatsSection';
 import StatusScript from './components/StatusScript';
 import TestimonialsSection from './components/TestimonialsSection';
 import UpdatesSection from './components/UpdatesSection';
+import ScamAlert from './components/ScamAlert';
 
 export default function HomePage() {
   return (
     <>
       <StatusScript />
+      <ScamAlert />
       <Header />
       <main className="relative z-10">
         <HeroSection />
