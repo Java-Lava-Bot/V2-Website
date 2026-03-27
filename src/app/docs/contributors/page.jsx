@@ -73,10 +73,10 @@ export default function ContributorsPage() {
           <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
             <GiCommercialAirplane className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">
-              Ziggy._.mc - Areospace Developer & Reminder system helper and debugger!
+              ziggy._.mc - Zavro Developer & Reminder system helper and debugger!
             </h3>
             <a
-              href="https://areospace.ziggymc.me/"
+              href="https://www.ziggymc.me/zigydbot/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
