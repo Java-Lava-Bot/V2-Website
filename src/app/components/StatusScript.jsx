@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import StatusPage from '@statuspage/status-widget';
 
 export default function StatusScript() {
   useEffect(() => {

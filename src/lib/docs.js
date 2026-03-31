@@ -100,7 +100,7 @@ export async function getDocBySlugAsync(category, slug) {
     .use(remarkSlug) // Add IDs to headings for linking
     .use(remarkEmoji) // Convert emoji shortcodes to actual emojis
     .use(html, { 
-      sanitize: false
+      sanitize: true // Sanitize HTML to prevent XSS attacks and resolve security vulnerabilities
     })
     .process(matterResult.content);
   

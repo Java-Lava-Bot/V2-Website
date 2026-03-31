@@ -2,17 +2,18 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function NotFound() {
-  const [count, setCount] = useState(5);
+  const timerRef = useRef(null);
 
   useEffect(() => {
-    const timer = count > 0 && setInterval(() => setCount(count - 1), 1000);
-    if (count === 0) {
-      window.location.href = 'https://discord.gg/tM8Y5acUta';
-    }
-    return () => clearInterval(timer);
+  if (count === 0) {
+    window.location.href = 'https://discord.gg/tM8Y5acUta';
+    return;
+  }
+  timerRef.current = setTimeout(() => setCount(c => c - 1), 1000);
+  return () => clearTimeout(timerRef.current);
   }, [count]);
 
   return (
