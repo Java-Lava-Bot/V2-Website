@@ -24,7 +24,7 @@ export const metadata = {
   icons: {
     icon: favicon.src,
   },
-  metadataBase: new URL('https://betajavalava.phillsphanbh3.me/'),
+  metadataBase: new URL('https://javalava.phillsphanbh3.me/'),
 };
 
 export default function RootLayout({ children }) {
@@ -42,7 +42,6 @@ export default function RootLayout({ children }) {
 
       {/* Hydration mismatch fix and main body*/}
       <body
-        suppressHydrationWarning
         className={`bg-[var(--color-dark)] text-[var(--color-light)] min-h-screen selection:bg-[var(--color-primary)] selection:text-white ${inter.className}`}
       >
         {children}

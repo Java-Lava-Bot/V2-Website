@@ -2,18 +2,19 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function NotFound() {
-  const [count, setCount] = useState(5);
+  const timerRef = useRef(null);
 
   useEffect(() => {
-    const timer = count > 0 && setInterval(() => setCount(count - 1), 1000);
-    if (count === 0) {
-      window.location.href = '/';
-    }
-    return () => clearInterval(timer);
-  }, [count]);
+  if (count === 0) {
+    window.location.href = '...';
+    return;
+  }
+  timerRef.current = setTimeout(() => setCount(c => c - 1), 1000);
+  return () => clearTimeout(timerRef.current);
+}, [count]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[var(--color-dark)] relative overflow-hidden">
