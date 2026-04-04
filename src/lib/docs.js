@@ -5,7 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import remarkGfm from 'remark-gfm';
 import remarkEmoji from 'remark-emoji';
-import remarkSlug from 'remark-slug';
+import remarkslug from 'remark-slug';
 
 // Base path for documentation files
 const docsDirectory = path.join(process.cwd(), 'src/content/docs');
@@ -97,10 +97,10 @@ export async function getDocBySlugAsync(category, slug) {
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(remarkGfm) // GitHub Flavored Markdown support
-    .use(remarkSlug) // Add IDs to headings for linking
+    .use(remarkslug) // Add IDs to headings for linking
     .use(remarkEmoji) // Convert emoji shortcodes to actual emojis
     .use(html, { 
-      sanitize: true // Sanitize HTML to prevent XSS attacks and resolve security vulnerabilities
+      sanitize: false
     })
     .process(matterResult.content);
   
