@@ -34,8 +34,14 @@
     "@eslint/eslintrc": "^3.3.5",
     "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/typography": "^0.5.19",
+<<<<<<< HEAD
     "baseline-browser-mapping": "^2.10.13",
     "eslint": "^10.1.0",
+=======
+    "baseline-browser-mapping": "^2.10.12",
+    "eslint": "^10.1.0",
+    "eslint-config-next": "^16.2.1",
+>>>>>>> 8997fa8032d72b21b8d7bc65be72e34e0929cf79
     "prettier": "^3.8.1",
     "tailwindcss": "^4.2.2"
   }
