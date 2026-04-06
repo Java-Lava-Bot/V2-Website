@@ -2,20 +2,18 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
-export default function SupportServerRedirect() {
-  const [count, setCount] = useState(5);
+export default function NotFound() {
   const timerRef = useRef(null);
 
   useEffect(() => {
-    if (count === 0) {
-      window.location.href = 'https://discord.gg/tM8Y5acUta';
-      return;
-    }
-
-    timerRef.current = setTimeout(() => setCount((c) => c - 1), 1000);
-    return () => clearTimeout(timerRef.current);
+  if (count === 0) {
+    window.location.href = 'https://discord.gg/tM8Y5acUta';
+    return;
+  }
+  timerRef.current = setTimeout(() => setCount(c => c - 1), 1000);
+  return () => clearTimeout(timerRef.current);
   }, [count]);
 
   return (
@@ -23,14 +21,29 @@ export default function SupportServerRedirect() {
       {/* Animated background elements */}
       <motion.div
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[var(--color-primary)] opacity-[0.03] blur-3xl"
-        animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-        transition={{ duration: 15, repeat: Infinity, repeatType: 'reverse' }}
+        animate={{
+          scale: [1, 1.2, 1],
+          rotate: [0, 90, 0],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
       />
 
       <motion.div
         className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[var(--color-secondary)] opacity-[0.03] blur-3xl"
-        animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
-        transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse', delay: 2 }}
+        animate={{
+          scale: [1, 1.3, 1],
+          rotate: [0, -90, 0],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          repeatType: 'reverse',
+          delay: 2,
+        }}
       />
 
       <div className="max-w-md mx-auto text-center px-4 relative z-10">
@@ -41,7 +54,7 @@ export default function SupportServerRedirect() {
         >
           <div className="relative inline-block">
             <motion.div
-              className="text-6xl md:text-7xl font-bold text-[var(--color-primary)]"
+              className="text-9xl font-bold text-[var(--color-primary)]"
               animate={{
                 textShadow: [
                   '0 0 10px rgba(123, 63, 228, 0.5)',
@@ -49,7 +62,11 @@ export default function SupportServerRedirect() {
                   '0 0 10px rgba(123, 63, 228, 0.5)',
                 ],
               }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: 'reverse',
+              }}
             >
               Support Server Invite
             </motion.div>
@@ -91,8 +108,7 @@ export default function SupportServerRedirect() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            You have been redirected to the support server invite page! Click the button or wait for the
-            countdown to finish!
+            You have been redirected to the support server invite page! Click the button or wait for the countdown to finish!
           </motion.p>
 
           <motion.div

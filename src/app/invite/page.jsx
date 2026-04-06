@@ -2,20 +2,17 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
-export default function InvitePage() {
-  const [count, setCount] = useState(5);
+export default function NotFound() {
   const timerRef = useRef(null);
 
   useEffect(() => {
-    if (count === 0) {
-      window.location.href =
-        'https://discord.com/oauth2/authorize?client_id=1305190785536360519&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fjavalava.phillsphanbh3.me%2F&integration_type=0&scope=bot+applications.commands.permissions.update+applications.commands';
-      return;
-    }
-
-    timerRef.current = setTimeout(() => setCount((c) => c - 1), 1000);
+  if (count === 0) {
+    window.location.href = 'https://discord.com/oauth2/authorize?client_id=1305190785536360519&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fjavalava.phillsphanbh3.me%2F&integration_type=0&scope=bot+applications.commands.permissions.update+applications.commands';
+    return;
+  }
+    timerRef.current = setTimeout(() => setCount(c => c - 1), 1000);
     return () => clearTimeout(timerRef.current);
   }, [count]);
 
