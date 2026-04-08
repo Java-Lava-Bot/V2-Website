@@ -52,9 +52,9 @@ const bugCategories = [
     description: 'Bugs that affect minor features and aesthetics',
     bugs: [
       {
-        name: 'None found yet',
-        description: 'We haven\'t identified any minor bugs so far.',
-        Reproduced: '',
+        name: 'Reminder command - Word misspelled',
+        description: `We have noticed a minor misspelling, accidentally spelled "from" with "for" on accident... minor issue which shouldn't have gotten overlooked.`,
+        Reproduced: 'We have reproduced it when the bot owner was using the reminder command for the bot',
       },
     ],
   },
