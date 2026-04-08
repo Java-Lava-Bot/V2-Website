@@ -26,6 +26,11 @@ const bugCategories = [
         description: 'We are currently aware of a ongoing issue with several prefix commands failing to work at this time, looking like only 2 prefix commands are working, we are currently working on multiple fixes for this and it probably will be v2.1 next month or the following month, we will also be releasing some patches for some errors we have been getting on the bot later in the month just so yous are aware!',
         Reproduced: 'We have repoduced this issue multiple times on our end and even seen in logs that several prefix commands are failing to work, we are currently working on multiple fixes for this and it probably will be v2.1 next month or the following month, we will also be releasing some patches for some errors we have been getting on the bot later in the month just so yous are aware!',
       },
+      {
+        name: 'Warn command - failing to save data',
+        description: 'We have noticed on our database that the bot is failing to save data on the warn and warn remove commands. We are currently working on a fix for it.',
+        Reproduced: 'We have found it several times, it will be a few days before everything is updated as we have higher priority issues at this time.'
+      },
     ],
   },
   {
