@@ -24,8 +24,7 @@
     "remark": "^15.0.1",
     "remark-emoji": "^5.0.2",
     "remark-gfm": "^4.0.1",
-    "remark-html": "^16.0.1",
-    "remark-slug": "^7.0.1"
+    "remark-html": "^16.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
