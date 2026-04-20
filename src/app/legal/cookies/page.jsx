@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
                 <p className="text-gray-300 leading-relaxed">
                   This Cookie Policy explains how Java Lava ("we", "us", and
                   "our") uses cookies and similar technologies to recognize you
-                  when you visit our website at https://javalava.phillsphanbh3.me/
+                  when you visit our website at https://betajavalava.phillsphanbh3.me/
                   ("Website"). This policy explains what these technologies are and why we
                   use them, as well as your rights to control our use of them.
 
