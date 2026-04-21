@@ -2,18 +2,17 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function NotFound() {
-  const timerRef = useRef(null);
+  const [count, setCount] = useState(5);
 
-useEffect(() => {
-  if (count === 0) {
-    window.location.href = 'https://javalava.statuspage.io/';
-    return;
-  }
-    timerRef.current = setTimeout(() => setCount(c => c - 1), 1000);
-  return () => clearTimeout(timerRef.current);
+  useEffect(() => {
+    const timer = count > 0 && setInterval(() => setCount(count - 1), 1000);
+    if (count === 0) {
+      window.location.href = 'https://javalava.statuspage.io/';
+    }
+    return () => clearInterval(timer);
   }, [count]);
 
   return (
@@ -145,7 +144,7 @@ useEffect(() => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            Redirecting to Status Page in {count} seconds...
+            Redirecting to support server in {count} seconds...
           </motion.p>
         </motion.div>
       </div>
