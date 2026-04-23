@@ -182,6 +182,7 @@ export default function PremiumCTA() {
         {/* Additional info */}
         <div className="mt-12 text-center">
           <p className="text-gray-400 text-sm">
+            Premium has not been implemented yet.
             All premium features come with a 7-day money-back guarantee. No
             questions asked.
           </p>
