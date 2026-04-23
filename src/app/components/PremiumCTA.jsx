@@ -134,7 +134,7 @@ export default function PremiumCTA() {
                   transition={{ delay: 0.5, duration: 0.5 }}
                 >
                   <a
-                    href="/premium"
+                    href="/"
                     className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-accent)] text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-accent)]/20"
                   >
                     Upgrade Now
