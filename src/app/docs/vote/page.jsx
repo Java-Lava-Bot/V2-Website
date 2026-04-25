@@ -49,7 +49,7 @@ export default function VotingPage() {
               Discord Bot List
             </h3>
             <a
-              href="https://discordbotlist.com/bots/java-lava-3011/upvote"
+              href="https://discordbotlist.com/bots/java-lava/upvote"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
