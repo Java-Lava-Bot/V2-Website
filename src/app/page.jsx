@@ -16,10 +16,10 @@ export default function HomePage() {
   return (
     <>
       <StatusScript />
-      <ScamAlert />
       <Header />
       <main className="relative z-10">
         <HeroSection />
+        <ScamAlert />
         <UpdatesSection />
         <FeaturesSection />
         <StatsSection />
