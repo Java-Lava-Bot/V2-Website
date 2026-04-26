@@ -6,20 +6,35 @@ import StatusScript from '../../components/StatusScript';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-export default function DocsContentPage() {
-  const [docContent, setDocContent] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
-  const [docMeta, setDocMeta] = useState({});
+// Converts inline markdown (bold, code, links) to HTML
+function parseInline(text) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(
+      /\[([^\]]+)\]\(([^)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:text-[var(--color-secondary)]">$1</a>'
+    );
+}
 
-  useEffect(() => {
-    // Fetch and process the index.md content
-    fetchDocContent();
-  }, []);
+// Converts a full markdown string to HTML
+function parseMarkdown(markdown) {
+  return markdown
+    .split('\n')
+    .map(line => {
+      if (line.startsWith('### ')) return `<h3>${parseInline(line.slice(4))}</h3>`;
+      if (line.startsWith('## '))  return `<h2>${parseInline(line.slice(3))}</h2>`;
+      if (line.startsWith('# '))   return `<h1>${parseInline(line.slice(2))}</h1>`;
+      if (line.startsWith('- '))   return `<li>${parseInline(line.slice(2))}</li>`;
+      if (/^\d+\.\s/.test(line))   return `<li>${parseInline(line.replace(/^\d+\.\s/, ''))}</li>`;
+      if (line === '---')           return '<hr>';
+      if (line.trim() === '')       return '<br>';
+      return `<p>${parseInline(line)}</p>`;
+    })
+    .join('');
+}
 
-  const fetchDocContent = async () => {
-    try {
-      // Import the markdown content directly
-      const markdownContent = `# Java Lava Advanced Setup Guide
+const markdownContent = `# Java Lava Advanced Setup Guide
 
 # Welcome to the advanced setup guide for Java Lava! This guide will walk you through the detailed configuration and customization options available to optimize Java Lava for your Discord server.
 
@@ -27,32 +42,19 @@ export default function DocsContentPage() {
 
 Welcome to the official Java Lava Discord bot documentation! This comprehensive guide will help you get the most out of your Discord server with our powerful moderation and community tools.
 
-### Current Version: 1.20
+### Current Version: 2.0
 
-Java Lava is currently on **version 1.20**, packed with improvements and new features to enhance your Discord server experience.
+Java Lava is currently on **version 2.0**, packed with improvements and new features to enhance your Discord server experience.
 
-## What's New in Version 1.20?
+## What's New in Version 2.0?
 
-### 🐛 Major Bug Fixes
+You can check out the full list of updates at https://javalava.phillsphanbh3.me/updates but here are some highlights:
 
-We've addressed several critical issues to improve stability and performance:
-
-1. **Ban Command Fix** - Resolved the \`TypeError: Cannot read properties of undefined (reading 'has')\` error that was affecting the ban command functionality.
-
-2. **Discord.js v14.21.0 Compatibility** - Fixed memory leak issues and improved overall bot stability with the latest Discord.js updates.
-
-3. **Deprecated Ephemeral Warnings** - Updated all commands to use modern Discord flags instead of deprecated ephemeral properties.
-
-### ✨ New Features
-
-- **Enhanced Reminder System** - A completely rebuilt reminder system with improved reliability
-- **Open Beta Bot** - Test new features before they reach the main bot
-- **Premium Features** - Access to exclusive functionality for premium users
-- **Improved Documentation** - This beautiful new documentation site you're viewing!
-
-### 🗑️ Removed Features
-
-- Legacy timeout command variations have been removed for better user experience
+- **New Moderation Features**: Enhanced automod capabilities and new moderation commands
+- **Improved Performance**: Faster response times and reduced latency
+- **Bug Fixes**: Various fixes to improve stability and reliability
+- **New Fun Commands**: More ways to engage with your community
+- **Customizable Settings**: More options to tailor Java Lava to your server's needs
 
 ## Getting Started
 
@@ -60,14 +62,14 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 
 ### Quick Setup
 
-1. **Invite the Bot** - Use our [invitation link](https://discord.com/oauth2/authorize?client_id=1305190785536360519) to add Java Lava to your server
+1. **Invite the Bot** - Use our [invitation link](https://javalava.phillsphanbh3.me/invite) to add Java Lava to your server
 2. **Set Permissions** - Ensure the bot has the necessary permissions for moderation
 3. **Configure Commands** - Set up your preferred settings using our setup commands
 4. **Start Moderating** - Begin using Java Lava's powerful features!
 
 ### Detailed Configuration
 
-1. **Invite Java Lava**: Click [here](https://discord.com/oauth2/authorize?client_id=1305190785536360519) to invite the bot to your server. Make sure to grant it the necessary permissions for optimal functionality.
+1. **Invite Java Lava**: Click [here](https://javalava.phillsphanbh3.me/invite) to invite the bot to your server. Make sure to grant it the necessary permissions for optimal functionality.
 
 2. **Set Up Roles**: Create a role for Java Lava with appropriate permissions, including managing messages, banning members, and reading message history.
 
@@ -77,7 +79,7 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 
 5. **Let Java Lava Work**: Sit back and let Java Lava help you manage and grow your Discord community effectively!
 
-6. **Stay Updated**: Keep an eye on our [Support server](https://discord.gg/tM8Y5acUta) for updates, new features, and support.
+6. **Stay Updated**: Keep an eye on our [Support server](https://javalava.phillsphanbh3.me/support) for updates, new features, and support.
 
 ---
 
@@ -93,28 +95,34 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 
 Need help or want to connect with other Java Lava users?
 
-- **Discord Server**: [Join our community](https://discord.gg/tM8Y5acUta)
-- **Status Page**: [Check service status](https://javalava.statuspage.io/)
+- **Discord Server**: [Join our community](https://javalava.phillsphanbh3.me/support) for support, updates, and discussions
+- **Status Page**: [Check service status](https://javalava.phillsphanbh3.me/status) for real-time updates on uptime and incidents
 - **Documentation**: You're already here!
 
 ---
 
 *Java Lava is developed with ❤️ by PhillsPhanbh3_the_bot_dev and the Java Lava team.*`;
 
-      setDocContent(markdownContent);
+export default function DocsContentPage() {
+  const [docContent, setDocContent] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [docMeta, setDocMeta] = useState({});
+
+  useEffect(() => {
+    try {
+      setDocContent(parseMarkdown(markdownContent));
       setDocMeta({
         title: 'Java Lava Documentation',
-        description:
-          'Complete guide to Java Lava Discord bot features and setup',
-        lastUpdated: '08-01-2025',
-        tags: ['documentation', 'bot-setup', 'getting-started'],
+        description: 'Complete guide to Java Lava Discord bot features and setup',
+        lastUpdated: '4-26-2026',
+        tags: ['documentation', 'bot-setup', 'getting-started', 'introduction-guide'],
       });
-      setIsLoading(false);
     } catch (error) {
       console.error('Error loading documentation:', error);
+    } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   if (isLoading) {
     return (
@@ -136,7 +144,6 @@ Need help or want to connect with other Java Lava users?
     <>
       <StatusScript />
       <Header />
-
       <main className="min-h-screen bg-[var(--color-dark)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Header */}
@@ -147,7 +154,6 @@ Need help or want to connect with other Java Lava users?
               <span className="text-gray-600">•</span>
               <span>Getting Started</span>
             </div>
-
             <div className="flex flex-wrap items-center gap-4 mb-6">
               {docMeta.lastUpdated && (
                 <div className="flex items-center gap-1 text-sm text-gray-400">
@@ -155,7 +161,6 @@ Need help or want to connect with other Java Lava users?
                   <span>Updated {docMeta.lastUpdated}</span>
                 </div>
               )}
-
               {docMeta.tags && (
                 <div className="flex items-center gap-2">
                   <TagIcon className="h-4 w-4 text-gray-400" />
@@ -176,68 +181,23 @@ Need help or want to connect with other Java Lava users?
 
           {/* Content */}
           <article className="prose prose-invert prose-lg max-w-none">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: docContent
-                  .split('\n')
-                  .map(line => {
-                    // Convert markdown to basic HTML
-                    if (line.startsWith('# ')) {
-                      return `<h1>${line.substring(2)}</h1>`;
-                    } else if (line.startsWith('## ')) {
-                      return `<h2>${line.substring(3)}</h2>`;
-                    } else if (line.startsWith('### ')) {
-                      return `<h3>${line.substring(4)}</h3>`;
-                    } else if (line.startsWith('- ')) {
-                      return `<li>${line.substring(2)}</li>`;
-                    } else if (line.startsWith('1. ')) {
-                      return `<li>${line.substring(3)}</li>`;
-                    } else if (line === '---') {
-                      return '<hr>';
-                    } else if (line.trim() === '') {
-                      return '<br>';
-                    } else {
-                      // Handle bold text
-                      let processedLine = line.replace(
-                        /\*\*(.*?)\*\*/g,
-                        '<strong>$1</strong>'
-                      );
-                      // Handle inline code
-                      processedLine = processedLine.replace(
-                        /`([^`]+)`/g,
-                        '<code>$1</code>'
-                      );
-                      // Handle links
-                      processedLine = processedLine.replace(
-                        /\[([^\]]+)\]\(([^)]+)\)/g,
-                        '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:text-[var(--color-secondary)]">$1</a>'
-                      );
-                      return `<p>${processedLine}</p>`;
-                    }
-                  })
-                  .join(''),
-              }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: docContent }} />
           </article>
 
           {/* Navigation */}
           <div className="mt-12 pt-8 border-t border-gray-800">
-            <div className="flex justify-between">
-              <div></div>
-              <div className="flex items-center gap-4">
-                <a
-                  href="/docs"
-                  className="flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-lg text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors"
-                >
-                  <BookOpenIcon className="h-4 w-4" />
-                  <span>Back to Docs</span>
-                </a>
-              </div>
+            <div className="flex justify-end">
+              <a
+                href="/docs"
+                className="flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-lg text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors"
+              >
+                <BookOpenIcon className="h-4 w-4" />
+                <span>Back to Docs</span>
+              </a>
             </div>
           </div>
         </div>
       </main>
-
       <Footer />
     </>
   );
