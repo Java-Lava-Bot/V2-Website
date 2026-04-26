@@ -19,9 +19,9 @@ export default function DocsContentPage() {
   const fetchDocContent = async () => {
     try {
       // Import the markdown content directly
-      const markdownContent = `# Java Lava Advanced Setup Guide
+      const markdownContent = `# Java Lava Guide
 
-# Welcome to the advanced setup guide for Java Lava! This guide will walk you through the detailed configuration and customization options available to optimize Java Lava for your Discord server.
+# Welcome to the setup guide for Java Lava! This guide will walk you through the detailed configuration and customization options available to optimize Java Lava for your Discord server.
 
 ## Welcome to Java Lava Bot
 
@@ -66,8 +66,8 @@ Ready to add Java Lava to your Discord server? Here's what you need to know:
 
 Need help or want to connect with other Java Lava users?
 
-- **Discord Server**: [Join our community](https://discord.gg/tM8Y5acUta)
-- **Status Page**: [Check service status](https://javalava.statuspage.io/)
+- **Discord Server**: [Join our community](https://javalava.phillsphanbh3.me/support) for support, updates, and discussions
+- **Status Page**: [Check service status](https://javalava.phillsphanbh3.me/status) for real-time updates on uptime and incidents
 - **Documentation**: You're already here!
 
 ---
@@ -94,10 +94,10 @@ Need help or want to connect with other Java Lava users?
       <>
         <StatusScript />
         <Header />
-        <main className="min-h-screen flex items-center justify-center">
-          <div className="animate-pulse text-center">
-            <BookOpenIcon className="h-12 w-12 text-[var(--color-primary)] mx-auto mb-4" />
-            <p className="text-gray-400">Loading documentation...</p>
+        <main className='min-h-screen flex items-center justify-center'>
+          <div className='animate-pulse text-center'>
+            <BookOpenIcon className='h-12 w-12 text-[var(--color-primary)] mx-auto mb-4' />
+            <p className='text-gray-400'>Loading documentation...</p>
           </div>
         </main>
         <Footer />
@@ -110,33 +110,33 @@ Need help or want to connect with other Java Lava users?
       <StatusScript />
       <Header />
 
-      <main className="min-h-screen bg-[var(--color-dark)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className='min-h-screen bg-[var(--color-dark)]'>
+        <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
           {/* Header */}
-          <div className="mb-8">
-            <div className="flex items-center gap-2 text-sm text-gray-400 mb-4">
-              <BookOpenIcon className="h-4 w-4" />
+          <div className='mb-8'>
+            <div className='flex items-center gap-2 text-sm text-gray-400 mb-4'>
+              <BookOpenIcon className='h-4 w-4' />
               <span>Documentation</span>
-              <span className="text-gray-600">•</span>
+              <span className='text-gray-600'>•</span>
               <span>Getting Started</span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 mb-6">
+            <div className='flex flex-wrap items-center gap-4 mb-6'>
               {docMeta.lastUpdated && (
-                <div className="flex items-center gap-1 text-sm text-gray-400">
-                  <ClockIcon className="h-4 w-4" />
+                <div className='flex items-center gap-1 text-sm text-gray-400'>
+                  <ClockIcon className='h-4 w-4' />
                   <span>Updated {docMeta.lastUpdated}</span>
                 </div>
               )}
 
               {docMeta.tags && (
-                <div className="flex items-center gap-2">
-                  <TagIcon className="h-4 w-4 text-gray-400" />
-                  <div className="flex gap-2">
+                <div className='flex items-center gap-2'>
+                  <TagIcon className='h-4 w-4 text-gray-400' />
+                  <div className='flex gap-2'>
                     {docMeta.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded text-xs text-[var(--color-primary)]"
+                        className='px-2 py-1 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded text-xs text-[var(--color-primary)]'
                       >
                         {tag}
                       </span>
@@ -148,7 +148,7 @@ Need help or want to connect with other Java Lava users?
           </div>
 
           {/* Content */}
-          <article className="prose prose-invert prose-lg max-w-none">
+          <article className='prose prose-invert prose-lg max-w-none'>
             <div
               dangerouslySetInnerHTML={{
                 __html: docContent
@@ -194,15 +194,15 @@ Need help or want to connect with other Java Lava users?
           </article>
 
           {/* Navigation */}
-          <div className="mt-12 pt-8 border-t border-gray-800">
-            <div className="flex justify-between">
+          <div className='mt-12 pt-8 border-t border-gray-800'>
+            <div className='flex justify-between'>
               <div></div>
-              <div className="flex items-center gap-4">
+              <div className='flex items-center gap-4'>
                 <a
-                  href="/docs"
-                  className="flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-lg text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors"
+                  href='/docs'
+                  className='flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-lg text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors'
                 >
-                  <BookOpenIcon className="h-4 w-4" />
+                  <BookOpenIcon className='h-4 w-4' />
                   <span>Back to Docs</span>
                 </a>
               </div>

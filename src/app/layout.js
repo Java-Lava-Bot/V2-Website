@@ -24,19 +24,20 @@ export const metadata = {
   icons: {
     icon: favicon.src,
   },
-  metadataBase: new URL('https://betajavalava.phillsphanbh3.me/'),
+  metadataBase: new URL('https://javalava.phillsphanbh3.me/'),
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
-      className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}
+      lang='en'
+      className={`data-scroll-behavior ${inter.variable} ${jetbrainsMono.variable}`}
+      // className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'
         />
       </head>
 

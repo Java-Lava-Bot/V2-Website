@@ -27,32 +27,19 @@ export default function DocsContentPage() {
 
 Welcome to the official Java Lava Discord bot documentation! This comprehensive guide will help you get the most out of your Discord server with our powerful moderation and community tools.
 
-### Current Version: 1.20
+### Current Version: 2.0
 
-Java Lava is currently on **version 1.20**, packed with improvements and new features to enhance your Discord server experience.
+Java Lava is currently on **version 2.0**, packed with improvements and new features to enhance your Discord server experience.
 
-## What's New in Version 1.20?
+## What's New in Version 2.0?
 
-### 🐛 Major Bug Fixes
+You can check out the full list of updates at https://javalava.phillsphanbh3.me/updates but here are some highlights:
 
-We've addressed several critical issues to improve stability and performance:
-
-1. **Ban Command Fix** - Resolved the \`TypeError: Cannot read properties of undefined (reading 'has')\` error that was affecting the ban command functionality.
-
-2. **Discord.js v14.21.0 Compatibility** - Fixed memory leak issues and improved overall bot stability with the latest Discord.js updates.
-
-3. **Deprecated Ephemeral Warnings** - Updated all commands to use modern Discord flags instead of deprecated ephemeral properties.
-
-### ✨ New Features
-
-- **Enhanced Reminder System** - A completely rebuilt reminder system with improved reliability
-- **Open Beta Bot** - Test new features before they reach the main bot
-- **Premium Features** - Access to exclusive functionality for premium users
-- **Improved Documentation** - This beautiful new documentation site you're viewing!
-
-### 🗑️ Removed Features
-
-- Legacy timeout command variations have been removed for better user experience
+- **New Moderation Features**: Enhanced automod capabilities and new moderation commands
+- **Improved Performance**: Faster response times and reduced latency
+- **Bug Fixes**: Various fixes to improve stability and reliability
+- **New Fun Commands**: More ways to engage with your community
+- **Customizable Settings**: More options to tailor Java Lava to your server's needs
 
 ## Getting Started
 
