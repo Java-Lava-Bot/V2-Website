@@ -160,25 +160,6 @@ export default function PrivacyPolicy() {
                   </a>.
                 </p>
               </section>
-
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-policies)] mb-4">
-                  7. Data Retention
-                </h2>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  We retain data only as long as necessary:
-                </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  <li>Command logs: 30 days for debugging purposes</li>
-                  <li>Error reports: 90 days for analysis and fixes</li>
-                  <li>
-                    Usage statistics: Anonymized and aggregated permanently
-                  </li>
-                  <li>
-                    Server configuration: Until bot is removed from server
-                  </li>
-                </ul>
-              </section>
             </div>
           </article>
 
