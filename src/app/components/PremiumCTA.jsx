@@ -134,7 +134,7 @@ export default function PremiumCTA() {
                   transition={{ delay: 0.5, duration: 0.5 }}
                 >
                   <a
-                    href="/premium"
+                    href="/"
                     className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-accent)] text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-accent)]/20"
                   >
                     Upgrade Now
@@ -182,6 +182,7 @@ export default function PremiumCTA() {
         {/* Additional info */}
         <div className="mt-12 text-center">
           <p className="text-gray-400 text-sm">
+            Premium features has not been implemented yet.
             All premium features come with a 7-day money-back guarantee. No
             questions asked.
           </p>
