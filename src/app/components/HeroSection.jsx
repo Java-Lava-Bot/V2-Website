@@ -327,9 +327,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <p className="absolute bottom-2 left-2 z-50 text-sm bg-opacity-60 px-2  rounded">
-                Our Commands Used data is not real data.
-              </p>
+              <p className="absolute bottom-2 left-2 z-50 text-sm bg-opacity-60 px-2  rounded"></p>
 
               {/* Animated elements */}
               <motion.div

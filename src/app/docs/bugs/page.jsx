@@ -57,10 +57,10 @@ const bugCategories = [
     description: 'Bugs that affect minor features and aesthetics',
     bugs: [
       {
-        name: 'Reminder command - Word misspelled',
-        description: `We have noticed a minor misspelling, accidentally spelled "from" with "for" on accident... minor issue which shouldn't have gotten overlooked.`,
-        Reproduced: 'We have reproduced it when the bot owner was using the reminder command for the bot',
-      },
+        name: 'Commmands Used number - placeholder text',
+        description: 'We are aware of an issue where the "Commands Used" number in the help command is showing as placeholder text instead of the actual number, we are currently working on a fix for this.',
+        Reproduced: 'Correct, this is just a placeholder text that we forgot to update, we are currently working on a fix for this and it will be updated in the next few weeks once we make a websocket/api update.',
+      }
     ],
   },
 ];
