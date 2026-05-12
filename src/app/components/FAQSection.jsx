@@ -134,7 +134,7 @@ export default function FAQSection() {
           <p className="text-gray-400">
             Still have questions? Feel free to join our{' '}
             <a
-              href="https://discord.com/invite/tM8Y5acUta"
+              href="https://javalava.phillsphanbh3.me/support"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--color-accent)] hover:underline"
