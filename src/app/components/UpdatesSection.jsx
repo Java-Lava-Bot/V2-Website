@@ -29,37 +29,37 @@ export default function UpdatesSection() {
   const updates = [
     {
       icon: <ArrowPathIcon className="h-6 w-6" />,
-      title: 'Study Buddy!',
+      title: 'Study Buddy Improvements!',
       description:
-        'We have implement a study buddy feature to help you stay focused and productive while studying or working on tasks.',
+        'We have implement a LOT of improvements to the study buddy feature, and it is now going to be a lot more useful and better than before!',
     },
     {
       icon: <XMarkIcon className="h-6 w-6" />,
-      title: 'Removed old automod commands',
+      title: 'Scam Prevention System updated!',
       description:
-        'We have removed the old automod commands from the bot, as they have been replaced with the new automod system!',
+        'We have updated the scam prevention system to better detect and prevent scam related activities!',
     },
     {
       icon: <ArrowPathIcon className="h-6 w-6" />,
-      title: 'New features!',
+      title: 'Prefix Updates!',
       description:
-        'We have added some new features to the bot and website! check them out below!',
+        'We have re-added the prefix commands into Java Lava after getting taken out silently for 2 to 3 weeks!',
     },
     {
       icon: <AdjustmentsHorizontalIcon className="h-6 w-6" />,
       title: 'Bot itself',
       description:
-        'Java Lava now can help remind you of things you set through the bot, this requires you to have dms turn on!',
+        'Java Lava version 3 is in development and we are working hard to bring you the best experience possible with the bot itself, stay tuned for more updates on this!',
     },
     {
       icon: <UsersIcon className="h-6 w-6" />,
       title: 'Website updates',
       description:
-        'We have updated the website as with our version 2 update!',
+        'We have updated the website to include the latest features and improvements!',
     },
     {
       icon: <ArrowsPointingOutIcon className="h-6 w-6" />,
-      title: 'New invite system!',
+      title: 'Invite system updated!',
       description:
         'We have implemented a new invite system for the bot, which allows you to easily invite the bot to your server and manage your invites through the website and it redirects to this page!',
     },
@@ -85,11 +85,11 @@ export default function UpdatesSection() {
             What's New
           </span>
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-[var(--color-accent)]">Version 2.00</span> has
+            <span className="text-[var(--color-accent)]">Version 2.1</span> has
             Released!
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Released on February 24th, 2026 - Check out the latest improvements and
+            Released on May 12th, 2026 - Check out the latest improvements and
             changes to Java Lava
           </p>
         </motion.div>
