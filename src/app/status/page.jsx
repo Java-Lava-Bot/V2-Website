@@ -144,7 +144,7 @@ export default function NotFound() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            Redirecting to status page in {count} seconds...
+            Redirecting to support server in {count} seconds...
           </motion.p>
         </motion.div>
       </div>
