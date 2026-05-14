@@ -89,9 +89,9 @@ const faqData = [
         },
       },
       {
-        question: "What's new in version 2.00?",
+        question: "What's new in version 2.1?",
         answer:
-          'Version 2.00 is a WHOLE rewrite of Java Lava, featuring a new architecture, improved performance, and a host of new features!',
+          'Version 2.1 is a WHOLE rewrite of Java Lava, featuring a new architecture, improved performance, and a host of new features! (2.1 fixed bugs)',
         link: {
           text: 'View Changelog',
           url: '/docs/updates',
