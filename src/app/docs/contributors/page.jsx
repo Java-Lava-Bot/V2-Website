@@ -73,7 +73,7 @@ export default function ContributorsPage() {
           <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
             <GiCommercialAirplane className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">
-              ziggy._.mc - Zavro Developer & Reminder system helper and debugger!
+              ziggy._.mc - Db Bug Tracker Developer & Reminder system helper and debugger!
             </h3>
             <a
               href="https://www.ziggymc.me/zigydbot/"
