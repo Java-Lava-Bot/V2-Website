@@ -85,7 +85,7 @@ export default function UpdatesSection() {
             What's New
           </span>
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-[var(--color-accent)]">Version 2.1</span> has
+            <span className="text-[var(--color-accent)]">Version 2.2</span> has
             Released!
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
