@@ -59,6 +59,7 @@ export default function PrivacyPolicy() {
                     <li>Command usage statistics and frequency</li>
                     <li>Error logs and debugging information</li>
                     <li>Server member counts (for analytics)</li>
+                    <li>Discord Automod Rule ID's for automod-scam-prevention command</li>
                   </ul>
                 </div>
               </section>
@@ -76,6 +77,7 @@ export default function PrivacyPolicy() {
                   <li>Analyzing usage patterns to enhance features</li>
                   <li>Ensuring compliance with Discord's Terms of Service and Dev Terms of Service</li>
                   <li>Preventing abuse and maintaining service security</li>
+                  <li>Discord Automod Rule ID's for automod-scam-prevention command</li>
                 </ul>
               </section>
 
