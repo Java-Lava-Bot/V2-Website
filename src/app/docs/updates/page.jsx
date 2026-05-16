@@ -15,26 +15,28 @@ import StatusScript from '../../components/StatusScript';
 
 const updates = [
   {
-    id: 'v2.2 update',
-    version: 'Java Lava v2.2',
+    id: 'v2.1 update',
+    version: 'Java Lava v2.1',
     date: '05-12-2026',
     type: 'major',
-    title: 'Major Bot Update - Java Lava v2.2',
+    title: 'Major Bot Update - Java Lava v2.1',
     description:
-      'Study Buddy improvements, reminder system fixes, automod scam prevention improvements, several security vulnerabilities, and exploits fixed in this major update to Java Lava bot!',
+      'A lot of improvements and new features have been added to Java Lava v2.1!',
     changes: {
       added: [
-        'Automatic update from developers on automod scam prevention system where a new scam prevention update has been implemented, Java Lava will now UPDATE your AUTOMOD rule when a new update to our DB is implemented! This means that you no longer have to worry about updating your automod rule every time we update our scam prevention system, Java Lava will automatically update it for you, making sure that your server is always protected with the latest and most effective scam prevention system!',
+        'Study buddy improvements and new features to make it more useful and better than before!',
+        'New invite system for easier bot invites and management through the website, if you want the standard bot (normal bot), you just have to add on /standard at the end of the invite on the website!',
       ],
       updated: [
-        'Study Buddy with multiple fixes: prompt injection where bad actors could tell the bot to forget everything that the user previously instructed which we have now implemented a fix to prevent that, another fix for an exploit was fixed where the bot could get abused by several spam questions getting sent and then the bot getting disabled, rate limited, or the API keys causing huge problems, and lastly we had an issue with error logging which was fixed where if the API keys were not working properly, the bot would not log any errors which made it very hard to debug and find out what was wrong, but now we have implemented a fix to make sure that all errors are properly logged even if the API keys are not working, making it easier for us to find and fix any issues with the Study Buddy feature!',
-        'Reminder system with a lot of fixes: the reminder system used to double send reminders, and a whole lot more which is just beyond dumb problems that should have never happened in the first place, but we have now completely reworked the reminder system to make sure that all of those issues are fixed and that the reminder system is now more reliable and efficient than ever before!',
+        'Updated the scam prevention system to better detect and prevent scam related activities!',
+        'Prefix commands for just about every command in the bot, you can now use both prefix and slash commands for most commands in the bot!',
+        'Added in some patches to the website for the getting started and setup guide pages to make them up to date with the latest changes for the /invite/standard link!',
       ],
       deprecated: [
-        'Currently nothing has been depreciated in this update, and we will update yous if we do go ahead and deprecate something',
+        'Nothing has been deprecated in this update, but we are planning to deprecate some old commands and features in the next major update (v2.2) to make way for new and better features and commands!',
       ],
       removed: [
-        'Nothing has been removed from Java Lava in this update, the temp ban and warn systems will be re-implemented in v2.3 (hopefully), but this is going to be a priority for us to get it back for all of yous!',
+        'Temp ban and warn systems have been removed from the bot due to them having a lot of issues, even though they are some of the most used moderation features in the bot, we have decided to remove them for now to work on improving them and re-adding them in a future update (v2.2 or part 2 of v2.1)!',
       ],
     },
   },
