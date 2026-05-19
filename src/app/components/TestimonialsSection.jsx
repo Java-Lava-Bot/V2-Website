@@ -14,6 +14,8 @@ const Ryan_profile_pictureName = 'Ryan_pfp.png';
 const Ryan_PFP = require(`../public/avatars/${Ryan_profile_pictureName}`);
 const ziggy_profile_pictureName = 'ziggy.gif';
 const ziggy_PFP = require(`../public/avatars/${ziggy_profile_pictureName}`);
+const ritz_profile_pictureName = 'Ritz_pfp.png';
+const ritz_PFP = require(`../public/avatars/${ritz_profile_pictureName}`);
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -64,6 +66,15 @@ export default function TestimonialsSection() {
         author: "ziggy._.mc",
       role: 'Server Owner & Developer',
       avatar: `${ziggy_PFP.default.src}`,
+    },
+    {
+      id: 7,
+      quote:
+        "As someone who loves using the Java Lava bot, i can say, it helped me with all of my problems. ALL of my problems. My server moderation was definetly there, and it helped me get through the sad times of a unmonitored server, and thanks to this BOT i can moderate and check out my server in peace.. without suspicous raiders joining my server! Yall should honestly use it",
+        author: "Ritz King",
+      role: 'Server Owner',
+      avatar: `${ritz_PFP.default.src}`,
+      
     }
   ];
 
