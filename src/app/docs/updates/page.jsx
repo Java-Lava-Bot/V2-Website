@@ -17,7 +17,7 @@ const updates = [
   {
     id: 'v2.2 update',
     version: 'Java Lava v2.2',
-    date: '05-16-2026',
+    date: '05-19-2026',
     type: 'Minor',
     title: 'Minor Bot Update - Java Lava v2.2',
     description:
