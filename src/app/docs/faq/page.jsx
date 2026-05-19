@@ -35,7 +35,7 @@ const faqData = [
       {
         question: 'What version is Java Lava currently on?',
         answer:
-          'Java Lava is currently on version 2.0! This version includes a complete rewrite with improved performance and new features. Check our updates section for detailed changelog information.',
+          'Java Lava is currently on version 2.1! This version includes a complete rewrite with improved performance and new features. Check our updates section for detailed changelog information.',
       },
     ],
   },
@@ -89,9 +89,9 @@ const faqData = [
         },
       },
       {
-        question: "What's new in version 2.00?",
+        question: "What's new in version 2.1?",
         answer:
-          'Version 2.00 is a WHOLE rewrite of Java Lava, featuring a new architecture, improved performance, and a host of new features!',
+          'Version 2.1 is a WHOLE rewrite of Java Lava, featuring a new architecture, improved performance, and a host of new features! (2.1 fixed bugs)',
         link: {
           text: 'View Changelog',
           url: '/docs/updates',

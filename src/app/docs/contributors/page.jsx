@@ -73,7 +73,7 @@ export default function ContributorsPage() {
           <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
             <GiCommercialAirplane className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-2">
-              ziggy._.mc - Zavro Developer & Reminder system helper and debugger!
+              ziggy._.mc - DB Bug Tracker Developer & Reminder system helper and debugger!
             </h3>
             <a
               href="https://www.ziggymc.me/zigydbot/"
@@ -81,7 +81,7 @@ export default function ContributorsPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
             >
-              <span>Zavro Discord Bot Website</span>
+              <span>Projects</span>
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                 <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
