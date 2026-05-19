@@ -89,7 +89,7 @@ export default function UpdatesSection() {
             Released!
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Released on May 16th, 2026 - Check out the latest improvements and
+            Released on May 19th, 2026 - Check out the latest improvements and
             changes to Java Lava
           </p>
         </motion.div>

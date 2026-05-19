@@ -18,8 +18,8 @@ const updates = [
     id: 'v2.2 update',
     version: 'Java Lava v2.2',
     date: '05-16-2026',
-    type: 'major',
-    title: 'Major Bot Update - Java Lava v2.2',
+    type: 'Minor',
+    title: 'Minor Bot Update - Java Lava v2.2',
     description:
       'Study Buddy improvements, reminder system fixes, automod scam prevention improvements, several security vulnerabilities, and exploits fixed in this major update to Java Lava bot!',
     changes: {
