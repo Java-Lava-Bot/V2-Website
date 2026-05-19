@@ -35,7 +35,7 @@ export default function PrivacyPolicy() {
 
             <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
               <ClockIcon className="h-4 w-4" />
-              <span>Last updated: January 8, 2025</span>
+              <span>Last updated: May 19, 2026</span>
             </div>
           </div>
 
@@ -59,6 +59,7 @@ export default function PrivacyPolicy() {
                     <li>Command usage statistics and frequency</li>
                     <li>Error logs and debugging information</li>
                     <li>Server member counts (for analytics)</li>
+                    <li>Discord Automod Rule ID's for automod-scam-prevention command</li>
                   </ul>
                 </div>
               </section>
@@ -76,6 +77,7 @@ export default function PrivacyPolicy() {
                   <li>Analyzing usage patterns to enhance features</li>
                   <li>Ensuring compliance with Discord's Terms of Service and Dev Terms of Service</li>
                   <li>Preventing abuse and maintaining service security</li>
+                  <li>Discord Automod Rule ID's for automod-scam-prevention command</li>
                 </ul>
               </section>
 
@@ -172,7 +174,16 @@ export default function PrivacyPolicy() {
 
               <section>
                 <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  9. Contact Us
+                  9. Automod Scam Preventions command Updates
+                </h2>
+                <p className="text-gray-300 leading-relaxed">
+                  This command collects the IDs of the Discord Automod Rules in the server and stores them in our database to be used for the automod-scam-prevention command, which is uploaded to discord automod (for those rare times when we do have an outage and the bot is unable to perform the scam prevention) to ensure that your server is protected from the latest scams and phishing attempts, and these IDs are only used for this command and are not shared with any third parties or used for any other purposes.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
+                  10. Contact Us
                 </h2>
                 <p className="text-gray-300 leading-relaxed">
                   For privacy-related questions or requests:
