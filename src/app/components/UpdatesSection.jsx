@@ -29,9 +29,9 @@ export default function UpdatesSection() {
   const updates = [
     {
       icon: <ArrowPathIcon className="h-6 w-6" />,
-      title: 'Security vulnerabilities & exploits fixed!',
+      title: 'Brand New Honeypot System!',
       description:
-        'We have fixed several security vulnerabilities and exploits in Java Lava to ensure a safer and more secure experience for all users!',
+        'Java Lava now has a brand new honeypot system that is designed to catch and block scammers and malicious users before they can cause any harm to your server, providing an extra layer of security and protection for your community! AND YOU can set the punishment for the honeypot system, whether it be a purge, a timeout, or a soft ban, giving you full control over how the system handles potential threats!',
     },
     {
       icon: <XMarkIcon className="h-6 w-6" />,
