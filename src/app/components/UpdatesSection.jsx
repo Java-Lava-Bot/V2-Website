@@ -29,27 +29,27 @@ export default function UpdatesSection() {
   const updates = [
     {
       icon: <ArrowPathIcon className="h-6 w-6" />,
-      title: 'Security vulnerabilities & exploits fixed!',
+      title: 'Brand New Honeypot System!',
       description:
-        'We have fixed several security vulnerabilities and exploits in Java Lava to ensure a safer and more secure experience for all users!',
+        'Java Lava now has a brand new honeypot system that is designed to catch and block scammers and malicious users before they can cause any harm to your server, providing an extra layer of security and protection for your community! AND YOU can set the punishment for the honeypot system, whether it be a purge, a timeout, or a soft ban, giving you full control over how the system handles potential threats!',
     },
     {
       icon: <XMarkIcon className="h-6 w-6" />,
-      title: 'Scam Prevention System updated!',
+      title: 'New Commands!',
       description:
-        'We have done another upgrade to the scam prevention system, and this update allows the bot to automatically update the scam prevention system with the latest scam links and domains to ensure that your server is protected from the latest scams and phishing attempts!',
+        'Java Lava has added in 3 new utility commands to help you with moderating members! The /avatar command, /server-info command, and /user-info command are all now available for you to use in your server, providing you with quick and easy access to important information about your members and server!',
     },
     {
       icon: <ArrowPathIcon className="h-6 w-6" />,
-      title: 'Study Buddy Improvements!',
+      title: 'TempBan System Returns!',
       description:
-        'We have made several improvements to the Study Buddy feature, including better context handling, improved response accuracy, and faster response times to enhance your study sessions and make them more productive and enjoyable!',
+        'Java Lava has brought back the tempban system (after issues in v2.1), allowing you to temporarily ban users from your server for a specified duration, providing a more flexible moderation tool to help you manage your community effectively!',
     },
     {
       icon: <AdjustmentsHorizontalIcon className="h-6 w-6" />,
-      title: 'Reminder System fixes!',
+      title: 'New Reviews added to the website!',
       description:
-        'We have fixed several issues with the reminder system, making it more reliable and efficient than ever before!',
+        'We have added new reviews to the website from some of our users, showcasing their experiences and feedback with Java Lava, giving you insights into how the bot has helped them and their communities thrive! If you would like to submit a review, you can do so by joining our support server and sending us your review in the #reviews forum channel!',
     },
     {
       icon: <UsersIcon className="h-6 w-6" />,
@@ -59,9 +59,9 @@ export default function UpdatesSection() {
     },
     {
       icon: <ArrowsPointingOutIcon className="h-6 w-6" />,
-      title: 'Why v2.2 this early?',
+      title: 'Performance Improvements!',
       description:
-        'We have decided to release v2.2 earlier than expected to get the latest improvements and fixes to all of you as soon as possible, and we are planning to have v2.3 out in 2 months (hopefully) with even more exciting features and improvements!',
+        'We have made several performance improvements to Java Lava, resulting in faster response times and a more efficient bot overall!',
     },
   ];
 

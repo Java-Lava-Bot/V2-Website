@@ -15,26 +15,30 @@ import StatusScript from '../../components/StatusScript';
 
 const updates = [
   {
-    id: 'v2.2 update',
-    version: 'Java Lava v2.2',
-    date: '05-19-2026',
-    type: 'Minor',
-    title: 'Minor Bot Update - Java Lava v2.2',
+    id: 'v2.3 update',
+    version: 'Java Lava v2.3',
+    date: '05-30-2026',
+    type: 'Major',
+    title: 'Major Bot Update - Java Lava v2.3',
     description:
-      'Study Buddy improvements, reminder system fixes, automod scam prevention improvements, several security vulnerabilities, and exploits fixed in this major update to Java Lava bot!',
+      'Honeypot system, new commands, performance improvements, and more!',
     changes: {
       added: [
-        'Automatic update from developers on automod scam prevention system where a new scam prevention update has been implemented, Java Lava will now UPDATE your AUTOMOD rule when a new update to our DB is implemented! This means that you no longer have to worry about updating your automod rule every time we update our scam prevention system, Java Lava will automatically update it for you, making sure that your server is always protected with the latest and most effective scam prevention system!',
+        'Brand New Honeypot System!',
+        'Honeypot system punishment settings (purge, timeout, soft ban)',
+        'New Utility Commands: /avatar, /server-info, and /user-info',
+        'Performance Improvements',
       ],
       updated: [
-        'Study Buddy with multiple fixes: prompt injection where bad actors could tell the bot to forget everything that the user previously instructed which we have now implemented a fix to prevent that, another fix for an exploit was fixed where the bot could get abused by several spam questions getting sent and then the bot getting disabled, rate limited, or the API keys causing huge problems, and lastly we had an issue with error logging which was fixed where if the API keys were not working properly, the bot would not log any errors which made it very hard to debug and find out what was wrong, but now we have implemented a fix to make sure that all errors are properly logged even if the API keys are not working, making it easier for us to find and fix any issues with the Study Buddy feature!',
-        'Reminder system with a lot of fixes: the reminder system used to double send reminders, and a whole lot more which is just beyond dumb problems that should have never happened in the first place, but we have now completely reworked the reminder system to make sure that all of those issues are fixed and that the reminder system is now more reliable and efficient than ever before!',
+        'We have improved the performance of Java Lava, resulting in faster response times and a more efficient bot overall!',
+        'We have also improved the error handling and stability of the bot, ensuring a smoother experience for all users!',
+        'We have updated the website to include the latest features and improvements!',
       ],
       deprecated: [
-        'Currently nothing has been depreciated in this update, and we will update yous if we do go ahead and deprecate something',
+        'No deprecated features in this update.',
       ],
       removed: [
-        'Nothing has been removed from Java Lava in this update, the temp ban and warn systems will be re-implemented in v2.3 (hopefully), but this is going to be a priority for us to get it back for all of yous!',
+        'No removed features in this update.',
       ],
     },
   },

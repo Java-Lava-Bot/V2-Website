@@ -16,6 +16,8 @@ const ziggy_profile_pictureName = 'ziggy.gif';
 const ziggy_PFP = require(`../public/avatars/${ziggy_profile_pictureName}`);
 const ritz_profile_pictureName = 'Ritz_pfp.png';
 const ritz_PFP = require(`../public/avatars/${ritz_profile_pictureName}`);
+const soab_profile_pictureName = 'ttb.soaby.gif';
+const soab_PFP = require(`../public/avatars/${soab_profile_pictureName}`);
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -74,7 +76,14 @@ export default function TestimonialsSection() {
         author: "Ritz King",
       role: 'Server Owner',
       avatar: `${ritz_PFP.default.src}`,
-      
+    },
+    {
+      id: 8,
+      quote:
+        "As a new member of Discord and a mildly experienced Twitch mod who wanted to make his own server but had no experience with discord bots, nor a Pc, JavaLava changed everything, its moderation really is an essential and excellent addition to my community! The commands are cool and phillsphanbh3 is always active keeping me up to date on the bots status and the updates which I truly appreciate.",
+        author: "𝑠𝑜𝑎𝑏.",
+      role: 'Server Owner',
+      avatar: `${soab_PFP.default.src}`,
     }
   ];
 
