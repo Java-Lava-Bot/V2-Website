@@ -43,7 +43,7 @@ export default function UpdatesSection() {
       icon: <ArrowPathIcon className="h-6 w-6" />,
       title: 'TempBan System Returns!',
       description:
-        'Java Lava has brought back the tempban system (after issues in v2.1), allowing you to temporarily ban users from your server for a specified duration, providing a more flexible moderation tool to help you manage your community effectively!',
+        'Java Lava has brought back the tempban system (after issues in v2.3), allowing you to temporarily ban users from your server for a specified duration, providing a more flexible moderation tool to help you manage your community effectively!',
     },
     {
       icon: <AdjustmentsHorizontalIcon className="h-6 w-6" />,
@@ -85,7 +85,7 @@ export default function UpdatesSection() {
             What's New
           </span>
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-[var(--color-accent)]">Version 2.2</span> has
+            <span className="text-[var(--color-accent)]">Version 2.3</span> has
             Released!
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">

@@ -2,14 +2,14 @@
 
 ## Supported Versions
 
-Java Lava's website only supports the latest commits so like v2.1+ is supported right this minute
+Java Lava's website only supports the latest commits so like v2.3+ is supported right this minute
 
 | Version | Supported          | Version |
 | ------- | ------------------ | --------|
-| 2.1.x   | :white_check_mark: | Master  |
+| 2.3.x   | :white_check_mark: | Master  |
 | 2.0.x   | :x:                | Master  |
-| 2.2.x   | :white_check_mark: | Beta    |
-| < 2.1   | :x:                | Beta    |
+| 2.3.x   | :white_check_mark: | Beta    |
+| < 2.3   | :x:                | Beta    |
 
 ## Reporting a Vulnerability
 
