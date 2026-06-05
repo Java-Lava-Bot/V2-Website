@@ -42,11 +42,11 @@ const markdownContent = `# Java Lava Advanced Setup Guide
 
 Welcome to the official Java Lava Discord bot documentation! This comprehensive guide will help you get the most out of your Discord server with our powerful moderation and community tools.
 
-### Current Version: 2.1
+### Current Version: 2.3
 
-Java Lava is currently on **version 2.1**, packed with improvements and new features to enhance your Discord server experience.
+Java Lava is currently on **version 2.3**, packed with improvements and new features to enhance your Discord server experience.
 
-## What's New in Version 2.1?
+## What's New in Version 2.3?
 
 You can check out the full list of updates at https://javalava.phillsphanbh3.me/updates but here are some highlights:
 
