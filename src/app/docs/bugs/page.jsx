@@ -57,7 +57,7 @@ const bugCategories = [
     description: 'Bugs that affect minor features and aesthetics',
     bugs: [
       {
-        name: 'Commmands Used number - placeholder text',
+        name: 'Commands Used number - placeholder text',
         description: 'We are aware of an issue where the "Commands Used" number in the help command is showing as placeholder text instead of the actual number, we are currently working on a fix for this.',
         Reproduced: 'Correct, this is just a placeholder text that we forgot to update, we are currently working on a fix for this and it will be updated in the next few weeks once we make a websocket/api update.',
       }
