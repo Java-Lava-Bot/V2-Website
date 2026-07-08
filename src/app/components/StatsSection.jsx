@@ -14,7 +14,7 @@ export default function StatsSection() {
   const y = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
 
   const stats = [
-    { value: '68+', label: 'Servers' },
+    { value: '71+', label: 'Servers' },
     { value: '4.6k+', label: 'Users' },
     { value: '63.5M+', label: 'Commands Run' },
     { value: '99%', label: 'Uptime' },
