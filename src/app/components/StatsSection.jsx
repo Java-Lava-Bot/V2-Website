@@ -15,7 +15,7 @@ export default function StatsSection() {
 
   const stats = [
     { value: '72', label: 'Servers' },
-    { value: '4.3k+', label: 'Users' },
+    { value: '4.6k+', label: 'Users' },
     { value: '63.5M+', label: 'Commands Run' },
     { value: '99%', label: 'Uptime' },
   ];
