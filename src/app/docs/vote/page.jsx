@@ -62,6 +62,25 @@ export default function VotingPage() {
             </a>
           </div>
 
+          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-secondary)]/20">
+            <CommandLineIcon className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-white mb-2">
+              Directum
+            </h3>
+            <a
+              href="https://directum.org/bot/6d4e7712-2998-4490-aee2-2dfa052c8c51"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
+            >
+              <span>Vote on Discord Bot List</span>
+              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+              </svg>
+            </a>
+          </div>
+
           {/* Navigation */}
           <div className="mt-12 pt-8 border-t border-gray-800">
             <div className="flex justify-between items-center">
