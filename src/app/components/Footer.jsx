@@ -170,7 +170,7 @@ export default function Footer() {
               </p>
 
               <p className='mt-2 text-xs text-white/15'>
-                Built by Phil, Jeo, Ziggy, and Heliki.
+                Built by Phil, Jeo, Ziggy, and Val.
               </p>
             </div>
 
