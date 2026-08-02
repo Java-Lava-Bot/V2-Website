@@ -1,11 +1,29 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function HeroSection() {
   const [isHovered, setIsHovered] = useState(false);
+  const [serverCount, setServerCount] = useState(null);
   const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    fetch('https://us-1-fjfahczzk.muffindiscord.me/servercount')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Failed to fetch server count');
+        }
+
+        return res.json();
+      })
+      .then(data => {
+        setServerCount(data.serverCount);
+      })
+      .catch(() => {
+        setServerCount(null);
+      });
+  }, []);
 
   const motionProps = shouldReduceMotion
     ? {}
@@ -148,6 +166,7 @@ export default function HeroSection() {
                         <div className='font-mono text-[10px] uppercase tracking-[0.18em] text-white/30'>
                           Recent activity
                         </div>
+
                         <div className='mt-1 text-lg font-semibold'>
                           Mod queue
                         </div>
@@ -206,6 +225,7 @@ export default function HeroSection() {
                               <span className='font-mono text-xs font-bold text-white/80'>
                                 {item.command}
                               </span>
+
                               <span className='truncate text-xs text-white/35'>
                                 {item.user}
                               </span>
@@ -233,6 +253,7 @@ export default function HeroSection() {
                       <div className='text-2xl font-black tracking-[-0.04em]'>
                         Moderation
                       </div>
+
                       <div className='mt-1 text-xs text-white/35'>
                         Tools for everyday server management
                       </div>
@@ -281,13 +302,29 @@ export default function HeroSection() {
                   </div>
                 </div>
 
+                {/* Bottom status bar */}
                 <div className='border-t border-white/10 bg-black/20 px-5 py-4'>
-                  <div className='flex items-center gap-3 font-mono text-xs'>
-                    <span className='text-[#fb923c]'>java@lava</span>
-                    <span className='text-white/20'>:</span>
-                    <span className='text-[#a78bfa]'>~</span>
-                    <span className='text-white/20'>$</span>
-                    <span className='text-white/60'>ready for moderation_</span>
+                  <div className='flex flex-wrap items-center justify-between gap-4'>
+                    <div className='flex items-center gap-3 font-mono text-xs'>
+                      <span className='text-[#fb923c]'>java@lava</span>
+                      <span className='text-white/20'>:</span>
+                      <span className='text-[#a78bfa]'>~</span>
+                      <span className='text-white/20'>$</span>
+                      <span className='text-white/60'>
+                        ready for moderation_
+                      </span>
+                    </div>
+
+                    {/* Live server count */}
+                    <div className='flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em]'>
+                      <span className='h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]' />
+
+                      <span className='text-white/35'>
+                        {serverCount !== null
+                          ? `${serverCount} servers`
+                          : 'Loading...'}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
