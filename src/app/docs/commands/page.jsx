@@ -8,18 +8,18 @@ import {
   SparklesIcon,
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import StatusScript from '../../components/StatusScript';
 
-const commandCategories = [
+export const commandCategories = [
   {
     name: 'Moderation',
     icon: ShieldCheckIcon,
     color: 'text-red-400',
-    bgColor: 'bg-red-500/10',
-    borderColor: 'border-red-500/20',
+    accent: '#f87171',
     description: 'Powerful tools to keep your server safe and organized',
     commands: [
       {
@@ -34,7 +34,10 @@ const commandCategories = [
         description: 'Unban a previously banned member',
         usage: '/ban-remove @user [reason]',
         permissions: 'Ban Members',
-        examples: ['/ban-remove @user Accidental or appealed', '/ban-remove @user'],
+        examples: [
+          '/ban-remove @user Accidental or appealed',
+          '/ban-remove @user',
+        ],
       },
       {
         name: '/ban-temp',
@@ -110,11 +113,14 @@ const commandCategories = [
         description: 'Unlock a previously locked channel',
         usage: '/lock-remove [channel] [reason]',
         permissions: 'Manage Channels',
-        examples: ['/lock-remove #general Maintenance complete', '/lock-remove' ],
+        examples: [
+          '/lock-remove #general Maintenance complete',
+          '/lock-remove',
+        ],
       },
       {
         name: '/nickname',
-        description: 'Change a member\'s nickname',
+        description: "Change a member's nickname",
         usage: '/nickname @user [new nickname]',
         permissions: 'Manage Nicknames',
         examples: ['/nickname @user NewNickname', '/nickname @user'],
@@ -131,7 +137,10 @@ const commandCategories = [
         description: 'Remove a role from a member',
         usage: '/role-remove @user <role>',
         permissions: 'Manage Roles',
-        examples: ['/role-remove @user @Member', '/role-remove @user @Moderator'],
+        examples: [
+          '/role-remove @user @Member',
+          '/role-remove @user @Moderator',
+        ],
       },
       {
         name: '/slowmode',
@@ -145,23 +154,23 @@ const commandCategories = [
         description: 'Report a member to the moderation team',
         usage: '/report @user <reason>',
         permissions: 'Use Application Commands',
-        examples: ['/report @user Spamming in chat\'s'],
+        examples: ['/report @user Spamming in chat'],
       },
       {
         name: '/report-setup',
         description: 'Setup report configuration for the moderation team',
         usage: '/report-setup [channel]',
         permissions: 'Manage Server',
-        examples: ['/report-setup #reports', '/report-setup' ],
+        examples: ['/report-setup #reports', '/report-setup'],
       },
     ],
   },
+
   {
     name: 'Community',
     icon: ChatBubbleLeftRightIcon,
     color: 'text-blue-400',
-    bgColor: 'bg-blue-500/10',
-    borderColor: 'border-blue-500/20',
+    accent: '#60a5fa',
     description: 'Engage your community with interactive features',
     commands: [
       {
@@ -180,26 +189,28 @@ const commandCategories = [
       },
       {
         name: '/giveaway',
-        description: 'Host giveaways in your server to boost engagement - Under development and may not work properly',
+        description:
+          'Host giveaways in your server to boost engagement - Under development and may not work properly',
         usage: '/giveaway <prize> <duration> <winners>',
         permissions: 'Manage Server',
         examples: ['/giveaway "Discord Nitro" 1h 1'],
       },
       {
         name: '/welcome',
-        description: 'Configure welcome messages for new members - Under development and may not work properly',
+        description:
+          'Configure welcome messages for new members - Under development and may not work properly',
         usage: '/welcome setup [channel] [message]',
         permissions: 'Manage Server',
         examples: ['/welcome setup #general "Welcome {user}!"'],
       },
     ],
   },
+
   {
     name: 'Fun',
     icon: SparklesIcon,
     color: 'text-purple-400',
-    bgColor: 'bg-purple-500/10',
-    borderColor: 'border-purple-500/20',
+    accent: '#a78bfa',
     description: 'Entertainment commands to keep your server lively',
     commands: [
       {
@@ -232,12 +243,12 @@ const commandCategories = [
       },
     ],
   },
+
   {
     name: 'Utility',
     icon: WrenchScrewdriverIcon,
     color: 'text-green-400',
-    bgColor: 'bg-green-500/10',
-    borderColor: 'border-green-500/20',
+    accent: '#4ade80',
     description: 'Helpful tools and information commands',
     commands: [
       {
@@ -252,21 +263,24 @@ const commandCategories = [
       },
       {
         name: '/userinfo',
-        description: 'Get information about a user - Under development and may not work properly',
+        description:
+          'Get information about a user - Under development and may not work properly',
         usage: '/userinfo [user]',
         permissions: 'Use Application Commands',
         examples: ['/userinfo @user', '/userinfo'],
       },
       {
         name: '/serverinfo',
-        description: 'Display server information and statistics - Under development and may not work properly',
+        description:
+          'Display server information and statistics - Under development and may not work properly',
         usage: '/serverinfo',
         permissions: 'Use Application Commands',
         examples: ['/serverinfo'],
       },
       {
         name: '/avatar',
-        description: "Display a user's avatar - Under development and may not work properly",
+        description:
+          "Display a user's avatar - Under development and may not work properly",
         usage: '/avatar [user]',
         permissions: 'Use Application Commands',
         examples: ['/avatar @user', '/avatar'],
@@ -280,9 +294,10 @@ const commandCategories = [
       },
       {
         name: '/study-buddy',
-        description: 'DM\'s ONLY COMMAND - Use Java Lava as a study buddy to help ace your tests and quizzes while using Discord!',
+        description:
+          "DM's ONLY COMMAND - Use Java Lava as a study buddy to help ace your tests and quizzes while using Discord!",
         usage: '/study-buddy',
-        permissions: 'DM\'s with Bot',
+        permissions: "DM's with Bot",
         examples: ['/study-buddy'],
       },
     ],
@@ -294,75 +309,123 @@ export default function CommandsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [expandedCommands, setExpandedCommands] = useState({});
 
+  const totalCommands = useMemo(
+    () =>
+      commandCategories.reduce(
+        (total, category) => total + category.commands.length,
+        0
+      ),
+    []
+  );
+
+  const filteredCategories = useMemo(() => {
+    const search = searchTerm.trim().toLowerCase();
+
+    return commandCategories
+      .map(category => ({
+        ...category,
+        commands: category.commands.filter(command => {
+          if (!search) return true;
+
+          return (
+            command.name.toLowerCase().includes(search) ||
+            command.description.toLowerCase().includes(search) ||
+            command.usage.toLowerCase().includes(search)
+          );
+        }),
+      }))
+      .filter(category => {
+        if (selectedCategory === 'all') {
+          return category.commands.length > 0;
+        }
+
+        return (
+          category.name.toLowerCase() === selectedCategory &&
+          category.commands.length > 0
+        );
+      });
+  }, [searchTerm, selectedCategory]);
+
   const toggleCommandDetails = (categoryName, commandName) => {
     const key = `${categoryName}-${commandName}`;
-    setExpandedCommands(prev => ({
-      ...prev,
-      [key]: !prev[key],
+
+    setExpandedCommands(previous => ({
+      ...previous,
+      [key]: !previous[key],
     }));
   };
-
-  const filteredCategories = commandCategories
-    .map(category => ({
-      ...category,
-      commands: category.commands.filter(
-        cmd =>
-          cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          cmd.description.toLowerCase().includes(searchTerm.toLowerCase())
-      ),
-    }))
-    .filter(category => {
-      if (selectedCategory === 'all') return category.commands.length > 0;
-      return category.name.toLowerCase() === selectedCategory;
-    });
-
-  const totalCommands = commandCategories.reduce(
-    (total, category) => total + category.commands.length,
-    0
-  );
 
   return (
     <>
       <StatusScript />
       <Header />
 
-      <main className="min-h-screen bg-[var(--color-dark)]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className='relative isolate min-h-screen overflow-hidden bg-[#0b0a12] text-white'>
+        {/* Shared grid background */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute inset-0 opacity-[0.035]'
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+          }}
+        />
+
+        {/* Purple glow */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute left-[-14rem] top-32 h-[30rem] w-[30rem] rounded-full bg-[#a78bfa]/[0.045] blur-[120px]'
+        />
+
+        {/* Orange glow */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute right-[-14rem] top-[50rem] h-[30rem] w-[30rem] rounded-full bg-[#fb923c]/[0.035] blur-[120px]'
+        />
+
+        <div className='relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10'>
           {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 mb-6">
-              <CommandLineIcon className="h-5 w-5 text-[var(--color-primary)] mr-2" />
-              <span className="text-sm font-medium text-[var(--color-primary)]">
-                Command Reference
-              </span>
+          <div className='mb-14 text-center'>
+            <div className='mb-5 flex items-center justify-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#a78bfa]'>
+              <span className='h-2 w-2 bg-[#fb923c]' />
+              Java Lava / commands
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Java Lava Commands
+            <h1 className='text-[clamp(2.8rem,6vw,5rem)] font-black leading-[0.9] tracking-[-0.055em]'>
+              Java Lava
+              <br />
+              <span className='text-[#a78bfa]'>Commands.</span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-              Discover all {totalCommands}+ commands available in Java Lava.
-              From powerful moderation tools to fun community features.
+
+            <p className='mx-auto mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg'>
+              Browse {totalCommands} commands across moderation, community, fun,
+              and utility features.
             </p>
 
-            {/* Search and Filter */}
-            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-              <div className="relative flex-1">
-                <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+            {/* Search */}
+            <div className='mx-auto mt-9 flex max-w-3xl flex-col gap-3 sm:flex-row'>
+              <div className='relative flex-1'>
+                <MagnifyingGlassIcon className='pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/25' />
+
                 <input
-                  type="text"
-                  placeholder="Search commands..."
-                  className="w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
+                  type='text'
                   value={searchTerm}
-                  onChange={e => setSearchTerm(e.target.value)}
+                  onChange={event => setSearchTerm(event.target.value)}
+                  placeholder='Search commands...'
+                  className='w-full border border-white/10 bg-[#11101a] py-3.5 pl-11 pr-4 text-sm text-white outline-none placeholder:text-white/25 transition-colors focus:border-[#a78bfa]/40'
                 />
               </div>
+
               <select
-                className="px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                 value={selectedCategory}
-                onChange={e => setSelectedCategory(e.target.value)}
+                onChange={event => setSelectedCategory(event.target.value)}
+                className='border border-white/10 bg-[#11101a] px-4 py-3.5 text-sm text-white/60 outline-none transition-colors focus:border-[#a78bfa]/40'
               >
-                <option value="all">All Categories</option>
+                <option value='all'>All Categories</option>
+
                 {commandCategories.map(category => (
                   <option
                     key={category.name}
@@ -375,166 +438,210 @@ export default function CommandsPage() {
             </div>
           </div>
 
-          {/* Commands Grid */}
-          <div className="space-y-12">
-            {filteredCategories.map((category, categoryIndex) => {
-              if (category.commands.length === 0) return null;
-
+          {/* Categories */}
+          <div className='space-y-14'>
+            {filteredCategories.map(category => {
               const Icon = category.icon;
 
               return (
-                <div key={categoryIndex} className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={`p-3 rounded-xl ${category.bgColor} ${category.borderColor} border`}
-                    >
-                      <Icon className={`h-6 w-6 ${category.color}`} />
-                    </div>
-                    <div>
-                      <h2 className={`text-3xl font-bold ${category.color}`}>
-                        {category.name}
-                      </h2>
-                      <p className="text-gray-400">{category.description}</p>
-                    </div>
-                    <div className="ml-auto">
-                      <span
-                        className={`px-3 py-1 text-sm font-medium rounded-full ${category.bgColor} ${category.color}`}
+                <section key={category.name}>
+                  {/* Category header */}
+                  <div className='mb-6 flex flex-col gap-4 border-b border-white/10 pb-5 sm:flex-row sm:items-center sm:justify-between'>
+                    <div className='flex items-center gap-4'>
+                      <div
+                        className='flex h-11 w-11 shrink-0 items-center justify-center border bg-white/[0.02]'
+                        style={{
+                          borderColor: `${category.accent}33`,
+                          color: category.accent,
+                        }}
                       >
-                        {category.commands.length} commands
-                      </span>
+                        <Icon className='h-5 w-5' />
+                      </div>
+
+                      <div>
+                        <div
+                          className='mb-1 font-mono text-[9px] font-bold uppercase tracking-[0.16em]'
+                          style={{ color: category.accent }}
+                        >
+                          Command category
+                        </div>
+
+                        <h2 className='text-2xl font-bold tracking-[-0.02em] text-white/90'>
+                          {category.name}
+                        </h2>
+
+                        <p className='mt-1 text-sm text-white/35'>
+                          {category.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div
+                      className='self-start border px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.12em]'
+                      style={{
+                        borderColor: `${category.accent}33`,
+                        color: category.accent,
+                        backgroundColor: `${category.accent}08`,
+                      }}
+                    >
+                      {category.commands.length} commands
                     </div>
                   </div>
 
-                  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {category.commands.map((command, commandIndex) => {
+                  {/* Command grid */}
+                  <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
+                    {category.commands.map(command => {
                       const uniqueKey = `${category.name}-${command.name}`;
                       const isExpanded = expandedCommands[uniqueKey];
 
                       return (
-                        <div
+                        <article
                           key={uniqueKey}
-                          className={`relative p-6 rounded-xl border transition-all duration-300 hover:transform hover:translate-y-[-2px] ${category.bgColor} ${category.borderColor} hover:border-opacity-60`}
+                          className='group relative overflow-hidden border border-white/10 bg-[#11101a] transition-all duration-200 hover:border-white/15 hover:bg-[#13121c]'
                         >
-                          <div className="flex items-start justify-between mb-4">
-                            <h3 className="text-lg font-bold text-white font-mono pr-2">
-                              {command.name}
-                            </h3>
-                            <button
-                              onClick={() =>
-                                toggleCommandDetails(
-                                  category.name,
-                                  command.name
-                                )
-                              }
-                              className={`flex-shrink-0 px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${category.color} border ${category.borderColor} hover:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-opacity-50`}
-                              style={{ focusRingColor: category.color }}
-                            >
-                              {isExpanded ? 'Less' : 'More'}
-                            </button>
-                          </div>
+                          <div className='p-5'>
+                            <div className='mb-4 flex items-start justify-between gap-3'>
+                              <div>
+                                <div
+                                  className='mb-2 font-mono text-[9px] uppercase tracking-[0.14em]'
+                                  style={{ color: `${category.accent}99` }}
+                                >
+                                  {category.name}
+                                </div>
 
-                          <p className="text-gray-300 text-sm mb-4 leading-relaxed min-h-[2.5rem]">
-                            {command.description}
-                          </p>
+                                <h3 className='font-mono text-base font-bold text-white/90'>
+                                  {command.name}
+                                </h3>
+                              </div>
 
-                          <div className="space-y-3">
-                            <div>
-                              <span className="text-xs font-medium text-gray-400 mb-1 block">
-                                Usage:
-                              </span>
-                              <code className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed">
+                              <button
+                                type='button'
+                                onClick={() =>
+                                  toggleCommandDetails(
+                                    category.name,
+                                    command.name
+                                  )
+                                }
+                                className='shrink-0 border border-white/10 bg-white/[0.025] px-3 py-1.5 font-mono text-[9px] font-bold uppercase tracking-[0.1em] text-white/40 transition-colors hover:border-white/20 hover:text-white/70'
+                              >
+                                {isExpanded ? 'Less' : 'More'}
+                              </button>
+                            </div>
+
+                            <p className='min-h-[3rem] text-sm leading-6 text-white/40'>
+                              {command.description}
+                            </p>
+
+                            <div className='mt-5'>
+                              <div className='mb-2 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-white/20'>
+                                Usage
+                              </div>
+
+                              <code className='block overflow-x-auto border border-white/5 bg-black/20 p-3 font-mono text-xs leading-5 text-white/60'>
                                 {command.usage}
                               </code>
                             </div>
 
                             {isExpanded && (
-                              <div className="space-y-4 pt-4 border-t border-gray-700/50 animate-fade-in">
+                              <div className='mt-5 space-y-5 border-t border-white/10 pt-5'>
                                 <div>
-                                  <span className="text-xs font-medium text-gray-400 mb-1 block">
-                                    Required Permission:
-                                  </span>
-                                  <p className="text-sm text-gray-300 bg-gray-800/30 rounded-md p-2">
+                                  <div className='mb-2 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-white/20'>
+                                    Required permission
+                                  </div>
+
+                                  <div className='border border-white/5 bg-white/[0.015] p-3 text-sm text-white/45'>
                                     {command.permissions}
-                                  </p>
+                                  </div>
                                 </div>
 
                                 <div>
-                                  <span className="text-xs font-medium text-gray-400 mb-2 block">
-                                    Examples:
-                                  </span>
-                                  <div className="space-y-2">
-                                    {command.examples.map(
-                                      (example, exIndex) => (
-                                        <code
-                                          key={exIndex}
-                                          className="block p-3 bg-black/30 rounded-md text-sm text-gray-200 font-mono leading-relaxed"
-                                        >
-                                          {example}
-                                        </code>
-                                      )
-                                    )}
+                                  <div className='mb-2 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-white/20'>
+                                    Examples
+                                  </div>
+
+                                  <div className='space-y-2'>
+                                    {command.examples.map((example, index) => (
+                                      <code
+                                        key={index}
+                                        className='block overflow-x-auto border border-white/5 bg-black/20 p-3 font-mono text-xs leading-5 text-white/55'
+                                      >
+                                        {example}
+                                      </code>
+                                    ))}
                                   </div>
                                 </div>
                               </div>
                             )}
                           </div>
-                        </div>
+
+                          <div
+                            className='absolute bottom-0 left-0 h-px w-0 transition-all duration-300 group-hover:w-full'
+                            style={{ backgroundColor: category.accent }}
+                          />
+                        </article>
                       );
                     })}
                   </div>
-                </div>
+                </section>
               );
             })}
           </div>
 
-          {searchTerm &&
-            filteredCategories.every(cat => cat.commands.length === 0) && (
-              <div className="text-center py-12">
-                <CommandLineIcon className="h-16 w-16 text-gray-600 mx-auto mb-4" />
-                <h3 className="text-xl font-medium text-gray-400 mb-2">
-                  No commands found
-                </h3>
-                <p className="text-gray-500">
-                  Try adjusting your search or filter criteria.
-                </p>
-              </div>
-            )}
+          {/* No results */}
+          {filteredCategories.length === 0 && (
+            <div className='border border-white/10 bg-[#11101a] px-6 py-16 text-center'>
+              <CommandLineIcon className='mx-auto mb-4 h-12 w-12 text-white/15' />
 
-          {/* Need Help Section */}
-          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-secondary)]/10 to-[var(--color-primary)]/10 rounded-2xl border border-[var(--color-secondary)]/20">
-            <CommandLineIcon className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">
-              Need Help with Commands?
-            </h3>
-            <p className="text-gray-400 mb-6 max-w-md mx-auto">
-              Join our Discord community for support, examples, and tips on
-              using Java Lava commands effectively.
-            </p>
-            <a
-              href="/support"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Get Support</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-          </div>
+              <h2 className='text-xl font-semibold text-white/70'>
+                No commands found
+              </h2>
+
+              <p className='mt-2 text-sm text-white/30'>
+                Try adjusting your search or category filter.
+              </p>
+            </div>
+          )}
+
+          {/* Help */}
+          <section className='mt-16 overflow-hidden border border-white/10 bg-[#11101a]'>
+            <div className='p-6 text-center sm:p-8'>
+              <CommandLineIcon className='mx-auto mb-4 h-10 w-10 text-[#a78bfa]' />
+
+              <div className='mb-2 font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-[#a78bfa]'>
+                Need assistance?
+              </div>
+
+              <h2 className='text-2xl font-bold tracking-[-0.02em] text-white/90'>
+                Need help with a command?
+              </h2>
+
+              <p className='mx-auto mt-3 max-w-xl text-sm leading-6 text-white/35'>
+                Join the Java Lava community for support, examples, and help
+                configuring commands for your server.
+              </p>
+
+              <a
+                href='/support'
+                className='mt-6 inline-flex min-h-10 items-center gap-2 border border-white/10 bg-white/[0.025] px-5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-white/50 transition-colors hover:border-[#a78bfa]/30 hover:bg-[#a78bfa]/[0.06] hover:text-[#c4b5fd]'
+              >
+                Get Support
+                <span>→</span>
+              </a>
+            </div>
+          </section>
 
           {/* Navigation */}
-          <div className="mt-12 pt-8 border-t border-gray-800">
-            <div className="flex justify-between items-center">
+          <div className='mt-12 border-y border-white/10 py-5'>
+            <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
               <a
-                href="/docs"
-                className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-gray-300 hover:bg-gray-800/70 hover:text-white transition-colors"
+                href='/docs'
+                className='inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white/35 transition-colors hover:text-white'
               >
-                ← Back to Docs
+                ← Back to docs
               </a>
-              <div className="text-sm text-gray-500">
-                {totalCommands} commands • Last updated: January 8, 2025
+
+              <div className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/20'>
+                {totalCommands} Commands • Updated August 2, 2026
               </div>
             </div>
           </div>
