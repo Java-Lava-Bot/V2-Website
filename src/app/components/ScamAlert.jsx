@@ -1,171 +1,214 @@
 'use client';
 
 import {
-  ExclamationTriangleIcon,
-  ShieldCheckIcon,
-  NoSymbolIcon,
-  LinkIcon,
   ChatBubbleBottomCenterTextIcon,
   EnvelopeIcon,
+  ExclamationTriangleIcon,
+  LinkIcon,
+  NoSymbolIcon,
+  ShieldCheckIcon,
 } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+
+const alerts = [
+  {
+    icon: NoSymbolIcon,
+    command: 'STAFF_DM',
+    title: 'Staff will not DM you first',
+    description:
+      'Java Lava staff will not contact you first asking for passwords, tokens, or payments.',
+  },
+  {
+    icon: LinkIcon,
+    command: 'LINK_CHECK',
+    title: 'Check links before opening them',
+    description:
+      "Be careful with shortened links and websites you don't recognize. Check where a link leads before opening it.",
+  },
+  {
+    icon: EnvelopeIcon,
+    command: 'GIVEAWAY',
+    title: 'Treat giveaways with caution',
+    description:
+      'Fake Nitro offers and verification pages are common ways to trick Discord users into giving away account access.',
+  },
+  {
+    icon: ChatBubbleBottomCenterTextIcon,
+    command: 'IDENTITY',
+    title: 'Check for impersonators',
+    description:
+      "A copied username or profile picture doesn't make someone staff. Check their username, roles, and server permissions.",
+  },
+  {
+    icon: ShieldCheckIcon,
+    command: 'ACCOUNT',
+    title: 'Protect your account',
+    description:
+      'Use a strong password and enable two-factor authentication on your Discord account.',
+  },
+  {
+    icon: ExclamationTriangleIcon,
+    command: 'REPORT',
+    title: 'Report suspicious activity',
+    description:
+      'Report suspicious messages to Discord and tell the server moderators so they can review what happened.',
+  },
+];
 
 export default function ScamAlertSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: 'spring', stiffness: 100, damping: 15 },
-    },
-  };
-
-  const alerts = [
-    {
-      icon: <NoSymbolIcon className="h-7 w-7" />,
-      title: 'No DMs From Staff',
-      description:
-        'We will never DM you first asking for passwords, tokens, or payments. If someone claims to be staff, verify in the server.',
-    },
-    {
-      icon: <LinkIcon className="h-7 w-7" />,
-      title: 'Watch Suspicious Links',
-      description:
-        'Avoid shortened or unfamiliar links. Hover to preview URLs, and only use links posted in official channels.',
-    },
-    {
-      icon: <EnvelopeIcon className="h-7 w-7" />,
-      title: 'Fake Giveaways & “Verification”',
-      description:
-        'Ignore messages about free Nitro, giveaways, or “verify your account” pages. These are common phishing scams.',
-    },
-    {
-      icon: <ChatBubbleBottomCenterTextIcon className="h-7 w-7" />,
-      title: 'Impersonation Attempts',
-      description:
-        'Scammers copy names/avatars. Always check the full username, roles, and join date before trusting requests.',
-    },
-    {
-      icon: <ShieldCheckIcon className="h-7 w-7" />,
-      title: 'Enable Extra Security',
-      description:
-        'Turn on 2FA and use a strong unique password. It’s the fastest way to protect your Discord account.',
-    },
-    // ✅ 6th slot added here
-    {
-      icon: <ExclamationTriangleIcon className="h-7 w-7" />,
-      title: 'Report Suspicious Activity',
-      description:
-        'If you encounter suspicious activity, report it immediately to Discord support, inform server moderators, and Java Lava staff. They can forward it to the dev team to input it into our scam database to protect other users.',
-    },
-  ];
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Abstract background elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-b from-[var(--color-primary)] opacity-[0.03] blur-3xl"></div>
-        <div className="absolute -bottom-10 -left-10 w-72 h-72 rounded-full bg-[var(--color-accent)] opacity-[0.04] blur-3xl"></div>
-      </div>
+    <section className='relative isolate overflow-hidden bg-[#0b0a12] py-28 text-white'>
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute inset-0 opacity-[0.035]'
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
+        }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute left-[-14rem] top-24 h-[32rem] w-[32rem] rounded-full bg-[#fb923c]/[0.06] blur-[130px]'
+      />
+
+      <div className='relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10'>
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className='mb-14 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end'
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-accent)] bg-opacity-20 text-[var(--color-secondary)]">
-            <ExclamationTriangleIcon className="h-4 w-4" />
-            Scam Alert
-          </span>
+          <div>
+            <div className='mb-5 flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#fb923c]'>
+              <span className='h-2 w-2 bg-[#fb923c]' />
+              Java Lava / security
+            </div>
 
-          <h2 className="text-4xl font-bold mb-4">
-            Stay Safe From Discord Scams
-          </h2>
-
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Scammers often target Discord communities with fake giveaways,
-            phishing links, and impersonation. Use these quick checks to protect
-            your account and your server.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-        >
-          {alerts.map((alert, index) => (
-            <motion.div key={index} className="relative" variants={itemVariants}>
-              <div className="flex items-center mb-4">
-                <div className="p-3 rounded-lg bg-[var(--color-secondary)] bg-opacity-10 text-[var(--color-accent)]">
-                  {alert.icon}
-                </div>
-                <h3 className="ml-4 text-xl font-semibold">{alert.title}</h3>
-              </div>
-
-              <p className="text-gray-400 pl-16">{alert.description}</p>
-
-              {/* Decorative line */}
-              <div className="absolute left-6 top-12 h-full w-[1px] bg-gradient-to-b from-[var(--color-accent)] to-transparent opacity-20"></div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-        >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-3">
-            <a
-              href="https://discord.com/safety/360044104071-tips-against-spam-and-hacking"
-              className="inline-flex items-center px-8 py-3 rounded-lg bg-[var(--color-secondary)] text-white hover:bg-opacity-90 transition-all duration-300"
-            >
-              Safety Guide
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </a>
-
-            <a
-              href="/support"
-              className="inline-flex items-center px-8 py-3 rounded-lg bg-[var(--color-secondary)] bg-opacity-10 text-white hover:bg-opacity-20 transition-all duration-300"
-            >
-              Report a Scam
-            </a>
+            <h2 className='text-[clamp(2.7rem,5vw,5rem)] font-black leading-[0.9] tracking-[-0.055em]'>
+              Don't give
+              <br />
+              <span className='text-[#fb923c]'>scammers access.</span>
+            </h2>
           </div>
 
-          <p className="text-gray-500 text-sm mt-4">
-            Tip: If you clicked something suspicious, change your password and
-            enable 2FA immediately.
-          </p>
+          <div className='max-w-xl lg:justify-self-end'>
+            <p className='text-base leading-7 text-white/50 sm:text-lg'>
+              Most Discord scams rely on a small number of tricks. These checks
+              can help you spot them before they become a problem.
+            </p>
+          </div>
         </motion.div>
+
+        <div className='relative overflow-hidden border border-white/10 bg-[#11101a]'>
+          <div className='flex items-center justify-between border-b border-white/10 px-5 py-4'>
+            <div className='flex items-center gap-3'>
+              <div className='flex gap-1.5'>
+                <span className='h-2.5 w-2.5 bg-white/15' />
+                <span className='h-2.5 w-2.5 bg-white/15' />
+                <span className='h-2.5 w-2.5 bg-white/15' />
+              </div>
+
+              <span className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/30'>
+                java-lava / security.check
+              </span>
+            </div>
+
+            <div className='flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider text-[#fb923c]'>
+              <ExclamationTriangleIcon className='h-3.5 w-3.5' />
+              Attention
+            </div>
+          </div>
+
+          <div className='divide-y divide-white/10'>
+            {alerts.map((alert, index) => {
+              const Icon = alert.icon;
+
+              return (
+                <motion.div
+                  key={alert.command}
+                  initial={
+                    shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -15 }
+                  }
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: shouldReduceMotion ? 0 : index * 0.05,
+                  }}
+                  className='group grid gap-5 px-5 py-6 transition-colors hover:bg-white/[0.025] sm:grid-cols-[180px_1fr_auto] sm:items-center sm:px-7'
+                >
+                  <div className='flex items-center gap-3'>
+                    <div className='flex h-9 w-9 items-center justify-center border border-[#a78bfa]/20 bg-[#a78bfa]/[0.06] text-[#a78bfa]'>
+                      <Icon className='h-4 w-4' />
+                    </div>
+
+                    <span className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/25'>
+                      {alert.command}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className='text-base font-semibold text-white/90'>
+                      {alert.title}
+                    </h3>
+
+                    <p className='mt-1 max-w-2xl text-sm leading-6 text-white/40'>
+                      {alert.description}
+                    </p>
+                  </div>
+
+                  <div className='hidden font-mono text-[10px] text-white/15 sm:block'>
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className='flex flex-col gap-4 border-t border-white/10 bg-black/20 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7'>
+            <div className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/25'>
+              If something feels wrong, stop before continuing.
+            </div>
+
+            <div className='flex flex-col gap-3 sm:flex-row'>
+              <a
+                href='https://discord.com/safety/360044104071-tips-against-spam-and-hacking'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex min-h-11 items-center justify-center gap-2 bg-[#a78bfa] px-5 font-semibold text-[#0b0a12] transition-colors hover:bg-[#c4b5fd] focus:outline-none focus:ring-2 focus:ring-[#a78bfa] focus:ring-offset-2 focus:ring-offset-[#11101a]'
+              >
+                Discord safety guide
+                <span>→</span>
+              </a>
+
+              <a
+                href='/support'
+                className='inline-flex min-h-11 items-center justify-center border border-white/10 bg-white/[0.03] px-5 font-semibold text-white/75 transition-colors hover:border-white/20 hover:bg-white/[0.06] hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30'
+              >
+                Report a scam
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-12 border-y border-white/10 py-4'>
+          <div className='flex flex-wrap items-center justify-between gap-4'>
+            <span className='font-mono text-[10px] uppercase tracking-[0.18em] text-white/25'>
+              Java Lava security guidance
+            </span>
+
+            <span className='font-mono text-[10px] uppercase tracking-[0.15em] text-emerald-400'>
+              Checks active
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

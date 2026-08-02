@@ -1,183 +1,185 @@
 'use client';
 
-import Link from 'next/link';
+import {
+  BookOpenIcon,
+  ChatBubbleLeftRightIcon,
+  DocumentTextIcon,
+  PlusIcon,
+  ShieldCheckIcon,
+} from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const footerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay: 0.3,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <motion.footer
-      className="relative bg-[#0a0a14] py-16 mt-16 text-center text-gray-400 border-t border-[var(--color-primary)] border-opacity-20"
-      initial="hidden"
-      whileInView="visible"
+      className='relative mt-16 border-t border-white/10 bg-[#0a0910] text-white'
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      variants={footerVariants}
+      transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12 text-left"
-          variants={itemVariants}
-        >
+      {/* Subtle grid */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute inset-0 opacity-[0.02]'
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
+        }}
+      />
+
+      {/* Subtle glow */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute left-[-12rem] top-[-12rem] h-[24rem] w-[24rem] rounded-full bg-[#a78bfa]/[0.035] blur-[120px]'
+      />
+
+      <div className='relative mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10'>
+        {/* Main footer content */}
+        <div className='grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr]'>
+          {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-[var(--color-Java)]">
-              Java<span className="text-[var(--color-Lava)]"> Lava</span>
-            </h3>
-            <p className="mb-4 text-sm">
-              An advanced Discord bot designed to enhance your community
-              experience with powerful moderation tools, automod features, and
-              fun commands.
+            <Link
+              href='/'
+              className='inline-flex items-center text-xl font-bold tracking-[-0.03em] text-white'
+            >
+              Java <span className='text-[#a78bfa]'>Lava</span>
+            </Link>
+
+            <p className='mt-4 max-w-md text-sm leading-7 text-white/35'>
+              An advanced Discord bot built to provide powerful moderation,
+              automation, utility, and community features for your server.
             </p>
-            <div className="flex space-x-4">
+
+            <div className='mt-6 flex flex-wrap gap-3'>
               <a
-                href="https://discord.gg/tM8Y5acUta"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[var(--color-primary)]"
+                href='https://discord.gg/tM8Y5acUta'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center gap-2 border border-white/10 bg-white/[0.025] px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-white/40 transition-colors hover:border-[#a78bfa]/30 hover:text-[#c4b5fd]'
               >
-                <i className="fab fa-discord text-xl"></i>
+                <ChatBubbleLeftRightIcon className='h-3.5 w-3.5' />
+                Discord
               </a>
+
               <a
-                href="https://github.com/Java-Lava-Bot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[var(--color-primary)]"
+                href='https://github.com/Java-Lava-Bot'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center gap-2 border border-white/10 bg-white/[0.025] px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-white/40 transition-colors hover:border-[#a78bfa]/30 hover:text-[#c4b5fd]'
               >
-                <i className="fab fa-github text-xl"></i>
-              </a>
-              <a
-                href="https://github.com/phillsphanbh3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[var(--color-primary)]"
-              >
-                <i className="fab fa-github text-xl"></i>
+                GitHub
               </a>
             </div>
           </div>
 
+          {/* Navigation */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/about-us"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                >
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://javalava.statuspage.io/"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Status Page
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/support"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Support
-                </a>
-              </li>
-            </ul>
+            <div className='mb-5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/25'>
+              Navigation
+            </div>
+
+            <nav className='space-y-3'>
+              <Link
+                href='/about-us'
+                className='flex items-center gap-2 text-sm text-white/40 transition-colors hover:text-white'
+              >
+                About Us
+              </Link>
+
+              <Link
+                href='/docs'
+                className='flex items-center gap-2 text-sm text-white/40 transition-colors hover:text-white'
+              >
+                <BookOpenIcon className='h-4 w-4 text-white/20' />
+                Documentation
+              </Link>
+
+              <Link
+                href='/invite'
+                className='flex items-center gap-2 text-sm text-[#a78bfa] transition-colors hover:text-[#c4b5fd]'
+              >
+                <PlusIcon className='h-4 w-4' />
+                Invite
+              </Link>
+
+              <a
+                href='https://javalava.statuspage.io/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-2 text-sm text-white/40 transition-colors hover:text-white'
+              >
+                Status Page
+              </a>
+
+              <a
+                href='https://discord.gg/tM8Y5acUta'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-2 text-sm text-white/40 transition-colors hover:text-white'
+              >
+                Support
+              </a>
+            </nav>
           </div>
 
+          {/* Legal */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Legal</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/legal/tos"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/legal/privacy"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/legal/cookies"
-                  className="text-gray-400 hover:text-[var(--color-accent)] transition"
-                >
-                  Cookie Policy
-                </Link>
-              </li>
-            </ul>
+            <div className='mb-5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/25'>
+              Legal
+            </div>
+
+            <nav className='space-y-3'>
+              <Link
+                href='/legal/tos'
+                className='flex items-center gap-2 text-sm text-white/40 transition-colors hover:text-white'
+              >
+                <DocumentTextIcon className='h-4 w-4 text-white/20' />
+                Terms of Service
+              </Link>
+
+              <Link
+                href='/legal/privacy'
+                className='flex items-center gap-2 text-sm text-white/40 transition-colors hover:text-white'
+              >
+                Privacy Policy
+              </Link>
+
+              <Link
+                href='/legal/cookies'
+                className='flex items-center gap-2 text-sm text-white/40 transition-colors hover:text-white'
+              >
+                Cookies Policy
+              </Link>
+            </nav>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={itemVariants}
-          className="pt-6 border-t border-gray-800"
-        >
-          <p className="text-sm">
-            © 2025 - {currentYear} Java Lava Discord Bot. All rights reserved.
-          </p>
-          <p className="text-xs mt-2 text-gray-600">
-            Made with <span className="text-[var(--color-secondary)]">♥</span>{' '}
-            by Phil, Jeo, Ziggy, and Heliki.
-          </p>
-        </motion.div>
-      </div>
+        {/* Bottom */}
+        <div className='mt-12 border-t border-white/10 pt-6'>
+          <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
+            <div>
+              <p className='font-mono text-[9px] uppercase tracking-[0.14em] text-white/20'>
+                © 2025–{currentYear} Java Lava Discord Bot
+              </p>
 
-      {/* Decorative element */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden">
-        <svg
-          className="relative block w-full h-8"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            fill="#0F0F1A"
-            fillOpacity="1"
-          ></path>
-        </svg>
+              <p className='mt-2 text-xs text-white/15'>
+                Built by Phil, Jeo, Ziggy, and Val.
+              </p>
+            </div>
+
+            <div className='flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-white/15'>
+              <ShieldCheckIcon className='h-3.5 w-3.5' />
+              <span>Java Lava / Official Site</span>
+            </div>
+          </div>
+        </div>
       </div>
     </motion.footer>
   );

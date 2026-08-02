@@ -1,230 +1,261 @@
 'use client';
 
-import {
-  CommandLineIcon,
-} from '@heroicons/react/24/outline';
+import { GiCupcake, GiCommercialAirplane } from 'react-icons/gi';
+import { IoBookSharp } from 'react-icons/io5';
+import { BiSolidErrorCircle } from 'react-icons/bi';
+import { SiIcons8 } from 'react-icons/si';
+import { FaServer } from 'react-icons/fa';
+
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import StatusScript from '../../components/StatusScript';
-import { FaServer } from 'react-icons/fa';
-import { GiCupcake, GiCommercialAirplane } from "react-icons/gi";
-import { IoBookSharp } from "react-icons/io5";
-import { BiSolidErrorCircle } from "react-icons/bi";
-import { SiIcons8 } from "react-icons/si";
+
+const contributors = [
+  {
+    icon: FaServer,
+    title: 'ZixeSea and Chrizz - ServerStats Developers',
+    description:
+      'The Serverstats Developers helped fix up our prefix issues back in alpha testing! I am very grateful for their help!',
+    link: 'https://serverstats.bot/',
+    linkText: 'Serverstats Discord Bot Website',
+  },
+  {
+    icon: GiCupcake,
+    title: 'TrainerJeo - Muffin Bot Developer & Error Logging Specialist!',
+    link: 'https://muffindiscord.me/',
+    linkText: 'Muffin Discord Bot Website',
+  },
+  {
+    icon: GiCommercialAirplane,
+    title:
+      'ziggy._.mc - DB Bug Tracker Developer & Reminder system helper and debugger!',
+    link: 'https://www.ziggymc.me/zigydbot/',
+    linkText: 'Projects',
+  },
+  {
+    icon: IoBookSharp,
+    title: 'ProCoderCat - Study Buddy expert & Developer!',
+    link: 'https://github.com/hankanderson0103-dev',
+    linkText: "ProCoderCat's GitHub",
+  },
+  {
+    icon: SiIcons8,
+    title: 'Lord_Nova - Emotes helper and debugger!',
+    link: 'https://github.com/sinisterMage',
+    linkText: "Lord_Nova's GitHub",
+  },
+];
+
+const bugHunters = [
+  {
+    name: 'kitfugll',
+    link: 'https://discord.gg/d9vT5hz8H5',
+    label: "Kitfugll's Discord",
+  },
+  {
+    name: 'techadka78',
+  },
+  {
+    name: 'vastbethatguy',
+  },
+  {
+    name: 'nielsen1984',
+  },
+  {
+    name: 'pixitan',
+    link: 'https://discord.gg/QzPPhb9XWR',
+    label: "Pixi's Discord",
+  },
+  {
+    name: 'sorceressrl',
+    link: 'https://discord.gg/X6XdCygUtD',
+    label: "Sorceress's Discord",
+  },
+  {
+    name: 'svpremesn0wyy',
+    link: 'https://discord.gg/pVDwbUMa',
+    label: "Sn0wyy's Discord",
+  },
+];
 
 export default function ContributorsPage() {
-
   return (
     <>
       <StatusScript />
       <Header />
 
-      <main className="min-h-screen bg-[var(--color-dark)]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className='relative isolate min-h-screen overflow-hidden bg-[#0b0a12] text-white'>
+        {/* Shared background */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute inset-0 opacity-[0.035]'
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+          }}
+        />
+
+        {/* Subtle shared glows */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute left-[-14rem] top-32 h-[30rem] w-[30rem] rounded-full bg-[#a78bfa]/[0.045] blur-[120px]'
+        />
+
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute right-[-14rem] top-[50rem] h-[30rem] w-[30rem] rounded-full bg-[#fb923c]/[0.035] blur-[120px]'
+        />
+
+        <div className='relative mx-auto max-w-4xl px-5 py-20 sm:px-8 lg:px-10'>
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Java Lava Contributors
+          <div className='mb-14 text-center'>
+            <div className='mb-5 flex items-center justify-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#a78bfa]'>
+              <span className='h-2 w-2 bg-[#fb923c]' />
+              Java Lava / contributors
+            </div>
+
+            <h1 className='text-[clamp(2.8rem,6vw,5rem)] font-black leading-[0.9] tracking-[-0.055em]'>
+              Java Lava
+              <br />
+              <span className='text-[#a78bfa]'>Contributors.</span>
             </h1>
+
+            <p className='mx-auto mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg'>
+              The developers, testers, and community members who have helped
+              Java Lava grow.
+            </p>
           </div>
 
-          {/* Voting Links */}
-          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
-            <FaServer className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">
-              ZixeSea and Chrizz - ServerStats Developers
-            </h3>
-            <h5>
-              The Serverstats Developers helped fix up our prefix issues back in alpha testing! I am very grateful for their help!
-            </h5>
-            <a
-              href="https://serverstats.bot/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Serverstats discord bot website</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
+          {/* Contributors */}
+          <div className='space-y-5'>
+            {contributors.map((contributor, index) => {
+              const Icon = contributor.icon;
+
+              return (
+                <article
+                  key={contributor.title}
+                  className='group relative overflow-hidden border border-white/10 bg-[#11101a] transition-colors duration-200 hover:border-white/15 hover:bg-[#13121c]'
+                >
+                  <div className='flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7'>
+                    <div className='flex min-w-0 items-start gap-5'>
+                      <div className='flex h-11 w-11 shrink-0 items-center justify-center border border-[#a78bfa]/20 bg-[#a78bfa]/[0.06] text-[#a78bfa]'>
+                        <Icon className='h-5 w-5' />
+                      </div>
+
+                      <div className='min-w-0'>
+                        <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                          Contributor {String(index + 1).padStart(2, '0')}
+                        </div>
+
+                        <h2 className='text-lg font-semibold leading-6 tracking-[-0.015em] text-white/90 sm:text-xl'>
+                          {contributor.title}
+                        </h2>
+
+                        {contributor.description && (
+                          <p className='mt-2 max-w-2xl text-sm leading-6 text-white/40'>
+                            {contributor.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    <a
+                      href={contributor.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='inline-flex min-h-10 shrink-0 items-center justify-center gap-2 border border-white/10 bg-white/[0.025] px-4 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-white/55 transition-all duration-200 hover:border-[#a78bfa]/30 hover:bg-[#a78bfa]/[0.08] hover:text-[#c4b5fd] focus:outline-none focus:ring-2 focus:ring-[#a78bfa]/50'
+                    >
+                      {contributor.linkText}
+                      <span className='transition-transform duration-200 group-hover:translate-x-0.5'>
+                        →
+                      </span>
+                    </a>
+                  </div>
+
+                  <div className='absolute bottom-0 left-0 h-px w-0 bg-[#a78bfa] transition-all duration-300 group-hover:w-full' />
+                </article>
+              );
+            })}
           </div>
 
-          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
-            <GiCupcake className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">
-              TrainerJeo - Muffin Bot Developer & Error Logging Specialist!
-            </h3>
-            <a
-              href="https://muffindiscord.me/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Muffin Discord Bot Website</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-          </div>
+          {/* Bug hunters */}
+          <section className='mt-12 overflow-hidden border border-white/10 bg-[#11101a]'>
+            <div className='border-b border-white/10 p-6 sm:p-7'>
+              <div className='flex items-start gap-5'>
+                <div className='flex h-11 w-11 shrink-0 items-center justify-center border border-[#fb923c]/20 bg-[#fb923c]/[0.05] text-[#fb923c]'>
+                  <BiSolidErrorCircle className='h-5 w-5' />
+                </div>
 
-          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
-            <GiCommercialAirplane className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">
-              ziggy._.mc - DB Bug Tracker Developer & Reminder system helper and debugger!
-            </h3>
-            <a
-              href="https://www.ziggymc.me/zigydbot/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Projects</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-          </div>
+                <div>
+                  <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-[#fb923c]'>
+                    Testing / feedback
+                  </div>
 
-          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
-            <IoBookSharp className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">
-              ProCoderCat - Study Buddy expert & Developer!
-            </h3>
-            <a
-              href="https://github.com/hankanderson0103-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>ProCoderCat's GitHub</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-          </div>
+                  <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                    Our bug hunters and beta testers
+                  </h2>
 
-          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
-            <SiIcons8 className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">
-              Lord_Nova - Emotes helper and debugger!
-            </h3>
-            <a
-              href="https://github.com/sinisterMage"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Lord_Nova's GitHub</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-          </div>
+                  <p className='mt-2 text-sm leading-6 text-white/40'>
+                    The Devs would like to thank everyone who helped test Java
+                    Lava and report issues during development.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-          <div className="mt-16 text-center p-8 bg-gradient-to-r from-[var(--color-Contributor1)]/10 to-[var(--color-Contributor2)]/10 rounded-2xl border border-[var(--color-Contributor1)]/20">
-            <BiSolidErrorCircle className="h-12 w-12 text-[var(--color-secondary)] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-white mb-2">
-              Our bug hunters and Beta Testers! The Devs would like to thank:
-              <br />
-              - kitfugll
-              <br />
-              - techadka78
-              <br />
-              - vastbethatguy
-              <br />
-              - nielsen1984
-              <br />
-              - pixitan
-              <br />
-              - sorceressrl
-              <br />
-              - svpremesn0wyy
-              <br />
-            </h3>
-            <a
-              href="https://discord.gg/d9vT5hz8H5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Kitfugll's Discord</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-            <a
-              href="https://discord.gg/eUYxMz4cW4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Adka's Discord</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-            <a
-              href="https://discord.gg/QzPPhb9XWR"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Pixi's Discord</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-            <a
-              href="https://discord.gg/X6XdCygUtD"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Sorceress's Discord</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-            <a
-              href="https://discord.gg/pVDwbUMa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-secondary)] text-white font-medium rounded-lg hover:bg-[var(--color-secondary)]/80 transition-colors"
-            >
-              <span>Sn0wyy's Discord</span>
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-          </div>
+            <div className='divide-y divide-white/10'>
+              {bugHunters.map((person, index) => (
+                <div
+                  key={person.name}
+                  className='flex flex-col gap-3 px-6 py-5 transition-colors hover:bg-white/[0.02] sm:flex-row sm:items-center sm:justify-between sm:px-7'
+                >
+                  <div className='flex items-center gap-4'>
+                    <span className='font-mono text-[10px] text-white/15'>
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+
+                    <span className='font-medium text-white/70'>
+                      {person.name}
+                    </span>
+                  </div>
+
+                  {person.link && (
+                    <a
+                      href={person.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='inline-flex items-center gap-2 self-start border border-white/10 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/35 transition-colors hover:border-[#fb923c]/30 hover:text-[#fb923c] sm:self-auto'
+                    >
+                      {person.label}
+                      <span>→</span>
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* Navigation */}
-          <div className="mt-12 pt-8 border-t border-gray-800">
-            <div className="flex justify-between items-center">
+          <div className='mt-12 border-y border-white/10 py-5'>
+            <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
               <a
-                href="/docs"
-                className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-gray-300 hover:bg-gray-800/70 hover:text-white transition-colors"
+                href='/docs'
+                className='inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white/35 transition-colors hover:text-white'
               >
                 ← Back to docs
               </a>
-              <div className="text-sm text-gray-500">
+
+              <div className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/20'>
                 8 Contributors • Last updated: January 2nd, 2026
               </div>
             </div>
           </div>
         </div>
       </main>
+
       <Footer />
     </>
   );

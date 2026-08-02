@@ -4,152 +4,160 @@ import {
   AdjustmentsHorizontalIcon,
   ArrowPathIcon,
   ArrowsPointingOutIcon,
-  BugAntIcon,
+  ShieldExclamationIcon,
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+
+const updates = [
+  {
+    icon: ShieldExclamationIcon,
+    type: 'SECURITY',
+    title: 'Honeypot system',
+    description:
+      'The new honeypot system detects suspicious users before they can cause problems. Server owners can choose the punishment, including purge, timeout, or soft ban.',
+  },
+  {
+    icon: XMarkIcon,
+    type: 'COMMANDS',
+    title: 'Three new utility commands',
+    description:
+      'Added /avatar, /server-info, and /user-info. Each command gives moderators quick access to useful member or server information.',
+  },
+  {
+    icon: ArrowPathIcon,
+    type: 'MODERATION',
+    title: 'Temporary bans are back',
+    description:
+      'The tempban system has returned after the issues in version 2.3. Moderators can now temporarily remove users for a defined period.',
+  },
+  {
+    icon: AdjustmentsHorizontalIcon,
+    type: 'WEBSITE',
+    title: 'New community reviews',
+    description:
+      'New reviews from Java Lava users are now available on the website. Want to submit yours? Send it through the reviews forum in the support server.',
+  },
+  {
+    icon: UsersIcon,
+    type: 'WEBSITE',
+    title: 'Website updates',
+    description:
+      'The website has been updated with the latest Java Lava features and improvements.',
+  },
+  {
+    icon: ArrowsPointingOutIcon,
+    type: 'PERFORMANCE',
+    title: 'Faster responses',
+    description:
+      'Several performance changes have improved response times and reduced unnecessary work across the bot.',
+  },
+];
 
 export default function UpdatesSection() {
-  const sectionVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  const updates = [
-    {
-      icon: <ArrowPathIcon className="h-6 w-6" />,
-      title: 'Brand New Honeypot System!',
-      description:
-        'Java Lava now has a brand new honeypot system that is designed to catch and block scammers and malicious users before they can cause any harm to your server, providing an extra layer of security and protection for your community! AND YOU can set the punishment for the honeypot system, whether it be a purge, a timeout, or a soft ban, giving you full control over how the system handles potential threats!',
-    },
-    {
-      icon: <XMarkIcon className="h-6 w-6" />,
-      title: 'New Commands!',
-      description:
-        'Java Lava has added in 3 new utility commands to help you with moderating members! The /avatar command, /server-info command, and /user-info command are all now available for you to use in your server, providing you with quick and easy access to important information about your members and server!',
-    },
-    {
-      icon: <ArrowPathIcon className="h-6 w-6" />,
-      title: 'TempBan System Returns!',
-      description:
-        'Java Lava has brought back the tempban system (after issues in v2.3), allowing you to temporarily ban users from your server for a specified duration, providing a more flexible moderation tool to help you manage your community effectively!',
-    },
-    {
-      icon: <AdjustmentsHorizontalIcon className="h-6 w-6" />,
-      title: 'New Reviews added to the website!',
-      description:
-        'We have added new reviews to the website from some of our users, showcasing their experiences and feedback with Java Lava, giving you insights into how the bot has helped them and their communities thrive! If you would like to submit a review, you can do so by joining our support server and sending us your review in the #reviews forum channel!',
-    },
-    {
-      icon: <UsersIcon className="h-6 w-6" />,
-      title: 'Website updates',
-      description:
-        'We have updated the website to include the latest features and improvements!',
-    },
-    {
-      icon: <ArrowsPointingOutIcon className="h-6 w-6" />,
-      title: 'Performance Improvements!',
-      description:
-        'We have made several performance improvements to Java Lava, resulting in faster response times and a more efficient bot overall!',
-    },
-  ];
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="py-20 relative">
-      {/* Background design elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[var(--color-primary)]\60 opacity-5 blur-3xl"></div>
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[var(--color-secondary)]\60 opacity-5 blur-3xl"></div>
-      </div>
+    <section className='relative overflow-hidden bg-[#0b0a12] py-24 text-white'>
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute inset-0 opacity-[0.035]'
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.8) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
+        }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
+      <div className='relative mx-auto max-w-6xl px-5 sm:px-8'>
+        <motion.header
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
+          className='mb-14 max-w-3xl'
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm rounded-full bg-[var(--color-secondary)] bg-opacity-20 text-[var(--color-WhatsNew)]">
-            What's New
-          </span>
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="text-[var(--color-accent)]">Version 2.3</span> has
-            Released!
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Released on May 19th, 2026 - Check out the latest improvements and
-            changes to Java Lava
-          </p>
-        </motion.div>
+          <div className='mb-5 flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-[#a78bfa]'>
+            <span className='h-px w-8 bg-[#fb923c]' />
+            Changelog
+          </div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-        >
-          {updates.map((update, index) => (
-            <motion.div
-              key={index}
-              className="p-6 rounded-lg border border-[var(--color-primary)] border-opacity-20 bg-[#1a1a2e] hover:border-[var(--color-secondary)] transition-all duration-300"
-              variants={itemVariants}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="flex items-start">
-                <div className="flex-shrink-0 p-2 rounded-md bg-[var(--color-primary)] bg-opacity-20 text-[var(--color-accent)]">
-                  {update.icon}
+          <div className='flex flex-col gap-6 border-b border-white/10 pb-10 sm:flex-row sm:items-end sm:justify-between'>
+            <div>
+              <h2 className='text-4xl font-black tracking-[-0.045em] sm:text-5xl'>
+                What's new in
+                <span className='text-[#a78bfa]'> 2.3</span>
+              </h2>
+
+              <p className='mt-4 max-w-xl text-sm leading-6 text-white/45 sm:text-base'>
+                The latest changes to Java Lava, released May 19, 2026.
+              </p>
+            </div>
+
+            <div className='shrink-0 font-mono text-[10px] uppercase tracking-[0.16em] text-white/25'>
+              Release / 2.3
+            </div>
+          </div>
+        </motion.header>
+
+        <div className='divide-y divide-white/10 border-y border-white/10'>
+          {updates.map((update, index) => {
+            const Icon = update.icon;
+
+            return (
+              <motion.article
+                key={update.title}
+                initial={shouldReduceMotion ? {} : { opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{
+                  duration: 0.45,
+                  delay: shouldReduceMotion ? 0 : index * 0.04,
+                }}
+                className='group grid gap-6 py-8 sm:grid-cols-[120px_48px_1fr] sm:items-start'
+              >
+                <div className='font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-white/25'>
+                  {update.type}
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-semibold mb-2 text-[var(--color-accent)]">
+
+                <div className='flex h-10 w-10 items-center justify-center border border-white/10 bg-white/[0.025] text-[#a78bfa] transition-colors duration-200 group-hover:border-[#a78bfa]/30 group-hover:text-[#c4b5fd]'>
+                  <Icon className='h-5 w-5' />
+                </div>
+
+                <div className='max-w-3xl'>
+                  <h3 className='text-xl font-bold tracking-[-0.02em] text-white'>
                     {update.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{update.description}</p>
+
+                  <p className='mt-2 text-sm leading-6 text-white/45'>
+                    {update.description}
+                  </p>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.article>
+            );
+          })}
+        </div>
 
         <motion.div
-          className="mt-12 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className='mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'
         >
+          <p className='font-mono text-[10px] uppercase tracking-[0.16em] text-white/20'>
+            More changes are documented in the full changelog
+          </p>
+
           <a
-            href="/docs/updates"
-            className="inline-flex items-center px-6 py-2 rounded-lg border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-Changelog)] hover:bg-opacity-10 transition-all duration-300"
+            href='/docs/updates'
+            className='inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.12em] text-[#a78bfa] transition-colors hover:text-[#c4b5fd] focus:outline-none focus:ring-2 focus:ring-[#a78bfa] focus:ring-offset-4 focus:ring-offset-[#0b0a12]'
           >
-            View Complete Changelog
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            View changelog
+            <span aria-hidden='true'>→</span>
           </a>
         </motion.div>
       </div>

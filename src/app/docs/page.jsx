@@ -8,12 +8,11 @@ import {
   QuestionMarkCircleIcon,
   RocketLaunchIcon,
 } from '@heroicons/react/24/outline';
-import { useEffect } from 'react';
+import { BugAntIcon } from '@heroicons/react/24/solid';
+import { FaHandsHelping, FaVoteYea } from 'react-icons/fa';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import StatusScript from '../components/StatusScript';
-import { BugAntIcon } from '@heroicons/react/24/solid';
-import { FaVoteYea, FaHandsHelping } from 'react-icons/fa';
 
 const docSections = [
   {
@@ -21,9 +20,6 @@ const docSections = [
     description: 'Quick start guide to set up Java Lava in your Discord server',
     href: '/docs/getting_started',
     icon: RocketLaunchIcon,
-    color: 'text-emerald-400',
-    bgColor: 'bg-emerald-500/10',
-    borderColor: 'border-emerald-500/20',
   },
   {
     title: 'Commands',
@@ -31,64 +27,43 @@ const docSections = [
       'Complete reference for all moderation, community, fun, and utility commands',
     href: '/docs/commands',
     icon: CommandLineIcon,
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-500/10',
-    borderColor: 'border-blue-500/20',
   },
   {
     title: 'Updates',
     description: 'Latest features, improvements, and bug fixes',
     href: '/docs/updates',
     icon: ArrowPathIcon,
-    color: 'text-purple-400',
-    bgColor: 'bg-purple-500/10',
-    borderColor: 'border-purple-500/20',
   },
   {
     title: 'Setup Guide',
     description: 'Detailed configuration and customization options',
     href: '/docs/setup_guide',
     icon: Cog6ToothIcon,
-    color: 'text-orange-400',
-    bgColor: 'bg-orange-500/10',
-    borderColor: 'border-orange-500/20',
   },
   {
     title: 'FAQ',
     description: 'Common questions and troubleshooting help',
     href: '/docs/faq',
     icon: QuestionMarkCircleIcon,
-    color: 'text-cyan-400',
-    bgColor: 'bg-cyan-500/10',
-    borderColor: 'border-cyan-500/20',
   },
   {
     title: 'Bugs & Issues',
     description: 'Report bugs and track known issues with Java Lava',
     href: '/docs/bugs',
     icon: BugAntIcon,
-    color: 'text-red-400',
-    bgColor: 'bg-red-500/10',
-    borderColor: 'border-red-500/20',
   },
   {
     title: 'Vote for Java Lava',
     description: 'Support Java Lava by voting on popular bot listing sites',
     href: '/docs/vote',
     icon: FaVoteYea,
-    color: 'text-pink-400',
-    bgColor: 'bg-pink-500/10',
-    borderColor: 'border-pink-500/20',
   },
   {
     title: 'Contributors',
     description: 'Meet the amazing people who contribute to Java Lava',
     href: '/docs/contributors',
     icon: FaHandsHelping,
-    color: 'text-yellow-400',
-    bgColor: 'bg-yellow-500/10',
-    borderColor: 'border-yellow-500/20',
-  }
+  },
 ];
 
 export default function DocsPage() {
@@ -97,102 +72,134 @@ export default function DocsPage() {
       <StatusScript />
       <Header />
 
-      <main className="relative min-h-screen">
-        {/* Hero Section */}
-        <div className="relative pt-20 pb-16 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 mb-6">
-                <BookOpenIcon className="h-5 w-5 text-[var(--color-primary)] mr-2" />
-                <span className="text-sm font-medium text-[var(--color-primary)]">
-                  Documentation
-                </span>
+      <main className='relative min-h-screen overflow-hidden bg-[#0b0a12] text-white'>
+        {/* Subtle shared background */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute inset-0 opacity-[0.025]'
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+          }}
+        />
+
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute left-[-16rem] top-[-16rem] h-[32rem] w-[32rem] rounded-full bg-[#a78bfa]/[0.035] blur-[120px]'
+        />
+
+        <section className='relative border-b border-white/10'>
+          <div className='mx-auto max-w-7xl px-5 pb-16 pt-20 sm:px-8 lg:px-10 lg:pb-20 lg:pt-24'>
+            <div className='max-w-3xl'>
+              <div className='mb-5 flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[#a78bfa]'>
+                <span className='h-1.5 w-1.5 bg-[#a78bfa]' />
+                Java Lava / documentation
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Java Lava
-                <br />
-                <span className="text-gradient bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-secondary)] to-[var(--color-accent)]">
-                  Documentation
-                </span>
+
+              <h1 className='text-4xl font-bold tracking-[-0.035em] sm:text-5xl'>
+                Documentation
               </h1>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Everything you need to build amazing Discord communities with
-                Java Lava's powerful moderation and engagement tools.
+
+              <p className='mt-5 max-w-2xl text-base leading-7 text-white/45 sm:text-lg'>
+                Everything you need to set up, configure, and get the most out
+                of Java Lava in your Discord server.
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Documentation Grid */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {docSections.map((section, index) => {
-              const Icon = section.icon;
-              return (
+        <section className='relative'>
+          <div className='mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20'>
+            <div className='mb-8'>
+              <div className='font-mono text-[10px] uppercase tracking-[0.18em] text-white/25'>
+                Documentation
+              </div>
+
+              <h2 className='mt-2 text-2xl font-semibold tracking-[-0.02em]'>
+                Browse the docs
+              </h2>
+            </div>
+
+            <div className='overflow-hidden border border-white/10 bg-[#11101a]'>
+              <div className='flex items-center gap-3 border-b border-white/10 px-5 py-4'>
+                <div className='flex gap-1.5'>
+                  <span className='h-2 w-2 bg-white/15' />
+                  <span className='h-2 w-2 bg-white/15' />
+                  <span className='h-2 w-2 bg-white/15' />
+                </div>
+
+                <span className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/25'>
+                  java-lava / docs
+                </span>
+              </div>
+
+              <div className='grid md:grid-cols-2'>
+                {docSections.map((section, index) => {
+                  const Icon = section.icon;
+
+                  return (
+                    <a
+                      key={section.title}
+                      href={section.href}
+                      className={`group relative border-b border-white/10 p-6 transition-colors hover:bg-white/[0.02] ${
+                        index % 2 === 0 ? 'md:border-r' : ''
+                      }`}
+                    >
+                      <div className='flex items-start gap-4'>
+                        <div className='flex h-10 w-10 shrink-0 items-center justify-center border border-white/10 bg-white/[0.025] text-white/50 transition-colors group-hover:border-[#a78bfa]/30 group-hover:text-[#a78bfa]'>
+                          <Icon className='h-5 w-5' />
+                        </div>
+
+                        <div className='min-w-0'>
+                          <div className='flex items-center gap-3'>
+                            <h3 className='font-semibold tracking-[-0.01em]'>
+                              {section.title}
+                            </h3>
+
+                            <span className='font-mono text-[9px] text-white/15'>
+                              {String(index + 1).padStart(2, '0')}
+                            </span>
+                          </div>
+
+                          <p className='mt-2 text-sm leading-6 text-white/40'>
+                            {section.description}
+                          </p>
+
+                          <div className='mt-4 flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.15em] text-white/25 transition-colors group-hover:text-[#a78bfa]'>
+                            View documentation
+                            <span className='transition-transform group-hover:translate-x-1'>
+                              →
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className='absolute bottom-0 left-0 h-px w-0 bg-[#a78bfa] transition-all duration-300 group-hover:w-full' />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className='mt-10 border-y border-white/10 py-4'>
+              <div className='flex flex-wrap items-center justify-between gap-4'>
+                <span className='font-mono text-[10px] uppercase tracking-[0.16em] text-white/25'>
+                  Guides / commands / updates / support
+                </span>
+
                 <a
-                  key={section.title}
-                  href={section.href}
-                  className={`group block p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${section.bgColor} ${section.borderColor} hover:border-opacity-40`}
+                  href='/docs/commands'
+                  className='font-mono text-[10px] uppercase tracking-[0.15em] text-[#a78bfa] transition-colors hover:text-[#c4b5fd]'
                 >
-                  <div className="flex items-center mb-4">
-                    <div
-                      className={`p-3 rounded-xl ${section.bgColor} ${section.borderColor} border mr-4`}
-                    >
-                      <Icon className={`h-6 w-6 ${section.color}`} />
-                    </div>
-                    <h3 className={`text-2xl font-bold ${section.color}`}>
-                      {section.title}
-                    </h3>
-                  </div>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {section.description}
-                  </p>
-                  <div className="flex items-center text-sm font-medium text-gray-400 group-hover:text-gray-200 transition-colors">
-                    <span>Explore</span>
-                    <svg
-                      className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </div>
+                  Browse commands →
                 </a>
-              );
-            })}
-          </div>
-
-          {/* Quick Stats */}
-          <div className="mt-20 p-8 rounded-2xl glass-effect">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-[var(--color-accent)] mb-2">
-                  50+
-                </div>
-                <div className="text-gray-300">Available Commands</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[var(--color-secondary)] mb-2">
-                  99.9%
-                </div>
-                <div className="text-gray-300">Uptime Reliability</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[var(--color-primary)] mb-2">
-                  24/7
-                </div>
-                <div className="text-gray-300">Active Support</div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
 
       <Footer />

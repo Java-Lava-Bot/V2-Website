@@ -8,155 +8,237 @@ import {
   MegaphoneIcon,
   ShieldCheckIcon,
 } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function FeaturesSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        damping: 15,
-      },
-    },
-  };
+  const shouldReduceMotion = useReducedMotion();
 
   const features = [
     {
-      icon: <ShieldCheckIcon className="h-7 w-7" />,
-      title: 'Advanced Moderation',
+      icon: ShieldCheckIcon,
+      command: '/moderate',
+      title: 'Moderation',
       description:
-        'Powerful tools to keep your server safe. Ban, kick, mute, and more with just a few clicks.',
+        'Ban, kick, timeout, and manage members without leaving Discord.',
+      accent: 'purple',
     },
     {
-      icon: <ClockIcon className="h-7 w-7" />,
-      title: 'Reminder System',
+      icon: ClockIcon,
+      command: '/reminder',
+      title: 'Reminders',
       description:
-        'Never forget important events. Set reminders for you and your server members.',
+        'Schedule reminders for yourself or your server when something needs attention.',
+      accent: 'orange',
     },
     {
-      icon: <ChatBubbleLeftRightIcon className="h-7 w-7" />,
-      title: 'Welcome Messages',
+      icon: ChatBubbleLeftRightIcon,
+      command: '/welcome',
+      title: 'Welcome messages',
       description:
-        'Greet new members with customizable welcome messages and make them feel at home.',
+        'Give new members a proper introduction with messages built for your server.',
+      accent: 'purple',
     },
     {
-      icon: <BoltIcon className="h-7 w-7" />,
-      title: 'Auto Roles',
+      icon: BoltIcon,
+      command: '/autorole',
+      title: 'Auto roles',
       description:
-        'Automatically assign roles to new members when they join your server.',
+        'Assign roles automatically when members join your community.',
+      accent: 'orange',
     },
     {
-      icon: <MegaphoneIcon className="h-7 w-7" />,
-      title: 'Announcement System',
+      icon: MegaphoneIcon,
+      command: '/announce',
+      title: 'Announcements',
       description:
-        'Easily make server-wide announcements with rich formatting and customization.',
+        'Publish clean server announcements with the formatting you choose.',
+      accent: 'purple',
     },
     {
-      icon: <CpuChipIcon className="h-7 w-7" />,
-      title: 'Custom Commands',
+      icon: CpuChipIcon,
+      command: '/custom',
+      title: 'Custom commands',
       description:
-        'Create your own commands that respond exactly how you want them to.',
+        'Create responses for the commands your community actually uses.',
+      accent: 'orange',
     },
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Abstract background elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-b from-[var(--color-primary)] opacity-[0.03] blur-3xl"></div>
-        <div className="absolute -bottom-10 -right-10 w-72 h-72 rounded-full bg-[var(--color-accent)] opacity-[0.04] blur-3xl"></div>
-      </div>
+    <section className='relative isolate overflow-hidden bg-[#0b0a12] py-28 text-white'>
+      {/* Shared background grid */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute inset-0 opacity-[0.035]'
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
+        }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Shared purple glow */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute right-[-14rem] top-16 h-[34rem] w-[34rem] rounded-full bg-[#a78bfa]/[0.06] blur-[130px]'
+      />
+
+      {/* Shared orange glow */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute bottom-[-12rem] left-[-12rem] h-[28rem] w-[28rem] rounded-full bg-[#fb923c]/[0.04] blur-[120px]'
+      />
+
+      <div className='relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10'>
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className='mb-14 grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end'
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-accent)] bg-opacity-20 text-[var(--color-secondary)]">
-            Features
-          </span>
-          <h2 className="text-4xl font-bold mb-4">
-            Everything You Need for Your Discord Server
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Java Lava comes packed with powerful features to enhance your
-            Discord server experience. From moderation to fun commands, we've
-            got you covered.
+          <div>
+            <div className='mb-5 flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#a78bfa]'>
+              <span className='h-2 w-2 bg-[#a78bfa]' />
+              Java Lava / commands
+            </div>
+
+            <h2 className='text-[clamp(2.7rem,5vw,5rem)] font-black leading-[0.9] tracking-[-0.055em]'>
+              Everything your
+              <br />
+              server <span className='text-[#a78bfa]'>needs.</span>
+            </h2>
+          </div>
+
+          <p className='max-w-xl text-base leading-7 text-white/50 lg:justify-self-end sm:text-lg'>
+            Java Lava puts the everyday tools for running a Discord community in
+            one place. Moderation, automation, and server utilities without
+            filling your bot list with separate services.
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="relative"
-              variants={itemVariants}
-            >
-              <div className="flex items-center mb-4">
-                <div className="p-3 rounded-lg bg-[var(--color-secondary)] bg-opacity-10 text-[var(--color-accent)]">
-                  {feature.icon}
-                </div>
-                <h3 className="ml-4 text-xl font-semibold">{feature.title}</h3>
+        <div className='overflow-hidden border border-white/10 bg-[#11101a]'>
+          <div className='flex items-center justify-between border-b border-white/10 px-5 py-4'>
+            <div className='flex items-center gap-3'>
+              <div className='flex gap-1.5'>
+                <span className='h-2.5 w-2.5 bg-white/15' />
+                <span className='h-2.5 w-2.5 bg-white/15' />
+                <span className='h-2.5 w-2.5 bg-white/15' />
               </div>
-              <p className="text-gray-400 pl-16">{feature.description}</p>
 
-              {/* Decorative line */}
-              <div className="absolute left-6 top-12 h-full w-[1px] bg-gradient-to-b from-[var(--color-accent)] to-transparent opacity-20"></div>
-            </motion.div>
-          ))}
-        </motion.div>
+              <span className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/30'>
+                java-lava / commands
+              </span>
+            </div>
 
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-        >
-          <a
-            href="/docs/commands"
-            className="inline-flex items-center px-8 py-3 rounded-lg bg-[var(--color-secondary)] text-white hover:bg-opacity-90 transition-all duration-300"
-          >
-            Explore All Commands
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <div className='font-mono text-[10px] uppercase tracking-wider text-emerald-400'>
+              6 modules loaded
+            </div>
+          </div>
+
+          <div className='grid md:grid-cols-2'>
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              const isPurple = feature.accent === 'purple';
+
+              return (
+                <motion.div
+                  key={feature.command}
+                  initial={
+                    shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }
+                  }
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.45,
+                    delay: shouldReduceMotion ? 0 : index * 0.06,
+                  }}
+                  className='group relative border-b border-white/10 p-6 transition-colors hover:bg-white/[0.025] md:nth-[odd]:border-r'
+                >
+                  <div className='mb-7 flex items-start justify-between'>
+                    <div
+                      className={`flex h-10 w-10 items-center justify-center border ${
+                        isPurple
+                          ? 'border-[#a78bfa]/20 bg-[#a78bfa]/[0.06] text-[#a78bfa]'
+                          : 'border-[#fb923c]/20 bg-[#fb923c]/[0.05] text-[#fb923c]'
+                      }`}
+                    >
+                      <Icon className='h-5 w-5' />
+                    </div>
+
+                    <span className='font-mono text-[10px] text-white/15'>
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+
+                  <div className='mb-3 flex flex-wrap items-center gap-3'>
+                    <span
+                      className={`font-mono text-xs font-medium ${
+                        isPurple ? 'text-[#a78bfa]' : 'text-[#fb923c]'
+                      }`}
+                    >
+                      {feature.command}
+                    </span>
+
+                    <span className='h-px w-8 bg-white/10' />
+
+                    <span className='font-mono text-[9px] uppercase tracking-[0.15em] text-white/25'>
+                      ready
+                    </span>
+                  </div>
+
+                  <h3 className='text-xl font-semibold tracking-[-0.02em]'>
+                    {feature.title}
+                  </h3>
+
+                  <p className='mt-3 max-w-lg text-sm leading-6 text-white/40'>
+                    {feature.description}
+                  </p>
+
+                  <div
+                    className={`absolute bottom-0 left-0 h-px w-0 transition-all duration-300 group-hover:w-full ${
+                      isPurple ? 'bg-[#a78bfa]' : 'bg-[#fb923c]'
+                    }`}
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className='flex flex-col gap-5 border-t border-white/10 bg-black/20 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7'>
+            <div>
+              <div className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/25'>
+                Command library
+              </div>
+
+              <div className='mt-1 text-sm text-white/45'>
+                Browse every command and configuration option.
+              </div>
+            </div>
+
+            <a
+              href='/docs/commands'
+              className='inline-flex min-h-11 items-center justify-center gap-2 bg-[#a78bfa] px-5 font-semibold text-[#0b0a12] transition-colors hover:bg-[#c4b5fd] focus:outline-none focus:ring-2 focus:ring-[#a78bfa] focus:ring-offset-2 focus:ring-offset-[#11101a]'
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </a>
-        </motion.div>
+              Explore all commands
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div className='mt-12 border-y border-white/10 py-4'>
+          <div className='flex flex-wrap items-center justify-between gap-4'>
+            <span className='font-mono text-[10px] uppercase tracking-[0.18em] text-white/25'>
+              Moderation / automation / utilities
+            </span>
+
+            <span className='font-mono text-[10px] uppercase tracking-[0.15em] text-[#a78bfa]'>
+              Java Lava / ready
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

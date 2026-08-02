@@ -5,6 +5,7 @@ import {
   ServerIcon,
   ShieldCheckIcon,
 } from '@heroicons/react/24/outline';
+
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import StatusScript from '../../components/StatusScript';
@@ -15,80 +16,158 @@ export default function PrivacyPolicy() {
       <StatusScript />
       <Header />
 
-      <main className="min-h-screen bg-[var(--color-dark)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className='relative isolate min-h-screen overflow-hidden bg-[#0b0a12] text-white'>
+        {/* Shared background */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute inset-0 opacity-[0.035]'
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+          }}
+        />
+
+        {/* Subtle shared glows */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute left-[-14rem] top-32 h-[30rem] w-[30rem] rounded-full bg-[#a78bfa]/[0.045] blur-[120px]'
+        />
+
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute right-[-14rem] top-[50rem] h-[30rem] w-[30rem] rounded-full bg-[#fb923c]/[0.035] blur-[120px]'
+        />
+
+        <div className='relative mx-auto max-w-4xl px-5 py-20 sm:px-8 lg:px-10'>
           {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 mb-6">
-              <ShieldCheckIcon className="h-5 w-5 text-[var(--color-accent)] mr-2" />
-              <span className="text-sm font-medium text-[var(--color-accent)]">
-                Privacy & Security
-              </span>
+          <div className='mb-14 text-center'>
+            <div className='mb-5 flex items-center justify-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#a78bfa]'>
+              <span className='h-2 w-2 bg-[#fb923c]' />
+              Java Lava / privacy
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Privacy Policy
+            <h1 className='text-[clamp(2.8rem,6vw,5rem)] font-black leading-[0.9] tracking-[-0.055em]'>
+              Privacy
+              <br />
+              <span className='text-[#a78bfa]'>Policy.</span>
             </h1>
-            <p className="text-xl text-gray-400 mb-6">
-              How Java Lava handles your data and protects your privacy
+
+            <p className='mx-auto mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg'>
+              How Java Lava handles your data, protects your privacy, and
+              manages information collected through its services.
             </p>
 
-            <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
-              <ClockIcon className="h-4 w-4" />
-              <span>Last updated: May 19, 2026</span>
+            <div className='mt-6 flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-white/25'>
+              <ClockIcon className='h-4 w-4' />
+              Last updated: May 19, 2026
             </div>
           </div>
 
           {/* Content */}
-          <article className="prose prose-invert prose-lg max-w-none">
-            <div className="bg-gray-900/30 rounded-2xl p-8 border border-gray-800/50 space-y-8">
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  1. Information We Collect
-                </h2>
-                <div className="bg-gray-800/40 rounded-lg p-6 mb-4">
-                  <div className="flex items-center gap-3 mb-3">
-                    <ServerIcon className="h-5 w-5 text-[var(--color-accent)]" />
-                    <h3 className="text-lg font-semibold text-white">
+          <article className='overflow-hidden border border-white/10 bg-[#11101a]'>
+            <div className='divide-y divide-white/10'>
+              {/* Section 1 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5 flex items-start gap-5'>
+                  <div className='flex h-11 w-11 shrink-0 items-center justify-center border border-[#a78bfa]/20 bg-[#a78bfa]/[0.06] text-[#a78bfa]'>
+                    <ServerIcon className='h-5 w-5' />
+                  </div>
+
+                  <div>
+                    <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                      Section 01
+                    </div>
+
+                    <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                      Information We Collect
+                    </h2>
+                  </div>
+                </div>
+
+                <div className='border border-white/10 bg-white/[0.02] p-5'>
+                  <div className='mb-4 flex items-center gap-3'>
+                    <ServerIcon className='h-5 w-5 text-[#a78bfa]' />
+
+                    <h3 className='text-base font-semibold text-white/85'>
                       Automatically Collected Data
                     </h3>
                   </div>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+
+                  <ul className='list-disc space-y-2 pl-5 text-sm leading-6 text-white/45'>
                     <li>Discord server ID and server name</li>
                     <li>User IDs for command execution</li>
                     <li>Command usage statistics and frequency</li>
                     <li>Error logs and debugging information</li>
-                    <li>Server member counts (for analytics)</li>
-                    <li>Discord Automod Rule ID's for automod-scam-prevention command</li>
+                    <li>Server member counts for analytics</li>
+                    <li>
+                      Discord Automod Rule IDs for the automod-scam-prevention
+                      command
+                    </li>
                   </ul>
                 </div>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  2. How We Use Your Information
-                </h2>
-                <p className="text-gray-300 leading-relaxed mb-4">
+              {/* Section 2 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5 flex items-start gap-5'>
+                  <div className='flex h-11 w-11 shrink-0 items-center justify-center border border-[#a78bfa]/20 bg-[#a78bfa]/[0.06] text-[#a78bfa]'>
+                    <ShieldCheckIcon className='h-5 w-5' />
+                  </div>
+
+                  <div>
+                    <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                      Section 02
+                    </div>
+
+                    <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                      How We Use Your Information
+                    </h2>
+                  </div>
+                </div>
+
+                <p className='mb-4 text-sm leading-6 text-white/45'>
                   We use collected information exclusively for:
                 </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+
+                <ul className='list-disc space-y-2 pl-5 text-sm leading-6 text-white/45'>
                   <li>Providing and maintaining bot functionality</li>
                   <li>Debugging errors and improving performance</li>
                   <li>Analyzing usage patterns to enhance features</li>
-                  <li>Ensuring compliance with Discord's Terms of Service and Dev Terms of Service</li>
+                  <li>
+                    Ensuring compliance with Discord's Terms of Service and
+                    Developer Terms of Service
+                  </li>
                   <li>Preventing abuse and maintaining service security</li>
-                  <li>Discord Automod Rule ID's for automod-scam-prevention command</li>
+                  <li>Supporting the automod-scam-prevention command</li>
                 </ul>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  3. Data Storage & Security
-                </h2>
-                <p className="text-gray-300 leading-relaxed mb-4">
+              {/* Section 3 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5 flex items-start gap-5'>
+                  <div className='flex h-11 w-11 shrink-0 items-center justify-center border border-[#a78bfa]/20 bg-[#a78bfa]/[0.06] text-[#a78bfa]'>
+                    <ShieldCheckIcon className='h-5 w-5' />
+                  </div>
+
+                  <div>
+                    <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                      Section 03
+                    </div>
+
+                    <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                      Data Storage & Security
+                    </h2>
+                  </div>
+                </div>
+
+                <p className='mb-4 text-sm leading-6 text-white/45'>
                   Your data security is our priority:
                 </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+
+                <ul className='list-disc space-y-2 pl-5 text-sm leading-6 text-white/45'>
                   <li>All data is encrypted in transit and at rest</li>
                   <li>We use industry-standard security practices</li>
                   <li>
@@ -101,12 +180,20 @@ export default function PrivacyPolicy() {
                 </ul>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  4. Data Sharing
-                </h2>
-                <p className="text-gray-300 leading-relaxed">
-                  <strong>
+              {/* Section 4 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5'>
+                  <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                    Section 04
+                  </div>
+
+                  <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                    Data Sharing
+                  </h2>
+                </div>
+
+                <p className='text-sm leading-7 text-white/45'>
+                  <strong className='font-semibold text-white/80'>
                     We do not sell, trade, or share your personal information
                     with third parties.
                   </strong>{' '}
@@ -115,33 +202,49 @@ export default function PrivacyPolicy() {
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  5. Data Retention
-                </h2>
-                <p className="text-gray-300 leading-relaxed mb-4">
+              {/* Section 5 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5'>
+                  <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                    Section 05
+                  </div>
+
+                  <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                    Data Retention
+                  </h2>
+                </div>
+
+                <p className='mb-4 text-sm leading-6 text-white/45'>
                   We retain data only as long as necessary:
                 </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+
+                <ul className='list-disc space-y-2 pl-5 text-sm leading-6 text-white/45'>
                   <li>Command logs: 30 days for debugging purposes</li>
                   <li>Error reports: 90 days for analysis and fixes</li>
                   <li>
-                    Usage statistics: Anonymized and aggregated permanently
+                    Usage statistics: anonymized and aggregated permanently
                   </li>
-                  <li>
-                    Server configuration: Until bot is removed from server
-                  </li>
+                  <li>Server configuration: until the bot is removed</li>
                 </ul>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  6. Your Rights
-                </h2>
-                <p className="text-gray-300 leading-relaxed mb-4">
+              {/* Section 6 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5'>
+                  <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                    Section 06
+                  </div>
+
+                  <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                    Your Rights
+                  </h2>
+                </div>
+
+                <p className='mb-4 text-sm leading-6 text-white/45'>
                   You have the right to:
                 </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+
+                <ul className='list-disc space-y-2 pl-5 text-sm leading-6 text-white/45'>
                   <li>Request information about data we have collected</li>
                   <li>Request deletion of your server's data</li>
                   <li>Opt out of data collection by removing the bot</li>
@@ -149,11 +252,19 @@ export default function PrivacyPolicy() {
                 </ul>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  7. Discord Integration
-                </h2>
-                <p className="text-gray-300 leading-relaxed">
+              {/* Section 7 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5'>
+                  <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                    Section 07
+                  </div>
+
+                  <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                    Discord Integration
+                  </h2>
+                </div>
+
+                <p className='text-sm leading-7 text-white/45'>
                   Java Lava operates within Discord's ecosystem and is subject
                   to Discord's Privacy Policy and Terms of Service. We recommend
                   reviewing Discord's policies to understand how your Discord
@@ -161,46 +272,89 @@ export default function PrivacyPolicy() {
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  8. Policy Updates
-                </h2>
-                <p className="text-gray-300 leading-relaxed">
+              {/* Section 8 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5'>
+                  <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                    Section 08
+                  </div>
+
+                  <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                    Policy Updates
+                  </h2>
+                </div>
+
+                <p className='text-sm leading-7 text-white/45'>
                   This privacy policy may be updated to reflect changes in our
                   practices or applicable laws. Significant changes will be
                   announced in our Discord server with at least 7 days notice.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  9. Automod Scam Preventions command Updates
-                </h2>
-                <p className="text-gray-300 leading-relaxed">
-                  This command collects the IDs of the Discord Automod Rules in the server and stores them in our database to be used for the automod-scam-prevention command, which is uploaded to discord automod (for those rare times when we do have an outage and the bot is unable to perform the scam prevention) to ensure that your server is protected from the latest scams and phishing attempts, and these IDs are only used for this command and are not shared with any third parties or used for any other purposes.
+              {/* Section 9 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5'>
+                  <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-[#fb923c]'>
+                    Section 09
+                  </div>
+
+                  <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                    Automod Scam Prevention
+                  </h2>
+                </div>
+
+                <p className='text-sm leading-7 text-white/45'>
+                  This command collects the IDs of the Discord Automod Rules in
+                  the server and stores them in our database for use by the
+                  automod-scam-prevention command. These rules are uploaded to
+                  Discord Automod so that, during rare service outages where
+                  Java Lava is unable to perform scam prevention directly, your
+                  server can continue to have protection against scams and
+                  phishing attempts.
+                </p>
+
+                <p className='mt-4 text-sm leading-7 text-white/45'>
+                  These IDs are only used for this command and are not shared
+                  with third parties or used for unrelated purposes.
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold text-[var(--color-accent)] mb-4">
-                  10. Contact Us
-                </h2>
-                <p className="text-gray-300 leading-relaxed">
+              {/* Section 10 */}
+              <section className='p-6 sm:p-8'>
+                <div className='mb-5'>
+                  <div className='mb-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                    Section 10
+                  </div>
+
+                  <h2 className='text-xl font-semibold tracking-[-0.02em]'>
+                    Contact Us
+                  </h2>
+                </div>
+
+                <p className='mb-4 text-sm leading-6 text-white/45'>
                   For privacy-related questions or requests:
                 </p>
-                <ul className="list-disc list-inside text-gray-300 space-y-2 mt-4">
+
+                <ul className='list-disc space-y-3 pl-5 text-sm leading-6 text-white/45'>
                   <li>
-                    Discord: <strong>PhillsPhanbh3_the_bot_developer</strong>
+                    Discord:{' '}
+                    <strong className='text-white/75'>
+                      PhillsPhanbh3_the_bot_developer
+                    </strong>
                   </li>
+
                   <li>
                     Support Server:{' '}
                     <a
-                      href="https://discord.gg/tM8Y5acUta"
-                      className="text-[var(--color-accent)] hover:text-[var(--color-secondary)] underline transition-colors"
+                      href='https://discord.gg/tM8Y5acUta'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-[#a78bfa] underline decoration-[#a78bfa]/30 underline-offset-4 transition-colors hover:text-[#c4b5fd]'
                     >
-                      Join our community
+                      Join our community ↗
                     </a>
                   </li>
+
                   <li>Email: Available upon request through Discord</li>
                 </ul>
               </section>
@@ -208,17 +362,18 @@ export default function PrivacyPolicy() {
           </article>
 
           {/* Navigation */}
-          <div className="mt-12 pt-8 border-t border-gray-800">
-            <div className="flex justify-between items-center">
+          <div className='mt-12 border-y border-white/10 py-5'>
+            <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
               <a
-                href="/legal/tos"
-                className="flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 rounded-lg text-[var(--color-primary)] hover:bg-[var(--color-primary)]/20 transition-colors"
+                href='/legal/tos'
+                className='inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white/35 transition-colors hover:text-white'
               >
                 ← Terms of Service
               </a>
+
               <a
-                href="/"
-                className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-gray-300 hover:bg-gray-800/70 hover:text-white transition-colors"
+                href='/'
+                className='inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white/35 transition-colors hover:text-white'
               >
                 Back to Home →
               </a>

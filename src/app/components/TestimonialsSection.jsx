@@ -1,326 +1,344 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
-const Navin_profile_pictureName = 'Navin_profile_picture.png';
-const Navin_profile_picture = require(`../public/avatars/${Navin_profile_pictureName}`);
-const ADKA_profile_pictureName = 'ADKA_profile_picture.png';
-const ADKA_profile_picture = require(`../public/avatars/${ADKA_profile_pictureName}`);
-const JR_PFPname = 'JR_PFP.png';
-const JR_PFP = require(`../public/avatars/${JR_PFPname}`);
-const JJ_PFPname = 'JJ_PFP.png';
-const JJ_PFP = require(`../public/avatars/${JJ_PFPname}`);
-const Ryan_profile_pictureName = 'Ryan_pfp.png';
-const Ryan_PFP = require(`../public/avatars/${Ryan_profile_pictureName}`);
-const ziggy_profile_pictureName = 'ziggy.gif';
-const ziggy_PFP = require(`../public/avatars/${ziggy_profile_pictureName}`);
-const ritz_profile_pictureName = 'Ritz_pfp.png';
-const ritz_PFP = require(`../public/avatars/${ritz_profile_pictureName}`);
-const soab_profile_pictureName = 'ttb.soaby.gif';
-const soab_PFP = require(`../public/avatars/${soab_profile_pictureName}`);
+
+const Navin_profile_picture = require('../public/avatars/Navin_profile_picture.png');
+const ADKA_profile_picture = require('../public/avatars/ADKA_profile_picture.png');
+const JR_PFP = require('../public/avatars/JR_PFP.png');
+const JJ_PFP = require('../public/avatars/JJ_PFP.png');
+const Ryan_PFP = require('../public/avatars/Ryan_pfp.png');
+const ziggy_PFP = require('../public/avatars/ziggy.gif');
+const ritz_PFP = require('../public/avatars/Ritz_pfp.png');
+const soab_PFP = require('../public/avatars/ttb.soaby.gif');
+
+const testimonials = [
+  {
+    id: 1,
+    quote:
+      'Owner is a great guy, bot has many moderation commands as well as fun command to check out.',
+    author: 'navin.10',
+    role: 'Fellow Discord bot developer',
+    avatar: Navin_profile_picture.default.src,
+  },
+  {
+    id: 2,
+    quote:
+      'I like how it has a lot of great moderation stuff and unique automod modules that other bots do not have. I also like how I can set reminders with this bot.',
+    author: 'techadka78',
+    role: 'Server Owner',
+    avatar: ADKA_profile_picture.default.src,
+  },
+  {
+    id: 3,
+    quote:
+      'Love the easy access to the majority of the features, the stability of it and the wide range of options available with the bot. It is like multiple bots all into one.',
+    author: 'JR The Fantastic',
+    role: 'VIP Member and TMTOJ Community Leader',
+    avatar: JR_PFP.default.src,
+  },
+  {
+    id: 4,
+    quote:
+      'Java Lava is an amazing bot. It provides great security measures and makes bans and kicks easier than with larger bots.',
+    author: 'JJ The Purple Lad',
+    role: 'Former Community Manager',
+    avatar: JJ_PFP.default.src,
+  },
+  {
+    id: 5,
+    quote:
+      "It's quite easy to work with Java Lava. There are some bugs, but the team is doing a great job resolving them.",
+    author: 'ℝ𝕪𝕒𝕟𝟛𝟛𝟜𝟛',
+    role: 'Server Administrator',
+    avatar: Ryan_PFP.default.src,
+  },
+  {
+    id: 6,
+    quote:
+      "Java Lava is a decent bot, great for small servers. Mainly tailored towards mobile users with automod commands. I'd recommend adding the bot.",
+    author: 'ziggy._.mc',
+    role: 'Server Owner & Developer',
+    avatar: ziggy_PFP.default.src,
+  },
+  {
+    id: 7,
+    quote:
+      'As someone who loves using the Java Lava bot, I can say it helped me with all of my moderation problems. It helped keep my server monitored and made moderation much easier.',
+    author: 'Ritz King',
+    role: 'Server Owner',
+    avatar: ritz_PFP.default.src,
+  },
+  {
+    id: 8,
+    quote:
+      'As a new member of Discord and a mildly experienced Twitch mod, Java Lava made moderation much easier for my community. The commands are useful and the team keeps me updated on the bot status.',
+    author: '𝑠𝑜𝑎𝑏.',
+    role: 'Server Owner',
+    avatar: soab_PFP.default.src,
+  },
+];
 
 export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      id: 1,
-      quote:
-        'Owner is a great guy, bot has many moderation commands as well as fun command to check out.',
-      author: 'navin.10',
-      role: 'Fellow discord bot developer',
-      avatar: `${Navin_profile_picture.default.src}`,
-    },
-    {
-      id: 2,
-      quote:
-        "I like how it has a lot of great moderation stuff and unique automod modules that other bots do not have like banning sexual content, I also like how I can set reminders with this bot",
-      author: 'techadka78',
-      role: 'Server Owner',
-      avatar: `${ADKA_profile_picture.default.src}`,
-    },
-    {
-      id: 3,
-      quote:
-        'love the easy access to the majority of the features, the stability of it and the wide range of options available with the bot its like multiple bots all into one which is great, only thing so far thats a bit stressful is the current slash commands only for like the ban command it takes a few extra seconds when in a rush other than that even it is good all around!',
-      author: 'JR The Fantastic',
-      role: 'VIP Member and TMTOJ Community Leader',
-      avatar: `${JR_PFP.default.src}`,
-    },
-    {
-      id: 4,
-      quote:
-        'Java lava is a amazing bot, it provides amazing security measures and it makes for easier bans and kicks than big bots such as the carl bot.',
-      author: 'JJ The Purple Lad',
-      role: 'Former Community Manager',
-      avatar: `${JJ_PFP.default.src}`,
-    },
-    {
-      id: 5,
-      quote:
-        'It\'s quite easy to work with javalava, apart from some bugs but the team is doing a great job in resolving those bugs🙌',
-      author: 'ℝ𝕪𝕒𝕟𝟛𝟛𝟜𝟛',
-      role: 'Server Administrator',
-      avatar: `${Ryan_PFP.default.src}`,
-    },
-    {
-      id: 6,
-      quote:
-        "Java lava is a decent bot, great for small servers. Mainly tailored towards mobile users with automod commands. I'd recommend you adding the bot! 😮",
-        author: "ziggy._.mc",
-      role: 'Server Owner & Developer',
-      avatar: `${ziggy_PFP.default.src}`,
-    },
-    {
-      id: 7,
-      quote:
-        "As someone who loves using the Java Lava bot, i can say, it helped me with all of my problems. ALL of my problems. My server moderation was definetly there, and it helped me get through the sad times of a unmonitored server, and thanks to this BOT i can moderate and check out my server in peace.. without suspicous raiders joining my server! Yall should honestly use it",
-        author: "Ritz King",
-      role: 'Server Owner',
-      avatar: `${ritz_PFP.default.src}`,
-    },
-    {
-      id: 8,
-      quote:
-        "As a new member of Discord and a mildly experienced Twitch mod who wanted to make his own server but had no experience with discord bots, nor a Pc, JavaLava changed everything, its moderation really is an essential and excellent addition to my community! The commands are cool and phillsphanbh3 is always active keeping me up to date on the bots status and the updates which I truly appreciate.",
-        author: "𝑠𝑜𝑎𝑏.",
-      role: 'Server Owner',
-      avatar: `${soab_PFP.default.src}`,
-    }
-  ];
+  const shouldReduceMotion = useReducedMotion();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [autoPlay, setAutoPlay] = useState(true);
 
   useEffect(() => {
-    let interval;
+    if (!autoPlay || shouldReduceMotion) return;
 
-    if (autoPlay) {
-      interval = setInterval(() => {
-        setDirection(1);
-        setCurrentIndex(prevIndex => (prevIndex + 1) % testimonials.length);
-      }, 5000);
-    }
+    const interval = setInterval(() => {
+      setDirection(1);
+      setCurrentIndex(previous => (previous + 1) % testimonials.length);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [autoPlay, testimonials.length]);
+  }, [autoPlay, shouldReduceMotion]);
 
-  const handlePrev = () => {
+  const changeTestimonial = (nextIndex, nextDirection) => {
     setAutoPlay(false);
-    setDirection(-1);
-    setCurrentIndex(prevIndex =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    setDirection(nextDirection);
+    setCurrentIndex(nextIndex);
+  };
+
+  const previous = () => {
+    changeTestimonial(
+      currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1,
+      -1
     );
   };
 
-  const handleNext = () => {
-    setAutoPlay(false);
-    setDirection(1);
-    setCurrentIndex(prevIndex => (prevIndex + 1) % testimonials.length);
+  const next = () => {
+    changeTestimonial((currentIndex + 1) % testimonials.length, 1);
   };
 
-  const slideVariants = {
-    enter: direction => ({
-      x: direction > 0 ? 200 : -200,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: direction => ({
-      x: direction > 0 ? -200 : 200,
-      opacity: 0,
-    }),
-  };
+  const testimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 rounded-full bg-[var(--color-accent)] opacity-[0.03] blur-3xl"></div>
-        <div className="absolute top-20 right-10 w-32 h-32 rounded-full bg-[var(--color-primary)] opacity-[0.05] blur-xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className='relative isolate overflow-hidden bg-[#0b0a12] py-28 text-white'>
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute inset-0 opacity-[0.035]'
+        style={{
+          backgroundImage: `
+        linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+      `,
+          backgroundSize: '48px 48px',
+        }}
+      />
+      {/* Shared purple glow */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute right-[-12rem] top-20 h-[28rem] w-[28rem] rounded-full bg-[#a78bfa]/10 blur-[120px]'
+      />
+      {/* Shared orange glow */}{' '}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute bottom-[-12rem] left-[-12rem] h-[28rem] w-[28rem] rounded-full bg-[#fb923c]/[0.04] blur-[120px]'
+      />
+      {/* Shared orange glow — continues from Features */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute left-[-12rem] top-[-12rem] h-[28rem] w-[28rem] rounded-full bg-[#fb923c]/[0.04] blur-[120px]'
+      />
+      <div className='relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10'>
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className='mb-14 max-w-2xl'
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium rounded-full bg-[var(--color-primary)] bg-opacity-20 text-[var(--color-secondary)]">
-            Testimonials
-          </span>
-          <h2 className="text-4xl font-bold mb-4">What Our Users Say</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Don't just take our word for it. See what server owners and
-            community managers are saying about Java Lava.
+          <div className='mb-5 flex items-center gap-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-[#a78bfa]'>
+            <span className='h-2 w-2 bg-[#fb923c]' />
+            Java Lava / feedback
+          </div>
+
+          <h2 className='text-[clamp(2.7rem,5vw,5rem)] font-black leading-[0.9] tracking-[-0.055em]'>
+            Built for the people
+            <br />
+            <span className='text-[#a78bfa]'>running the server.</span>
+          </h2>
+
+          <p className='mt-7 max-w-xl text-base leading-7 text-white/50 sm:text-lg'>
+            Server owners and moderators use Java Lava every day. Here&apos;s
+            what they have to say about it.
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto relative">
-          <div className="absolute top-10 left-0 w-20 h-20 rounded-full bg-[var(--color-primary)] bg-opacity-10 blur-xl z-0"></div>
-          <div className="absolute bottom-10 right-0 w-20 h-20 rounded-full bg-[var(--color-accent)] bg-opacity-10 blur-xl z-0"></div>
+        <div className='grid gap-10 lg:grid-cols-[0.35fr_1fr] lg:gap-16'>
+          <div className='border-y border-white/10 py-5'>
+            <div className='font-mono text-[10px] uppercase tracking-[0.18em] text-white/25'>
+              User feedback
+            </div>
 
-          <div className="absolute -top-10 -left-4 text-[100px] leading-none text-[var(--color-accent)] opacity-10"></div>
-          <div className="absolute -bottom-20 right-0 text-[100px] leading-none text-[var(--color-accent)] opacity-10"></div>
+            <div className='mt-5 font-mono text-5xl font-bold tracking-[-0.05em]'>
+              {String(currentIndex + 1).padStart(2, '0')}
+            </div>
 
-          <div className="bg-[#1a1a2e] border border-[var(--color-primary)] border-opacity-20 rounded-xl p-8 md:p-10 relative overflow-hidden">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-              <motion.div
-                key={currentIndex}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: 'spring', stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
-                }}
-                className="relative z-10"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="w-20 h-20 rounded-full bg-[var(--color-secondary)] bg-opacity-20 p-1 mb-6">
-                    <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center text-[var(--color-accent)]">
-                      {testimonials[currentIndex].avatar ? (
-                        <img
-                          src={testimonials[currentIndex].avatar}
-                          alt={testimonials[currentIndex].author}
-                          className="w-full h-full rounded-full object-cover"
-                        />
-                      ) : (
-                        <span className="text-2xl font-bold">
-                          {testimonials[currentIndex].author.charAt(0)}
-                        </span>
-                      )}
-                    </div>
-                  </div>
+            <div className='mt-2 font-mono text-[10px] uppercase tracking-[0.15em] text-white/30'>
+              of {String(testimonials.length).padStart(2, '0')}
+            </div>
 
-                  <p className="text-xl md:text-2xl text-center mb-6">
-                    {testimonials[currentIndex].quote}
-                  </p>
+            <div className='mt-8 h-px bg-white/10' />
 
-                  <div className="text-center">
-                    <h4 className="text-lg font-bold text-[var(--color-accent)]">
-                      {testimonials[currentIndex].author}
-                    </h4>
-                    <p className="text-gray-400">
-                      {testimonials[currentIndex].role}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            <div className="absolute bottom-5 left-0 right-0 flex justify-center space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    setAutoPlay(false);
-                    setDirection(index > currentIndex ? 1 : -1);
-                    setCurrentIndex(index);
-                  }}
-                  className={`w-2 h-2 rounded-full transition-all duration-450 ${index === currentIndex ? 'bg-[var(--color-accent)] w-6' : 'bg-gray-500'}`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
+            <div className='mt-5 font-mono text-[10px] uppercase tracking-[0.15em] text-white/25'>
+              Community voices
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-3 items-center">
-            <div className="justify-self-start">
-              <button
-                onClick={handlePrev}
-                className="p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-accent)] hover:bg-opacity-20 transition-all duration-300"
-                aria-label="Previous testimonial"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-            </div>
+          <div className='relative'>
+            <div className='absolute -bottom-3 -left-3 h-full w-full border border-[#fb923c]/20 bg-[#fb923c]/[0.03]' />
 
-            <div className="justify-self-center">
-              <button
-                onClick={() => setAutoPlay(!autoPlay)}
-                className="p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-accent)] hover:bg-opacity-20 transition-all duration-300"
-                aria-label={autoPlay ? 'Pause auto-scroll' : 'Resume auto-scroll'}
-              >
-                {autoPlay ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
+            <div className='relative overflow-hidden border border-white/10 bg-[#11101a]'>
+              <div className='flex items-center justify-between border-b border-white/10 px-5 py-4'>
+                <div className='flex items-center gap-3'>
+                  <div className='flex gap-1.5'>
+                    <span className='h-2.5 w-2.5 bg-white/15' />
+                    <span className='h-2.5 w-2.5 bg-white/15' />
+                    <span className='h-2.5 w-2.5 bg-white/15' />
+                  </div>
 
-            <div className="justify-self-end">
-              <button
-                onClick={handleNext}
-                className="p-3 rounded-full bg-[var(--color-primary)] bg-opacity-10 text-[var(--color-accent)] hover:bg-opacity-20 transition-all duration-300"
-                aria-label="Next testimonial"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  <span className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/30'>
+                    java-lava / community.log
+                  </span>
+                </div>
+
+                <div className='flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider text-emerald-400'>
+                  <span className='h-1.5 w-1.5 bg-emerald-400' />
+                  Live
+                </div>
+              </div>
+
+              <AnimatePresence initial={false} custom={direction} mode='wait'>
+                <motion.div
+                  key={testimonial.id}
+                  custom={direction}
+                  initial={
+                    shouldReduceMotion
+                      ? { opacity: 0 }
+                      : {
+                          opacity: 0,
+                          x: direction > 0 ? 40 : -40,
+                        }
+                  }
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={
+                    shouldReduceMotion
+                      ? { opacity: 0 }
+                      : {
+                          opacity: 0,
+                          x: direction > 0 ? -40 : 40,
+                        }
+                  }
+                  transition={{ duration: 0.35 }}
+                  className='min-h-[340px] p-7 sm:p-10'
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+                  <div className='mb-8 flex items-center justify-between border-b border-white/10 pb-5'>
+                    <div className='font-mono text-[10px] uppercase tracking-[0.18em] text-white/25'>
+                      Message received
+                    </div>
+
+                    <div className='font-mono text-[10px] text-[#fb923c]'>
+                      #{String(testimonial.id).padStart(2, '0')}
+                    </div>
+                  </div>
+
+                  <div className='grid gap-8 md:grid-cols-[auto_1fr]'>
+                    <div className='flex items-start'>
+                      <div className='h-16 w-16 overflow-hidden border border-[#a78bfa]/30 bg-[#a78bfa]/10 p-1'>
+                        <Image
+                          src={testimonial.avatar}
+                          alt={testimonial.author}
+                          width={64}
+                          height={64}
+                          className='h-full w-full object-cover'
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <blockquote className='max-w-3xl text-xl font-medium leading-8 tracking-[-0.015em] text-white/85 sm:text-2xl'>
+                        &quot;{testimonial.quote}&quot;
+                      </blockquote>
+
+                      <div className='mt-8 flex flex-col gap-1'>
+                        <span className='font-mono text-sm font-bold text-[#a78bfa]'>
+                          {testimonial.author}
+                        </span>
+
+                        <span className='text-sm text-white/35'>
+                          {testimonial.role}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              <div className='flex items-center justify-between border-t border-white/10 bg-black/20 px-5 py-4'>
+                <button
+                  type='button'
+                  onClick={previous}
+                  className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/35 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-[#a78bfa]'
+                  aria-label='Previous testimonial'
+                >
+                  ← Previous
+                </button>
+
+                <div className='flex items-center gap-2'>
+                  {testimonials.map((item, index) => (
+                    <button
+                      key={item.id}
+                      type='button'
+                      onClick={() =>
+                        changeTestimonial(index, index > currentIndex ? 1 : -1)
+                      }
+                      className={`h-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#a78bfa] ${
+                        index === currentIndex
+                          ? 'w-8 bg-[#a78bfa]'
+                          : 'w-2 bg-white/20 hover:bg-white/40'
+                      }`}
+                      aria-label={`Show testimonial ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  type='button'
+                  onClick={next}
+                  className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/35 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-[#a78bfa]'
+                  aria-label='Next testimonial'
+                >
+                  Next →
+                </button>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <div className='mt-16 border-y border-white/10 py-4'>
+          <div className='flex flex-wrap items-center justify-between gap-4'>
+            <span className='font-mono text-[10px] uppercase tracking-[0.18em] text-white/25'>
+              Feedback from Java Lava communities
+            </span>
+
+            <button
+              type='button'
+              onClick={() => setAutoPlay(!autoPlay)}
+              className='font-mono text-[10px] uppercase tracking-[0.15em] text-[#a78bfa] transition-colors hover:text-[#c4b5fd] focus:outline-none focus:ring-2 focus:ring-[#a78bfa]'
+              aria-label={
+                autoPlay
+                  ? 'Pause automatic rotation'
+                  : 'Resume automatic rotation'
+              }
+            >
+              {autoPlay ? 'Auto / On' : 'Auto / Off'}
+            </button>
           </div>
         </div>
       </div>
