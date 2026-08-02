@@ -1,153 +1,196 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import {
+  ArrowTopRightOnSquareIcon,
+  BeakerIcon,
+  CheckIcon,
+} from '@heroicons/react/24/outline';
 
-export default function NotFound() {
-  const [count, setCount] = useState(5);
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import StatusScript from '../../components/StatusScript';
 
-  useEffect(() => {
-    const timer = count > 0 && setInterval(() => setCount(count - 1), 1000);
-    if (count === 0) {
-      window.location.href = 'https://discord.com/oauth2/authorize?client_id=1390723130904805376&permissions=8';
-    }
-    return () => clearInterval(timer);
-  }, [count]);
+const INVITE_URL =
+  'https://discord.com/oauth2/authorize?client_id=1305190785536360519&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fjavalava.phillsphanbh3.me%2F&integration_type=0&scope=bot+applications.commands.permissions.update+applications.commands';
 
+const features = [
+  'Early access to new features',
+  'Upcoming command changes',
+  'Beta testing environment',
+  'Discord application commands',
+];
+
+export default function BetaInvite() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--color-dark)] relative overflow-hidden">
-      {/* Animated background elements */}
-      <motion.div
-        className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[var(--color-primary)] opacity-[0.03] blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 90, 0],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-      />
+    <>
+      <StatusScript />
+      <Header />
 
-      <motion.div
-        className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[var(--color-secondary)] opacity-[0.03] blur-3xl"
-        animate={{
-          scale: [1, 1.3, 1],
-          rotate: [0, -90, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: 'reverse',
-          delay: 2,
-        }}
-      />
+      <main className='relative min-h-screen overflow-hidden bg-[#0b0a12] text-white'>
+        {/* Shared documentation background */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute inset-0 opacity-[0.025]'
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+            `,
+            backgroundSize: '48px 48px',
+          }}
+        />
 
-      <div className="max-w-md mx-auto text-center px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="relative inline-block">
-            <motion.div
-              className="text-9xl font-bold text-[var(--color-primary)]"
-              animate={{
-                textShadow: [
-                  '0 0 10px rgba(123, 63, 228, 0.5)',
-                  '0 0 20px rgba(123, 63, 228, 0.7)',
-                  '0 0 10px rgba(123, 63, 228, 0.5)',
-                ],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatType: 'reverse',
-              }}
-            >
-              Bot Invite
-            </motion.div>
+        {/* Subtle purple glow */}
+        <div
+          aria-hidden='true'
+          className='pointer-events-none absolute left-[-16rem] top-[-16rem] h-[32rem] w-[32rem] rounded-full bg-[#a78bfa]/[0.035] blur-[120px]'
+        />
 
-            <motion.div
-              className="absolute -top-10 -right-10 w-20 h-20"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="w-full h-full text-[var(--color-accent)]"
-              >
-                <path
-                  d="M13.7299 3.51001L15.4899 7.03001C15.7299 7.52001 16.3699 7.99001 16.9099 8.08001L20.0999 8.61001C22.1399 8.95001 22.6199 10.43 21.1499 11.89L18.6699 14.37C18.2499 14.79 18.0199 15.6 18.1499 16.18L18.8599 19.25C19.4199 21.68 18.1299 22.62 15.9799 21.35L12.9899 19.58C12.4499 19.26 11.5599 19.26 11.0099 19.58L8.01991 21.35C5.87991 22.62 4.57991 21.67 5.13991 19.25L5.84991 16.18C5.97991 15.6 5.74991 14.79 5.32991 14.37L2.84991 11.89C1.38991 10.43 1.85991 8.95001 3.89991 8.61001L7.08991 8.08001C7.61991 7.99001 8.25991 7.52001 8.49991 7.03001L10.2599 3.51001C11.2199 1.60001 12.7799 1.60001 13.7299 3.51001Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </motion.div>
+        {/* Header */}
+        <section className='relative border-b border-white/10'>
+          <div className='mx-auto max-w-7xl px-5 pb-16 pt-20 sm:px-8 lg:px-10 lg:pb-20 lg:pt-24'>
+            <div className='max-w-3xl'>
+              <div className='mb-5 flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[#a78bfa]'>
+                <span className='h-1.5 w-1.5 bg-[#a78bfa]' />
+                Java Lava Beta / bot invite
+              </div>
+
+              <div className='flex items-center gap-4'>
+                <div className='flex h-12 w-12 shrink-0 items-center justify-center border border-[#a78bfa]/20 bg-[#a78bfa]/[0.05] text-[#a78bfa]'>
+                  <BeakerIcon className='h-6 w-6' />
+                </div>
+
+                <h1 className='text-4xl font-bold tracking-[-0.035em] sm:text-5xl'>
+                  Invite Java Lava Beta
+                </h1>
+              </div>
+
+              <p className='mt-5 max-w-2xl text-base leading-7 text-white/45 sm:text-lg'>
+                Install Java Lava Beta on your Discord server to test upcoming
+                features and changes before they reach the production bot.
+              </p>
+
+              <div className='mt-6 flex flex-wrap items-center gap-5 font-mono text-[10px] uppercase tracking-[0.15em] text-white/25'>
+                <div className='flex items-center gap-2'>
+                  <span className='h-1.5 w-1.5 bg-[#a78bfa]' />
+                  Beta release
+                </div>
+
+                <span className='text-white/10'>•</span>
+
+                <span>Java Lava / Testing</span>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <motion.h1
-            className="text-2xl md:text-3xl font-bold mt-6 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            Add the bot
-          </motion.h1>
+        {/* Content */}
+        <section className='relative'>
+          <div className='mx-auto max-w-5xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20'>
+            <div className='grid gap-px overflow-hidden border border-white/10 bg-white/10 lg:grid-cols-[1.2fr_0.8fr]'>
+              {/* Invite card */}
+              <div className='bg-[#11101a] p-7 sm:p-9'>
+                <div className='mb-6 flex items-center gap-3'>
+                  <BeakerIcon className='h-5 w-5 text-[#a78bfa]' />
 
-          <motion.p
-            className="text-gray-400 mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            You have been redirected to the bot invite page! Click the button or wait for the countdown to finish!
-          </motion.p>
+                  <span className='font-mono text-[10px] uppercase tracking-[0.18em] text-white/25'>
+                    java-lava / beta / invite
+                  </span>
+                </div>
 
-          <motion.div
-            className="mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-          >
-            <Link
-              href="https://discord.com/oauth2/authorize?client_id=1390723130904805376&permissions=8"
-              className="inline-flex items-center px-6 py-3 rounded-lg bg-[var(--color-primary)] text-white font-medium hover:bg-opacity-90 transition-all duration-300"
-            >
-              Add bot
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-            </Link>
-          </motion.div>
+                <h2 className='text-2xl font-semibold tracking-[-0.02em]'>
+                  Add the beta bot
+                </h2>
 
-          <motion.p
-            className="text-sm text-gray-500"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-          >
-            Redirecting to bot invite page in {count} seconds...
-          </motion.p>
-        </motion.div>
-      </div>
-    </div>
+                <p className='mt-4 max-w-xl text-sm leading-7 text-white/40'>
+                  Java Lava Beta gives you access to features currently being
+                  tested. Features may change, be incomplete, or be removed
+                  before reaching the production bot.
+                </p>
+
+                <a
+                  href={INVITE_URL}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='mt-8 inline-flex items-center gap-2 border border-[#a78bfa]/30 bg-[#a78bfa]/[0.08] px-5 py-3 font-mono text-[10px] uppercase tracking-[0.15em] text-[#a78bfa] transition-colors hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/[0.12] hover:text-[#c4b5fd]'
+                >
+                  Continue to Discord
+                  <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+                </a>
+              </div>
+
+              {/* Beta features */}
+              <div className='bg-[#11101a] p-7 sm:p-9'>
+                <div className='mb-6 font-mono text-[10px] uppercase tracking-[0.18em] text-white/25'>
+                  Beta features
+                </div>
+
+                <div className='space-y-4'>
+                  {features.map(feature => (
+                    <div
+                      key={feature}
+                      className='flex items-center gap-3 border-b border-white/10 pb-4 last:border-b-0'
+                    >
+                      <CheckIcon className='h-4 w-4 shrink-0 text-[#a78bfa]' />
+
+                      <span className='text-sm text-white/55'>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Beta warning */}
+            <div className='mt-8 border border-[#a78bfa]/15 bg-[#a78bfa]/[0.025] p-5'>
+              <div className='flex gap-4'>
+                <BeakerIcon className='mt-0.5 h-5 w-5 shrink-0 text-[#a78bfa]' />
+
+                <div>
+                  <div className='font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-[#a78bfa]'>
+                    Beta software
+                  </div>
+
+                  <p className='mt-2 text-sm leading-6 text-white/40'>
+                    Java Lava Beta is intended for testing and previewing
+                    upcoming functionality. You may encounter bugs, incomplete
+                    features, or unexpected behavior.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation */}
+            <div className='mt-10 border-y border-white/10 py-4'>
+              <div className='flex flex-wrap items-center justify-between gap-4'>
+                <a
+                  href='/invite'
+                  className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 transition-colors hover:text-white'
+                >
+                  ← All invites
+                </a>
+
+                <div className='flex items-center gap-6'>
+                  <a
+                    href='/invite/java-lava'
+                    className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/30 transition-colors hover:text-white'
+                  >
+                    Production bot
+                  </a>
+
+                  <a
+                    href='/docs'
+                    className='font-mono text-[10px] uppercase tracking-[0.15em] text-[#a78bfa] transition-colors hover:text-[#c4b5fd]'
+                  >
+                    Documentation →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
   );
 }

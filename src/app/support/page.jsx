@@ -1,153 +1,137 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import {
+  ArrowRightIcon,
+  ExclamationTriangleIcon,
+} from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
+
+const SUPPORT_SERVER = 'https://discord.gg/tM8Y5acUta';
 
 export default function NotFound() {
   const [count, setCount] = useState(5);
 
   useEffect(() => {
-    const timer = count > 0 && setInterval(() => setCount(count - 1), 1000);
-    if (count === 0) {
-      window.location.href = 'https://discord.gg/tM8Y5acUta';
+    if (count <= 0) {
+      window.location.href = SUPPORT_SERVER;
+      return;
     }
-    return () => clearInterval(timer);
+
+    const timer = window.setTimeout(() => {
+      setCount(current => current - 1);
+    }, 1000);
+
+    return () => window.clearTimeout(timer);
   }, [count]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--color-dark)] relative overflow-hidden">
-      {/* Animated background elements */}
-      <motion.div
-        className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[var(--color-primary)] opacity-[0.03] blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 90, 0],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-      />
-
-      <motion.div
-        className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[var(--color-secondary)] opacity-[0.03] blur-3xl"
-        animate={{
-          scale: [1, 1.3, 1],
-          rotate: [0, -90, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: 'reverse',
-          delay: 2,
+    <main className='relative isolate min-h-screen overflow-hidden bg-[#0b0a12] text-white'>
+      {/* Shared background */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute inset-0 opacity-[0.035]'
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
         }}
       />
 
-      <div className="max-w-md mx-auto text-center px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="relative inline-block">
-            <motion.div
-              className="text-9xl font-bold text-[var(--color-primary)]"
-              animate={{
-                textShadow: [
-                  '0 0 10px rgba(123, 63, 228, 0.5)',
-                  '0 0 20px rgba(123, 63, 228, 0.7)',
-                  '0 0 10px rgba(123, 63, 228, 0.5)',
-                ],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                repeatType: 'reverse',
-              }}
-            >
-              Support Server Invite
-            </motion.div>
+      {/* Shared glow */}
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute left-[-14rem] top-[-12rem] h-[32rem] w-[32rem] rounded-full bg-[#a78bfa]/[0.045] blur-[120px]'
+      />
 
-            <motion.div
-              className="absolute -top-10 -right-10 w-20 h-20"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="w-full h-full text-[var(--color-accent)]"
-              >
-                <path
-                  d="M13.7299 3.51001L15.4899 7.03001C15.7299 7.52001 16.3699 7.99001 16.9099 8.08001L20.0999 8.61001C22.1399 8.95001 22.6199 10.43 21.1499 11.89L18.6699 14.37C18.2499 14.79 18.0199 15.6 18.1499 16.18L18.8599 19.25C19.4199 21.68 18.1299 22.62 15.9799 21.35L12.9899 19.58C12.4499 19.26 11.5599 19.26 11.0099 19.58L8.01991 21.35C5.87991 22.62 4.57991 21.67 5.13991 19.25L5.84991 16.18C5.97991 15.6 5.74991 14.79 5.32991 14.37L2.84991 11.89C1.38991 10.43 1.85991 8.95001 3.89991 8.61001L7.08991 8.08001C7.61991 7.99001 8.25991 7.52001 8.49991 7.03001L10.2599 3.51001C11.2199 1.60001 12.7799 1.60001 13.7299 3.51001Z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </motion.div>
+      <div
+        aria-hidden='true'
+        className='pointer-events-none absolute bottom-[-16rem] right-[-14rem] h-[32rem] w-[32rem] rounded-full bg-[#fb923c]/[0.03] blur-[120px]'
+      />
+
+      <div className='relative flex min-h-screen items-center justify-center px-5 py-16 sm:px-8 lg:px-10'>
+        <div className='w-full max-w-4xl'>
+          {/* Breadcrumb */}
+          <div className='mb-8 flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[#a78bfa]'>
+            <span className='h-1.5 w-1.5 bg-[#a78bfa]' />
+            Java Lava / support
           </div>
 
-          <motion.h1
-            className="text-2xl md:text-3xl font-bold mt-6 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            Join our Support Server!
-          </motion.h1>
+          {/* Main card */}
+          <div className='border border-white/10 bg-[#11101a]'>
+            {/* Terminal-style header */}
+            <div className='flex items-center gap-3 border-b border-white/10 px-5 py-4'>
+              <div className='flex gap-1.5'>
+                <span className='h-2 w-2 bg-white/15' />
+                <span className='h-2 w-2 bg-white/15' />
+                <span className='h-2 w-2 bg-white/15' />
+              </div>
 
-          <motion.p
-            className="text-gray-400 mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            You have been redirected to the support server invite page! Click the button or wait for the countdown to finish!
-          </motion.p>
+              <span className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/25'>
+                java-lava / support-server
+              </span>
+            </div>
 
-          <motion.div
-            className="mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-          >
-            <Link
-              href="https://discord.gg/tM8Y5acUta"
-              className="inline-flex items-center px-6 py-3 rounded-lg bg-[var(--color-primary)] text-white font-medium hover:bg-opacity-90 transition-all duration-300"
-            >
-              Join Support Server
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
-            </Link>
-          </motion.div>
+            <div className='px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20'>
+              {/* Status */}
+              <div className='mb-6 flex items-center gap-3 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[#fb923c]'>
+                <ExclamationTriangleIcon className='h-4 w-4' />
+                Page unavailable
+              </div>
 
-          <motion.p
-            className="text-sm text-gray-500"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-          >
-            Redirecting to support server in {count} seconds...
-          </motion.p>
-        </motion.div>
+              {/* Title */}
+              <h1 className='text-[clamp(3rem,8vw,6rem)] font-black leading-[0.9] tracking-[-0.055em]'>
+                Support
+                <br />
+                <span className='text-[#a78bfa]'>Server.</span>
+              </h1>
+
+              <p className='mt-7 max-w-2xl text-base leading-7 text-white/45 sm:text-lg'>
+                You have been redirected to the Java Lava support server. Join
+                the community for support, announcements, bug reports, and
+                assistance with the bot.
+              </p>
+
+              {/* Redirect information */}
+              <div className='mt-10 border-y border-white/10 py-5'>
+                <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
+                  <div>
+                    <div className='font-mono text-[9px] uppercase tracking-[0.16em] text-white/20'>
+                      Automatic redirect
+                    </div>
+
+                    <div className='mt-2 font-mono text-sm text-white/60'>
+                      discord.gg/tM8Y5acUta
+                    </div>
+                  </div>
+
+                  <div className='font-mono text-[10px] uppercase tracking-[0.15em] text-white/25'>
+                    Redirecting in{' '}
+                    <span className='text-[#a78bfa]'>{count}s</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action */}
+              <div className='mt-8'>
+                <a
+                  href={SUPPORT_SERVER}
+                  className='group inline-flex items-center gap-3 border border-[#a78bfa]/30 bg-[#a78bfa]/[0.08] px-5 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-[#a78bfa] transition-all duration-200 hover:border-[#a78bfa]/50 hover:bg-[#a78bfa]/[0.14] hover:text-[#c4b5fd]'
+                >
+                  Join Support Server
+                  <ArrowRightIcon className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer label */}
+          <div className='mt-8 flex items-center justify-center gap-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/15'>
+            Java Lava / Support
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
