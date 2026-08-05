@@ -104,7 +104,7 @@ export default function AboutUs() {
                   </p>
 
                   <p>
-                    Since then, Java Lava has grown to over 50 servers and
+                    Since then, Java Lava has grown to over 65 servers and
                     continues expanding with the development of new systems and
                     features.
                   </p>
