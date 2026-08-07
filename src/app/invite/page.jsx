@@ -18,7 +18,7 @@ const bots = [
       'The production Java Lava Discord bot with moderation, community, utility, and server management features.',
     href: '/invite/standard',
     invite:
-      'https://discord.com/oauth2/authorize?client_id=1305190785536360519&permissions=8',
+      'https://discord.com/oauth2/authorize?client_id=1305190785536360519&permissions=8&response_type=code&redirect_uri=https%3A%2F%2Fjavalava.phillsphanbh3.me%2F&integration_type=0&scope=applications.commands.permissions.update+applications.commands+bot',
   },
   {
     name: 'Java Lava Beta',
