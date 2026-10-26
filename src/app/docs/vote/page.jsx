@@ -21,12 +21,6 @@ const votingSites = [
     href: 'https://discordbotlist.com/bots/java-lava/upvote',
     button: 'Vote on Discord Bot List',
   },
-  {
-    name: 'Directum',
-    description: 'Support Java Lava with a vote on Directum.',
-    href: 'https://directum.org/bot/6d4e7712-2998-4490-aee2-2dfa052c8c51',
-    button: 'Vote on Directum',
-  },
 ];
 
 export default function VotingPage() {
