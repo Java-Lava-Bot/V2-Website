@@ -15,7 +15,7 @@
     "@heroicons/react": "^2.2.0",
     "@statuspage/status-widget": "^1.0.5",
     "@vercel/speed-insights": "^2.0.0",
-    "framer-motion": "^14.2.0",
+    "framer-motion": "^14.9.0",
     "gray-matter": "^4.0.3",
     "next": "^16.4.1",
     "react": "^19.3.1",
